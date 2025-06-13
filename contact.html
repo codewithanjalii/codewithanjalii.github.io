@@ -14,8 +14,6 @@
     <a href="about.html">About</a>
     <a href="tips.html">Tips</a>
     <a href="contact.html">Contact</a>
-    
-
   </div>
 
   <div class="row">
@@ -27,23 +25,25 @@
           <li>Email ID : <a href="mailto:hello.codewithanjalii@gmail.com">hello.codewithanjalii@gmail.com</a></li>
           <li>Instagram: <a href="https://instagram.com/codewithanjalii" target="_blank">@codewithanjalii</a></li>
           <li>YouTube  : <a href="https://youtube.com/@codewithanjalii" target="_blank">CodeWithAnjalii</a></li>
-          
         </ul>
 
         <h3>Or send a message here:</h3>
-        <form>
+        <form action="https://formsubmit.co/hello.codewithanjalii@gmail.com" method="POST">
           <label>Name:</label><br>
-          <input type="text" placeholder="Your name"><br><br>
+          <input type="text" name="name" placeholder="Your name" required><br><br>
 
           <label>Email:</label><br>
-          <input type="email" placeholder="Your email"><br><br>
+          <input type="email" name="email" placeholder="Your email" required><br><br>
 
           <label>Message:</label><br>
-          <textarea rows="4" placeholder="Your message..."></textarea><br><br>
+          <textarea name="message" rows="4" placeholder="Your message..." required></textarea><br><br>
+
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://codewithanjalii.github.io/thankyou.html">
 
           <button type="submit">Send</button>
         </form>
-        <p><i>Note: Form not functional yet — can be connected later using Formspree or Google Forms.</i></p>
+        <p><i>Form powered by Formsubmit. Messages go straight to your email inbox.</i></p>
       </div>
     </div>
   </div>
