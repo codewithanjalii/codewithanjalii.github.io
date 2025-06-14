@@ -3,89 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Coding Tips - CodeWithAnjalii</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Tips - CodeWithAnjalii</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 
-  <div class="topnav">
-    <h1>CodeWithAnjalii</h1>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="tips.html">Tips</a>
-    <a href="contact.html">Contact</a>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">CodeWithAnjalii</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="tips.html">Tips</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
   </div>
+</nav>
 
-  <div class="row">
-    <div class="leftcolumn">
-      <div class="card">
-        <h2>Coding Tips for Beginners 💡</h2>
-        <ul>
-          <li><a href="#">What is a Variable?</a></li>
-          <li><a href="#">How Loops Work (for, while)</a></li>
-          <li><a href="#">Basic HTML Structure</a></li>
-          <li><a href="#">Git and GitHub Basics</a></li>
-          <li><a href="#">How to Write Clean Code</a></li>
-          <li><a href="#">Understanding Functions</a></li>
-          <li><a href="#">What is an Array?</a></li>
-        </ul>
-        <p>Click on any topic to start learning! ✨</p>
+<!-- Tips Section -->
+<div class="container my-5">
+  <h2 class="text-center mb-4">💡 Coding Tips by Anjali</h2>
+  <div class="row g-4">
+
+    <!-- Tip 1 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">1️⃣ What is a Variable?</h5>
+          <p class="card-text">A variable is like a container that holds data. In Python, you don’t need to define its type explicitly.</p>
+        </div>
       </div>
     </div>
 
-    <div class="rightcolumn">
-      <div class="card">
-        <h3>Need Help?</h3>
-        <p>DM me on <a href="https://instagram.com/codewithanjalii" target="_blank">Instagram</a></p>
-        <p>📧 Email me at <a href="mailto:hello.codewithanjalii@gmail.com">hello.codewithanjalii@gmail.com</a></p>
-
+    <!-- Tip 2 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">2️⃣ What is Git?</h5>
+          <p class="card-text">Git is a version control system used to track changes in code and collaborate with others.</p>
+        </div>
       </div>
     </div>
+
+    <!-- Tip 3 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">3️⃣ HTML Tags</h5>
+          <p class="card-text">HTML uses tags like &lt;h1&gt;, &lt;p&gt;, &lt;a&gt; to define headings, paragraphs, and links.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tip 4 (EXTRA) -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">4️⃣ Python Tip</h5>
+          <p class="card-text">Use f-strings for easy formatting: <code>name = "Anjali"; print(f"Hello {name}")</code></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tip 5 (EXTRA) -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">5️⃣ Git Tip</h5>
+          <p class="card-text">Use <code>git status</code> to check which files have changed before committing.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tip 6 (EXTRA) -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">6️⃣ SQL Tip</h5>
+          <p class="card-text">Use <code>SELECT * FROM tablename WHERE condition;</code> to filter data in SQL queries.</p>
+        </div>
+      </div>
+    </div>
+
   </div>
-
-  <div class="card">
-  <h2>1. What is a Variable?</h2>
-  <p>Variables are used to store data values in a program. For example:<br>
-     Python: <code>x = 5</code><br>
-     C: <code>int x = 5;</code>
-  </p>
 </div>
 
-<div class="card">
-  <h2>2. Understanding Data Types</h2>
-  <p>Different data types include:<br>
-     - Integer (e.g., 10)<br>
-     - Float (e.g., 3.14)<br>
-     - String (e.g., "Hello")<br>
-     - Boolean (True/False)
-  </p>
-</div>
+<!-- Footer -->
+<footer class="bg-dark text-light text-center py-3 mt-5">
+  &copy; 2025 CodeWithAnjalii. Learn daily, grow daily 💻
+</footer>
 
-<div class="card">
-  <h2>3. If-Else Conditions</h2>
-  <p>Used to make decisions in a program.<br>
-     Python: <code>if age >= 18: print("Adult")</code>
-  </p>
-</div>
-
-<div class="card">
-  <h2>4. Loops</h2>
-  <p>Loops let you repeat a block of code:<br>
-     Python: <code>for i in range(5): print(i)</code>
-  </p>
-</div>
-
-<div class="card">
-  <h2>5. Functions</h2>
-  <p>Functions group reusable code:<br>
-     Python: <code>def greet(): print("Hello")</code>
-  </p>
-</div>
-
-
-  <div class="footer">
-    <p>© 2025 CodeWithAnjalii. All rights reserved.</p>
-  </div>
-
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

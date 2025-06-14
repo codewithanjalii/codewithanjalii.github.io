@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Tables - CodeWithAnjalii</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    pre {
+      background: #fff;
+      border-left: 4px solid #f582ae;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    code {
+      background-color: #f1f1f1;
+      padding: 3px 6px;
+      border-radius: 4px;
+    }
+    .tip {
+      background-color: #fff3cd;
+      border-left: 5px solid #ffc107;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <h1 class="mb-4">📊 HTML Tables in Detail</h1>
+    <p>HTML tables allow you to organize data into rows and columns. They're perfect for displaying tabular information like schedules, marksheets, and more.</p>
+
+    <div class="tip">
+      🔍 <strong>Syntax:</strong> Use <code>&lt;table&gt;</code> to start a table, then add rows with <code>&lt;tr&gt;</code> and cells with <code>&lt;td&gt;</code> or <code>&lt;th&gt;</code>.
+    </div>
+
+    <h3>📋 Basic Table Example</h3>
+    <pre><code>&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Anjali&lt;/td&gt;
+    &lt;td&gt;22&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Rahul&lt;/td&gt;
+    &lt;td&gt;23&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    <p><code>&lt;th&gt;</code> is used for header cells, while <code>&lt;td&gt;</code> is for data cells.</p>
+
+    <h3>🔄 Using <code>colspan</code> and <code>rowspan</code></h3>
+    <pre><code>&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th colspan="2"&gt;Student Details&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Name&lt;/td&gt;
+    &lt;td&gt;Anjali&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    <p><code>colspan</code> lets a cell span multiple columns. Similarly, <code>rowspan</code> can make a cell span multiple rows.</p>
+
+    <div class="tip">
+      💡 <strong>Tip:</strong> Always close your <code>&lt;table&gt;</code> structure properly and avoid using too many nested tables!
+    </div>
+
+    <h3>🎨 Styling Tables (Basic CSS)</h3>
+    <pre><code>&lt;style&gt;
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+&lt;/style&gt;</code></pre>
+
+    <h3>🎯 Try It Yourself</h3>
+    <p>Create a table showing your weekly schedule with days as columns and subjects as rows.</p>
+
+    <div class="text-end">
+      <a href="../courses.html" class="btn btn-primary">Back to Courses 📚</a>
+    </div>
+  </div>
+</body>
+</html>

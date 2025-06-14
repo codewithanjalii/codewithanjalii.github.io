@@ -4,42 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About - CodeWithAnjalii</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #fef6e4, #fcefee);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .about-section {
+      background: white;
+      padding: 60px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    .about-section h1 {
+      color: #f582ae;
+    }
+    .highlight {
+      color: #f582ae;
+      font-weight: 600;
+    }
+    .btn-learn {
+      background: linear-gradient(to right, #f582ae, #ff6b9b);
+      color: white;
+      font-weight: bold;
+      border: none;
+    }
+    .btn-learn:hover {
+      background: linear-gradient(to right, #ff6b9b, #f582ae);
+    }
+  </style>
 </head>
 <body>
+  <div class="container py-5">
+    <div class="about-section">
+      <h1 class="mb-4 text-center">👩‍💻 About CodeWithAnjalii</h1>
+      <p>Hello! I'm <span class="highlight">Anjali</span>, the creator of <strong>CodeWithAnjalii</strong> — a platform to make learning tech simple, fun, and beginner-friendly!</p>
 
-  <div class="topnav">
-    <h1>CodeWithAnjalii</h1>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="tips.html">Tips</a>
-    <a href="contact.html">Contact</a>
-  </div>
+      <p>I started this site to help students, career-switchers, and curious minds understand complex concepts in an easy way. Whether it's <span class="highlight">HTML, CSS, Python, SQL, or Git</span>, you’ll find step-by-step guides, real examples, and mini-projects here.</p>
 
-  <div class="row">
-    <div class="leftcolumn">
-      <div class="card">
-        <h2>About Me</h2>
-        <p>Hello! I’m Anjali 👩‍💻 — the creator of CodeWithAnjalii.</p>
-        <p>I created this website to help beginners learn coding with simple tips, real-life examples, and easy-to-understand explanations.</p>
-        <p>I'm passionate about teaching topics like HTML, CSS, Python, Git, and more in a way that *actually makes sense.*</p>
-        <p>Whether you’re a complete beginner or brushing up your skills — you’re in the right place!</p>
-      </div>
-    </div>
+      <p>I'm passionate about teaching in a way that builds confidence in students. Each lesson is designed with 💡 clarity, 💻 practice, and 🎯 purpose — so that you don't just read code, you understand it.</p>
 
-    <div class="rightcolumn">
-      <div class="card">
-        <h3>My Socials</h3>
-        <p><a href="https://instagram.com/codewithanjalii" target="_blank">Instagram</a></p>
-        <p><a href="https://youtube.com/@codewithanjalii" target="_blank">YouTube</a></p>
-        <p><a href="https://github.com/codewithanjalii" target="_blank">GitHub</a></p>
+      <p class="mt-4"><strong>Let's code the future together — one line at a time!</strong></p>
+
+      <div class="text-center mt-5">
+        <a href="courses.html" class="btn btn-learn btn-lg">📚 Explore My Free Courses</a>
       </div>
     </div>
   </div>
-
-  <div class="footer">
-    <p>© 2025 CodeWithAnjalii. Made with ❤️</p>
-  </div>
-
 </body>
 </html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses - CodeWithAnjalii</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #4C6EF5;
+      --accent: #15AABF;
+      --background: #FAFAFA;
+      --highlight: #D0BFFF;
+      --text-dark: #2B2B2B;
+    }
+
+    body {
+      background-color: var(--background);
+      color: var(--text-dark);
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .card {
+      border: 1px solid transparent;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      border: 1px solid var(--highlight);
+      box-shadow: 0 6px 16px rgba(85, 108, 214, 0.15);
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--primary);">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">CodeWithAnjalii</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#"><i class="bi bi-book"></i> Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-person"></i> About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-chat"></i> Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="page-header">
+  <div class="container">
+    <h1 class="display-5">Explore Free Coding Courses</h1>
+    <p>HTML, CSS, Python, SQL, Git — everything you need to start your journey 🚀</p>
+  </div>
+</header>
+
+<!-- Courses Grid -->
+<section class="container my-5">
+  <div class="row g-4">
+    <div class="col-md-4" data-aos="fade-up">
+      <div class="card p-3">
+        <h5><i class="bi bi-code-slash text-primary"></i> HTML for Beginners</h5>
+        <p>Start from basic tags to forms, tables, and structure of a real webpage.</p>
+        <a href="html/index.html" class="btn btn-outline-primary btn-sm">Start Learning</a>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="card p-3">
+        <h5><i class="bi bi-palette text-warning"></i> CSS Styling</h5>
+        <p>Learn colors, layout, Flexbox, and how to make your site beautiful.</p>
+        <a href="css/index.html" class="btn btn-outline-primary btn-sm">Start Learning</a>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="card p-3">
+        <h5><i class="bi bi-terminal text-success"></i> Python Basics</h5>
+        <p>Understand variables, loops, logic and how Python works behind the scenes.</p>
+        <a href="python/index.html" class="btn btn-outline-primary btn-sm">Start Learning</a>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+      <div class="card p-3">
+        <h5><i class="bi bi-diagram-3 text-info"></i> Git & GitHub</h5>
+        <p>Learn version control, commits, and push your code to GitHub easily.</p>
+        <a href="git/index.html" class="btn btn-outline-primary btn-sm">Start Learning</a>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+      <div class="card p-3">
+        <h5><i class="bi bi-database-check text-danger"></i> SQL Queries</h5>
+        <p>Write SELECT, JOIN, and GROUP BY queries to manage real-world databases.</p>
+        <a href="sql/index.html" class="btn btn-outline-primary btn-sm">Start Learning</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-3">
+  &copy; 2025 CodeWithAnjalii. Learn free. Build confidence. 💡
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+</body>
+</html>
