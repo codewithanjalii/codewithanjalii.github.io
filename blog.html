@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
+  <title>Blog - CodeWithAnjalii</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
+    body {
+      background: linear-gradient(to right, #fff0f5, #e0f7fa);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding-bottom: 60px;
+    }
     .topnav {
       background-color: #fff;
       border-bottom: 2px solid #f582ae;
@@ -27,18 +33,6 @@
     }
     .topnav a:hover {
       color: #f582ae;
-    }
-    .topnav .btn {
-      font-size: 0.9rem;
-      padding: 6px 16px;
-      border-radius: 20px;
-    }
-  </style>
-  <style>
-    body {
-      background: linear-gradient(to right, #fff0f5, #e0f7fa);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      padding: 40px 0;
     }
     .blog-box {
       background: white;
@@ -72,9 +66,6 @@
       padding: 40px;
       box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     }
-    .form-label {
-      font-weight: bold;
-    }
     .btn-submit {
       background: linear-gradient(to right, #a18cd1, #fbc2eb);
       border: none;
@@ -88,7 +79,9 @@
     }
   </style>
 </head>
-
+<body>
+
+  <!-- Top Navigation -->
   <div class="topnav">
     <h1>CodeWithAnjalii</h1>
     <div>
@@ -96,29 +89,40 @@
       <a href="about.html">About</a>
       <a href="courses.html">Courses</a>
       <a href="contact.html">Contact</a>
-      <a href="blog.html" class="btn btn-outline-danger">Ask / Share</a>
+      <a href="blog-submit.html" class="btn btn-outline-danger">✍️ Submit Blog</a>
     </div>
   </div>
-  <div class="container">
-    <h1 class="text-center mb-5">📝 CodeWithAnjalii Blog</h1>
 
-    <div class="row g-4">
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">📝 CodeWithAnjalii Blog</h1>
+
+    <!-- Search Bar -->
+    <div class="row mb-4 justify-content-center">
+      <div class="col-md-8">
+        <input type="text" id="searchInput" class="form-control form-control-lg" placeholder="🔍 Search blog posts...">
+      </div>
+    </div>
+
+    <div class="row g-4" id="blogList">
+      <!-- Blog 1 -->
       <div class="col-md-6">
         <div class="blog-box">
           <h3 class="blog-title">✨ How I Built CodeWithAnjalii</h3>
           <p>This blog post explains how I started this journey, tools I used (GitHub Pages, Bootstrap, VS Code), and how you can start your own learning blog too!</p>
-          <a href="#" class="btn btn-readmore">Read More</a>
+          <a href="blog/post1.html" class="btn btn-readmore">Read More</a>
         </div>
       </div>
 
+      <!-- Blog 2 -->
       <div class="col-md-6">
         <div class="blog-box">
-          <h3 class="blog-title">🧠 Learn Coding with Real Examples</h3>
-          <p>Coding is best understood by doing. In this article, I break down how real-world mini projects can help you master HTML, CSS, Python, and more!</p>
-          <a href="#" class="btn btn-readmore">Read More</a>
+          <h3 class="blog-title">📊 Roadmap to Become a Data Scientist (2025)</h3>
+          <p>A complete beginner-to-advanced guide to start your career as a Data Scientist, with tools, projects, tips, and portfolio building!</p>
+          <a href="blog/post2.html" class="btn btn-readmore">Read More</a>
         </div>
       </div>
 
+      <!-- Blog 3 -->
       <div class="col-md-6">
         <div class="blog-box">
           <h3 class="blog-title">🚀 Top 5 Tools Every Beginner Coder Should Try</h3>
@@ -127,6 +131,7 @@
         </div>
       </div>
 
+      <!-- Blog 4 -->
       <div class="col-md-6">
         <div class="blog-box">
           <h3 class="blog-title">💬 Why Teaching Helps You Learn Faster</h3>
@@ -136,41 +141,55 @@
       </div>
     </div>
 
+    <!-- Ask / Share Form -->
     <div class="ask-box mt-5">
       <h2 class="mb-4">📣 Ask a Question or Share Your Story</h2>
-      <form action="https://formsubmit.co/hello.codewithanjalii@gmail.com" method="POST" enctype="multipart/form-data" class="p-4 border rounded bg-white shadow">
-  <!-- Hidden settings -->
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://codewithanjalii.github.io/thankyou.html">
+      <form action="https://formsubmit.co/hello.codewithanjalii@gmail.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://codewithanjalii.github.io/thankyou.html">
+        <input type="text" name="_honey" style="display:none">
 
-  <!-- Anti-bot hidden honeypot field -->
-  <input type="text" name="_honey" style="display:none">
+        <div class="mb-3">
+          <label for="name" class="form-label">Your Name</label>
+          <input type="text" class="form-control" name="name" required>
+        </div>
 
-  <h2 class="mb-4">💬 Share Your Story or Experience</h2>
+        <div class="mb-3">
+          <label for="email" class="form-label">Your Email</label>
+          <input type="email" class="form-control" name="email" required>
+        </div>
 
-  <div class="mb-3">
-    <label for="name" class="form-label">Your Name</label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="John / Priya" required>
-  </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Your Story or Question</label>
+          <textarea class="form-control" name="message" rows="5" required></textarea>
+        </div>
 
-  <div class="mb-3">
-    <label for="email" class="form-label">Your Email</label>
-    <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
-  </div>
+        <div class="mb-3">
+          <label for="attachment" class="form-label">Attach a File (optional)</label>
+          <input type="file" class="form-control" name="attachment">
+        </div>
 
-  <div class="mb-3">
-    <label for="story" class="form-label">Your Story</label>
-    <textarea class="form-control" id="story" name="message" rows="6" placeholder="Tell us how you started coding, what you built, your journey..." required></textarea>
-  </div>
-
-  <div class="mb-3">
-    <label for="attachment" class="form-label">Attach File (optional)</label>
-    <input type="file" class="form-control" id="attachment" name="attachment">
-  </div>
-
-  <button type="submit" class="btn btn-outline-primary">📤 Submit Your Story</button>
-</form>
+        <button type="submit" class="btn btn-submit">📤 Submit</button>
+      </form>
     </div>
+
   </div>
+
+  <!-- JS for Search -->
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const blogList = document.getElementById("blogList");
+
+    searchInput.addEventListener("keyup", function () {
+      const query = this.value.toLowerCase();
+      const blogItems = blogList.querySelectorAll(".col-md-6");
+
+      blogItems.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        item.style.display = text.includes(query) ? "block" : "none";
+      });
+    });
+  </script>
+
 </body>
 </html>
