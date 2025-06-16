@@ -138,29 +138,38 @@
 
     <div class="ask-box mt-5">
       <h2 class="mb-4">📣 Ask a Question or Share Your Story</h2>
-      <form action="https://formsubmit.co/hello.codewithanjalii@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://codewithanjalii.github.io/thankyou.html">
+      <form action="https://formsubmit.co/hello.codewithanjalii@gmail.com" method="POST" enctype="multipart/form-data" class="p-4 border rounded bg-white shadow">
+  <!-- Hidden settings -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://codewithanjalii.github.io/thankyou.html">
 
-        <div class="mb-3">
-          <label for="name" class="form-label">Your Name</label>
-          <input type="text" class="form-control" id="name" name="name" required>
-        </div>
+  <!-- Anti-bot hidden honeypot field -->
+  <input type="text" name="_honey" style="display:none">
 
-        <div class="mb-3">
-          <label for="email" class="form-label">Email Address</label>
-          <input type="email" class="form-control" id="email" name="email" required>
-        </div>
+  <h2 class="mb-4">💬 Share Your Story or Experience</h2>
 
-        <div class="mb-3">
-          <label for="message" class="form-label">Your Question or Story</label>
-          <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-        </div>
+  <div class="mb-3">
+    <label for="name" class="form-label">Your Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="John / Priya" required>
+  </div>
 
-        <div class="text-end">
-          <button type="submit" class="btn btn-submit">🚀 Submit</button>
-        </div>
-      </form>
+  <div class="mb-3">
+    <label for="email" class="form-label">Your Email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="story" class="form-label">Your Story</label>
+    <textarea class="form-control" id="story" name="message" rows="6" placeholder="Tell us how you started coding, what you built, your journey..." required></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="attachment" class="form-label">Attach File (optional)</label>
+    <input type="file" class="form-control" id="attachment" name="attachment">
+  </div>
+
+  <button type="submit" class="btn btn-outline-primary">📤 Submit Your Story</button>
+</form>
     </div>
   </div>
 </body>
