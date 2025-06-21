@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main Pages -->
+  <url><loc>https://codewithanjalii.github.io/</loc></url>
+  <url><loc>https://codewithanjalii.github.io/about.html</loc></url>
+  <url><loc>https://codewithanjalii.github.io/contact.html</loc></url>
+  <url><loc>https://codewithanjalii.github.io/courses.html</loc></url>
+  <url><loc>https://codewithanjalii.github.io/blog.html</loc></url>
+  <url><loc>https://codewithanjalii.github.io/blog-submit.html</loc></url>
+  <url><loc>https://codewithanjalii.github.io/thankyou.html</loc></url>
+  <url><loc>https://codewithanjalii.github.io/tips.html</loc></url>
+
+  <!-- HTML Course Pages -->
+  <url><loc>https://codewithanjalii.github.io/html/index.html</loc></url>
+  <url><loc>https://codewithanjalii.github.io/html/forms.html</loc></url>
+  <url><loc>https://codewithanjalii.github.io/html/tables.html</loc></url>
+  <url><loc>https://codewithanjalii.github.io/html/tags.html</loc></url>
+
+  <!-- Blog Posts -->
+  <url><loc>https://codewithanjalii.github.io/blog/post1.html</loc></url>
+  <url><loc>https://codewithanjalii.github.io/blog/post2.html</loc></url>
+
+</urlset>
+
