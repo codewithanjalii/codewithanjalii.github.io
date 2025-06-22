@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://codewithanjalii.github.io/sitemap.xml.txt
+Sitemap: https://raw.githubusercontent.com/codewithanjalii/codewithanjalii.github.io/refs/heads/main/sitemap.xml.txt
