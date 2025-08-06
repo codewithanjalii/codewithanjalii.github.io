@@ -1,76 +1,966 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Submit Your Story - CodeWithAnjalii</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Submit Your Story | CodeWithAnjalii - Share Your Success Journey</title>
+  <meta name="google-site-verification" content="oohCAl1xNrcDvPVSomnA-ZUMIbWsHBVjjDN7-JPHsPE" />
+  <meta name="description" content="Share your success story, coding journey, or technical article with the CodeWithAnjalii community. Inspire others and get featured on our platform.">
+  <meta name="keywords" content="submit story, CodeWithAnjalii, success story, coding journey, technical blog, student success, career transformation">
+  <meta name="author" content="Anjali Yadav">
+  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta property="og:title" content="Submit Your Story | CodeWithAnjalii">
+  <meta property="og:description" content="Share your success story and inspire the CodeWithAnjalii community">
+  <meta property="og:image" content="https://codewithanjalii.github.io/images/og-image.png">
+  <meta property="og:url" content="https://codewithanjalii.github.io/submit-story.html">
+  <meta property="og:type" content="website">
+  
+  <link rel="icon" href="https://codewithanjalii.github.io/images/favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
   <style>
+    :root {
+      --primary-blue: #2563eb;
+      --secondary-blue: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --accent-green: #10b981;
+      --accent-orange: #f59e0b;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-dark: #1e293b;
+      --text-light: #64748b;
+      --border-light: #e2e8f0;
+      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background: linear-gradient(to right, #fff0f5, #e0f7fa);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: var(--light-bg);
+      overflow-x: hidden;
     }
-    .submit-box {
-      max-width: 700px;
-      margin: 60px auto;
-      background: white;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+    /* Animated Background Elements */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      opacity: 0.03;
+      background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe, #43e97b);
+      background-size: 400% 400%;
+      animation: gradientWave 20s ease infinite;
     }
-    .submit-box h2 {
-      color: #ff6b9b;
-      font-weight: bold;
+
+    @keyframes gradientWave {
+      0% { background-position: 0% 50%; }
+      25% { background-position: 100% 50%; }
+      50% { background-position: 100% 100%; }
+      75% { background-position: 50% 100%; }
+      100% { background-position: 0% 50%; }
     }
-    .btn-submit {
-      background: linear-gradient(to right, #f582ae, #ff6b9b);
-      color: white;
-      font-weight: bold;
+
+    /* Floating Geometric Shapes */
+    .floating-shapes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.1;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--primary-blue), var(--accent-purple));
+      animation: float 15s infinite ease-in-out;
+    }
+
+    .shape:nth-child(1) {
+      width: 80px;
+      height: 80px;
+      top: 10%;
+      left: 10%;
+      animation-delay: -2s;
+    }
+
+    .shape:nth-child(2) {
+      width: 120px;
+      height: 120px;
+      top: 70%;
+      left: 80%;
+      animation-delay: -5s;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      border-radius: 0;
+    }
+
+    .shape:nth-child(3) {
+      width: 60px;
+      height: 60px;
+      top: 40%;
+      left: 5%;
+      animation-delay: -8s;
+      background: var(--gradient-2);
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+        opacity: 0.1;
+      }
+      33% {
+        transform: translateY(-30px) rotate(120deg) scale(1.1);
+        opacity: 0.2;
+      }
+      66% {
+        transform: translateY(20px) rotate(240deg) scale(0.9);
+        opacity: 0.15;
+      }
+    }
+
+    /* Navigation with Glass Effect */
+    .navbar {
+      background: rgba(255, 255, 255, 0.85) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+      animation: slideDown 0.8s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: pulse 2s infinite;
+    }
+
+    .nav-link {
+      color: var(--text-dark) !important;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-blue) !important;
+      transform: translateY(-2px);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-1);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .btn-primary-gradient {
+      background: var(--gradient-1);
       border: none;
-      border-radius: 30px;
-      padding: 10px 25px;
+      color: white;
+      font-weight: 500;
+      padding: 12px 24px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      animation: buttonGlow 3s infinite alternate;
     }
-    .btn-submit:hover {
-      background: linear-gradient(to right, #ff6b9b, #f582ae);
+
+    .btn-primary-gradient:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: var(--shadow-lg);
+      color: white;
+    }
+
+    @keyframes buttonGlow {
+      0% { box-shadow: 0 0 5px rgba(102, 126, 234, 0.5); }
+      100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.8), 0 0 30px rgba(102, 126, 234, 0.4); }
+    }
+
+    /* Main Content */
+    .main-content {
+      padding-top: 120px;
+      min-height: 100vh;
+    }
+
+    .submit-hero {
+      text-align: center;
+      padding: 60px 0 40px;
+      background: var(--card-bg);
+      border-radius: 30px;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .submit-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-1);
+    }
+
+    .submit-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .submit-form-container {
+      background: var(--card-bg);
+      border-radius: 25px;
+      padding: 3rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-light);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .submit-form-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-1);
+      transition: left 0.4s ease;
+    }
+
+    .submit-form-container:hover::before {
+      left: 0;
+    }
+
+    .form-floating {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-control {
+      border: 2px solid var(--border-light);
+      border-radius: 15px;
+      padding: 1rem;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: rgba(248, 250, 252, 0.5);
+    }
+
+    .form-control:focus {
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+      background: var(--card-bg);
+    }
+
+    .form-label {
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .category-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .category-card {
+      background: var(--card-bg);
+      border: 2px solid var(--border-light);
+      border-radius: 15px;
+      padding: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-blue);
+    }
+
+    .category-card.selected {
+      border-color: var(--primary-blue);
+      background: rgba(37, 99, 235, 0.1);
+    }
+
+    .category-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .file-upload-area {
+      border: 2px dashed var(--border-light);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      background: rgba(248, 250, 252, 0.5);
+      cursor: pointer;
+    }
+
+    .file-upload-area:hover {
+      border-color: var(--primary-blue);
+      background: rgba(37, 99, 235, 0.05);
+    }
+
+    .file-upload-area.dragover {
+      border-color: var(--accent-green);
+      background: rgba(16, 185, 129, 0.1);
+    }
+
+    .guidelines-card {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border-left: 4px solid var(--primary-blue);
+    }
+
+    .success-message {
+      background: var(--gradient-4);
+      color: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 2rem;
+      display: none;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .submit-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .submit-form-container {
+        padding: 2rem;
+        border-radius: 20px;
+      }
+      
+      .category-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--light-bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gradient-1);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-blue);
     }
   </style>
 </head>
+
 <body>
-  <div class="submit-box">
-    <h2 class="mb-4">📢 Submit Your Story or Blog</h2>
-    <form action="https://formsubmit.co/hello.codewithanjalii@gmail.com" method="POST" enctype="multipart/form-data">
-      <!-- FormSubmit Hidden Fields -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://codewithanjalii.github.io/thankyou.html">
-      <input type="text" name="_honey" style="display:none">
-
-      <div class="mb-3">
-        <label class="form-label">Your Name</label>
-        <input type="text" class="form-control" name="name" required>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Your Email</label>
-        <input type="email" class="form-control" name="email" required>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Blog Title or Subject</label>
-        <input type="text" class="form-control" name="title" required>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Your Story or Article</label>
-        <textarea class="form-control" name="message" rows="6" required></textarea>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Upload an Image or Document (optional)</label>
-        <input type="file" class="form-control" name="attachment">
-      </div>
-
-      <button type="submit" class="btn btn-submit">🚀 Submit</button>
-    </form>
+  <!-- Animated Background -->
+  <div class="animated-bg"></div>
+  
+  <!-- Floating Shapes -->
+  <div class="floating-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
   </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-cpu-fill"></i> CodeWithAnjalii
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="bi bi-house-heart"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="courses.html"><i class="bi bi-journal-code"></i> Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#ai-tools"><i class="bi bi-robot"></i> AI Tools</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#automation"><i class="bi bi-gear-wide-connected"></i> Automation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html"><i class="bi bi-person"></i> About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html"><i class="bi bi-pencil-square"></i> Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="bi bi-chat-heart"></i> Contact</a>
+          </li>
+        </ul>
+        <a href="index.html#subscribe" class="btn btn-primary-gradient ms-3">
+          <i class="bi bi-person-plus-fill"></i> Join Free
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="container">
+      <!-- Hero Section -->
+      <div class="submit-hero fade-in">
+        <h1>📢 Share Your Story</h1>
+        <p class="lead">Inspire the CodeWithAnjalii community with your journey, success, or insights!</p>
+        <div class="mt-4">
+          <span class="badge bg-success me-2">✨ Get Featured</span>
+          <span class="badge bg-primary me-2">🎯 Inspire Others</span>
+          <span class="badge bg-warning">🚀 Build Your Brand</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8">
+          <!-- Submit Form -->
+          <div class="submit-form-container fade-in">
+            <h3 class="mb-4">
+              <i class="bi bi-pencil-square text-primary me-2"></i>
+              Tell Us Your Story
+            </h3>
+            
+            <form id="storyForm" action="https://formsubmit.co/hello.codewithanjalii@gmail.com" method="POST" enctype="multipart/form-data">
+              <!-- FormSubmit Hidden Fields -->
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://codewithanjalii.github.io/thankyou.html">
+              <input type="text" name="_honey" style="display:none">
+              <input type="hidden" name="_subject" value="New Story Submission - CodeWithAnjalii">
+              
+              <!-- Personal Information -->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Full Name" required>
+                    <label for="name"><i class="bi bi-person me-2"></i>Your Full Name *</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="your.email@gmail.com" required>
+                    <label for="email"><i class="bi bi-envelope me-2"></i>Email Address *</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="profession" name="profession" placeholder="Your Current Role">
+                    <label for="profession"><i class="bi bi-briefcase me-2"></i>Current Role/Profession</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="url" class="form-control" id="linkedin" name="linkedin" placeholder="LinkedIn Profile URL">
+                    <label for="linkedin"><i class="bi bi-linkedin me-2"></i>LinkedIn Profile (Optional)</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Story Category -->
+              <div class="mb-4">
+                <label class="form-label">
+                  <i class="bi bi-tags me-2"></i>What type of story are you sharing? *
+                </label>
+                <div class="category-cards">
+                  <div class="category-card" data-category="success">
+                    <div class="category-icon">🎉</div>
+                    <h6>Success Story</h6>
+                    <small>Career transformation, job success</small>
+                  </div>
+                  <div class="category-card" data-category="learning">
+                    <div class="category-icon">📚</div>
+                    <h6>Learning Journey</h6>
+                    <small>How you mastered new skills</small>
+                  </div>
+                  <div class="category-card" data-category="project">
+                    <div class="category-icon">💻</div>
+                    <h6>Project Showcase</h6>
+                    <small>Cool project you built</small>
+                  </div>
+                  <div class="category-card" data-category="tips">
+                    <div class="category-icon">💡</div>
+                    <h6>Tips & Insights</h6>
+                    <small>Helpful advice for others</small>
+                  </div>
+                </div>
+                <input type="hidden" name="category" id="selectedCategory" required>
+              </div>
+
+              <!-- Story Title -->
+              <div class="form-floating">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Give your story a catchy title" required>
+                <label for="title"><i class="bi bi-bookmark me-2"></i>Story Title *</label>
+              </div>
+
+              <!-- Story Content -->
+              <div class="mb-4">
+                <label for="story" class="form-label">
+                  <i class="bi bi-chat-quote me-2"></i>Your Story *
+                </label>
+                <textarea class="form-control" id="story" name="story" rows="8" placeholder="Share your journey, challenges, achievements, and lessons learned. Be detailed and inspiring!" required></textarea>
+                <div class="form-text">
+                  <i class="bi bi-info-circle me-1"></i>
+                  Minimum 200 words. Include specific details about your experience with CodeWithAnjalii courses or content.
+                </div>
+              </div>
+
+              <!-- Key Takeaways -->
+              <div class="form-floating">
+                <textarea class="form-control" id="takeaways" name="takeaways" placeholder="Key lessons or advice for other students" rows="3"></textarea>
+                <label for="takeaways"><i class="bi bi-lightbulb me-2"></i>Key Takeaways/Advice for Others</label>
+              </div>
+
+              <!-- File Upload -->
+              <div class="mb-4">
+                <label class="form-label">
+                  <i class="bi bi-cloud-upload me-2"></i>Upload Supporting Files (Optional)
+                </label>
+                <div class="file-upload-area" id="fileUploadArea">
+                  <i class="bi bi-cloud-upload" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1rem;"></i>
+                  <h6>Drag & drop files here or click to browse</h6>
+                  <p class="text-muted mb-2">Upload images, screenshots, certificates, or documents</p>
+                  <small class="text-muted">Supported: JPG, PNG, PDF, DOC (Max 10MB)</small>
+                  <input type="file" class="form-control d-none" id="fileInput" name="attachment" accept="image/*,.pdf,.doc,.docx" multiple>
+                </div>
+                <div id="fileList" class="mt-2"></div>
+              </div>
+
+              <!-- Permission -->
+              <div class="mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="permission" name="permission" required>
+                  <label class="form-check-label" for="permission">
+                    <strong>I give permission to CodeWithAnjalii to feature my story on the website, social media, and marketing materials.</strong>
+                    <small class="d-block text-muted">Your name and story will be publicly visible to inspire other students.</small>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary-gradient btn-lg px-5" id="submitBtn">
+                  <i class="bi bi-rocket-takeoff me-2"></i>Submit My Story
+                </button>
+              </div>
+            </form>
+
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+              <h5><i class="bi bi-check-circle-fill me-2"></i>Story Submitted Successfully! 🎉</h5>
+              <p class="mb-0">Thank you for sharing your journey! We'll review your story and get back to you within 2-3 business days.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guidelines Sidebar -->
+        <div class="col-lg-4">
+          <!-- Guidelines Card -->
+          <div class="guidelines-card fade-in">
+            <h5><i class="bi bi-lightbulb text-warning me-2"></i>Submission Guidelines</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Be authentic and genuine</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Include specific details about your experience</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Minimum 200 words for your story</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Use clear, engaging language</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Include lessons learned or advice</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Proofread before submitting</li>
+            </ul>
+          </div>
+
+          <!-- What Happens Next -->
+          <div class="guidelines-card fade-in">
+            <h5><i class="bi bi-clock text-primary me-2"></i>What Happens Next?</h5>
+            <div class="timeline">
+              <div class="d-flex mb-3">
+                <div class="flex-shrink-0">
+                  <div class="badge bg-primary rounded-pill">1</div>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <h6>Review Process</h6>
+                  <small class="text-muted">We review your submission within 2-3 business days</small>
+                </div>
+              </div>
+              <div class="d-flex mb-3">
+                <div class="flex-shrink-0">
+                  <div class="badge bg-primary rounded-pill">2</div>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <h6>Publication</h6>
+                  <small class="text-muted">Approved stories get featured on our blog and social media</small>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <div class="badge bg-primary rounded-pill">3</div>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <h6>Recognition</h6>
+                  <small class="text-muted">You get credited and can share your featured story!</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Inspiration -->
+          <div class="guidelines-card fade-in">
+            <h5><i class="bi bi-heart text-danger me-2"></i>Need Inspiration?</h5>
+            <p class="small mb-2">Here are some ideas to get you started:</p>
+            <ul class="small">
+              <li>How CodeWithAnjalii helped you land your first job</li>
+              <li>A challenging project you completed using our tutorials</li>
+              <li>Your journey from beginner to confident developer</li>
+              <li>How AI tools changed your workflow</li>
+              <li>Tips that helped you stay motivated while learning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h5>💻 CodeWithAnjalii</h5>
+          <p class="mb-2">Empowering the next generation of tech professionals with cutting-edge skills in AI, Development, and Automation.</p>
+          <p class="text-muted">&copy; 2025 CodeWithAnjalii. Made with ❤️ for Indian students.</p>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <div class="mb-3">
+            <a href="https://instagram.com/codewithanjalii" class="text-white me-3" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com/@codewithanjalii" class="text-white me-3" target="_blank"><i class="bi bi-youtube"></i></a>
+            <a href="https://github.com/codewithanjalii" class="text-white me-3" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://linkedin.com/in/codewithanjalii" class="text-white" target="_blank"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <div class="mb-3">
+            <a href="courses.html" class="footer-link me-3">Courses</a>
+            <a href="about.html" class="footer-link me-3">About</a>
+            <a href="blog.html" class="footer-link me-3">Blog</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+          <small class="text-muted">🇮🇳 Proudly Made in India</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Category Selection
+    document.querySelectorAll('.category-card').forEach(card => {
+      card.addEventListener('click', function() {
+        // Remove selected class from all cards
+        document.querySelectorAll('.category-card').forEach(c => c.classList.remove('selected'));
+        
+        // Add selected class to clicked card
+        this.classList.add('selected');
+        
+        // Update hidden input
+        document.getElementById('selectedCategory').value = this.dataset.category;
+        
+        // Add animation effect
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1)';
+        }, 150);
+      });
+    });
+
+    // File Upload Handling
+    const fileUploadArea = document.getElementById('fileUploadArea');
+    const fileInput = document.getElementById('fileInput');
+    const fileList = document.getElementById('fileList');
+
+    // Click to upload
+    fileUploadArea.addEventListener('click', () => {
+      fileInput.click();
+    });
+
+    // Drag and drop functionality
+    fileUploadArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      fileUploadArea.classList.add('dragover');
+    });
+
+    fileUploadArea.addEventListener('dragleave', (e) => {
+      e.preventDefault();
+      fileUploadArea.classList.remove('dragover');
+    });
+
+    fileUploadArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      fileUploadArea.classList.remove('dragover');
+      const files = e.dataTransfer.files;
+      handleFiles(files);
+    });
+
+    // File input change
+    fileInput.addEventListener('change', (e) => {
+      handleFiles(e.target.files);
+    });
+
+    function handleFiles(files) {
+      fileList.innerHTML = '';
+      Array.from(files).forEach((file, index) => {
+        const fileItem = document.createElement('div');
+        fileItem.className = 'alert alert-info d-flex justify-content-between align-items-center mt-2';
+        fileItem.innerHTML = `
+          <div>
+            <i class="bi bi-file-earmark me-2"></i>
+            <strong>${file.name}</strong>
+            <small class="text-muted ms-2">(${(file.size / 1024 / 1024).toFixed(2)} MB)</small>
+          </div>
+          <button type="button" class="btn-close" onclick="removeFile(${index})"></button>
+        `;
+        fileList.appendChild(fileItem);
+      });
+    }
+
+    function removeFile(index) {
+      // Create new FileList without the removed file
+      const dt = new DataTransfer();
+      const files = fileInput.files;
+      
+      for (let i = 0; i < files.length; i++) {
+        if (i !== index) {
+          dt.items.add(files[i]);
+        }
+      }
+      
+      fileInput.files = dt.files;
+      handleFiles(fileInput.files);
+    }
+
+    // Form Validation and Submission
+    document.getElementById('storyForm').addEventListener('submit', function(e) {
+      const category = document.getElementById('selectedCategory').value;
+      const story = document.getElementById('story').value;
+      
+      // Validate category selection
+      if (!category) {
+        e.preventDefault();
+        alert('Please select a story category!');
+        document.querySelector('.category-cards').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      
+      // Validate story length (minimum 200 words)
+      const wordCount = story.trim().split(/\s+/).length;
+      if (wordCount < 200) {
+        e.preventDefault();
+        alert(`Your story should be at least 200 words. Current word count: ${wordCount}`);
+        document.getElementById('story').focus();
+        return;
+      }
+      
+      // Show loading state
+      const submitBtn = document.getElementById('submitBtn');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Submitting...';
+      submitBtn.disabled = true;
+      
+      // The form will submit normally to FormSubmit
+      // On success, user will be redirected to thankyou.html
+    });
+
+    // Word Counter for Story
+    const storyTextarea = document.getElementById('story');
+    const wordCountDiv = document.createElement('div');
+    wordCountDiv.className = 'form-text mt-1';
+    wordCountDiv.id = 'wordCount';
+    storyTextarea.parentNode.appendChild(wordCountDiv);
+
+    storyTextarea.addEventListener('input', function() {
+      const words = this.value.trim().split(/\s+/).filter(word => word.length > 0);
+      const wordCount = this.value.trim() === '' ? 0 : words.length;
+      const wordCountDisplay = document.getElementById('wordCount');
+      
+      if (wordCount < 200) {
+        wordCountDisplay.innerHTML = `<i class="bi bi-exclamation-triangle text-warning me-1"></i>Word count: ${wordCount}/200 (minimum required)`;
+        wordCountDisplay.className = 'form-text mt-1 text-warning';
+      } else {
+        wordCountDisplay.innerHTML = `<i class="bi bi-check-circle text-success me-1"></i>Word count: ${wordCount} words`;
+        wordCountDisplay.className = 'form-text mt-1 text-success';
+      }
+    });
+
+    // Auto-resize textareas
+    function autoResize(textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
+
+    document.querySelectorAll('textarea').forEach(textarea => {
+      textarea.addEventListener('input', function() {
+        autoResize(this);
+      });
+      
+      // Initial resize
+      autoResize(textarea);
+    });
+
+    // Form field animations
+    document.querySelectorAll('.form-control').forEach(input => {
+      input.addEventListener('focus', function() {
+        this.parentNode.style.transform = 'translateY(-2px)';
+      });
+      
+      input.addEventListener('blur', function() {
+        this.parentNode.style.transform = 'translateY(0)';
+      });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add parallax effect to floating shapes
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const shapes = document.querySelectorAll('.shape');
+      
+      shapes.forEach((shape, index) => {
+        const speed = 0.3 + (index * 0.1);
+        shape.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    });
+
+    // Character limit for title
+    const titleInput = document.getElementById('title');
+    titleInput.addEventListener('input', function() {
+      if (this.value.length > 100) {
+        this.value = this.value.substring(0, 100);
+      }
+    });
+
+    // Add success animation after form submission
+    if (window.location.search.includes('success')) {
+      setTimeout(() => {
+        document.getElementById('successMessage').style.display = 'block';
+        document.getElementById('storyForm').style.display = 'none';
+      }, 1000);
+    }
+
+    // Prevent form resubmission on page refresh
+    if (window.history.replaceState) {
+      window.history.replaceState(null, null, window.location.href);
+    }
+  </script>
 </body>
 </html>
