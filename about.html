@@ -1,56 +1,942 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About - CodeWithAnjalii</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>About Anjali | CodeWithAnjalii - AI & Coding Mentor</title>
+  <meta name="google-site-verification" content="oohCAl1xNrcDvPVSomnA-ZUMIbWsHBVjjDN7-JPHsPE" />
+  <meta name="description" content="Meet Anjali Yadav - Your AI & Coding Mentor. Learn about the creator behind CodeWithAnjalii and her mission to make technology accessible to everyone.">
+  <meta name="keywords" content="Anjali Yadav, CodeWithAnjalii, AI mentor, coding instructor, generative AI, Python teacher, automation expert">
+  <meta name="author" content="Anjali Yadav">
+  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta property="og:title" content="About Anjali | CodeWithAnjalii">
+  <meta property="og:description" content="Meet Anjali Yadav - Your AI & Coding Mentor passionate about making technology accessible to everyone.">
+  <meta property="og:image" content="https://codewithanjalii.github.io/images/og-image.png">
+  <meta property="og:url" content="https://codewithanjalii.github.io/about.html">
+  <meta property="og:type" content="website">
+  
+  <link rel="icon" href="https://codewithanjalii.github.io/images/favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
   <style>
+    :root {
+      --primary-blue: #2563eb;
+      --secondary-blue: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --accent-green: #10b981;
+      --accent-orange: #f59e0b;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-dark: #1e293b;
+      --text-light: #64748b;
+      --border-light: #e2e8f0;
+      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background: linear-gradient(to right, #fef6e4, #fcefee);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: var(--light-bg);
+      overflow-x: hidden;
     }
-    .about-section {
-      background: white;
-      padding: 60px;
-      border-radius: 20px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+
+    /* Animated Background Elements */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      opacity: 0.03;
+      background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe, #43e97b);
+      background-size: 400% 400%;
+      animation: gradientWave 20s ease infinite;
     }
-    .about-section h1 {
-      color: #f582ae;
+
+    @keyframes gradientWave {
+      0% { background-position: 0% 50%; }
+      25% { background-position: 100% 50%; }
+      50% { background-position: 100% 100%; }
+      75% { background-position: 50% 100%; }
+      100% { background-position: 0% 50%; }
     }
+
+    /* Floating Geometric Shapes */
+    .floating-shapes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.1;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--primary-blue), var(--accent-purple));
+      animation: float 15s infinite ease-in-out;
+    }
+
+    .shape:nth-child(1) {
+      width: 80px;
+      height: 80px;
+      top: 10%;
+      left: 10%;
+      animation-delay: -2s;
+    }
+
+    .shape:nth-child(2) {
+      width: 120px;
+      height: 120px;
+      top: 70%;
+      left: 80%;
+      animation-delay: -5s;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      border-radius: 0;
+    }
+
+    .shape:nth-child(3) {
+      width: 60px;
+      height: 60px;
+      top: 40%;
+      left: 5%;
+      animation-delay: -8s;
+      background: var(--gradient-2);
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+        opacity: 0.1;
+      }
+      33% {
+        transform: translateY(-30px) rotate(120deg) scale(1.1);
+        opacity: 0.2;
+      }
+      66% {
+        transform: translateY(20px) rotate(240deg) scale(0.9);
+        opacity: 0.15;
+      }
+    }
+
+    /* Navigation with Glass Effect */
+    .navbar {
+      background: rgba(255, 255, 255, 0.85) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+      animation: slideDown 0.8s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: pulse 2s infinite;
+    }
+
+    .nav-link {
+      color: var(--text-dark) !important;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-blue) !important;
+      transform: translateY(-2px);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-1);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .btn-primary-gradient {
+      background: var(--gradient-1);
+      border: none;
+      color: white;
+      font-weight: 500;
+      padding: 12px 24px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      animation: buttonGlow 3s infinite alternate;
+    }
+
+    .btn-primary-gradient:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: var(--shadow-lg);
+      color: white;
+    }
+
+    @keyframes buttonGlow {
+      0% { box-shadow: 0 0 5px rgba(102, 126, 234, 0.5); }
+      100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.8), 0 0 30px rgba(102, 126, 234, 0.4); }
+    }
+
+    /* Main Content Styles */
+    .main-content {
+      padding-top: 120px;
+      min-height: 100vh;
+    }
+
+    .about-hero {
+      text-align: center;
+      padding: 60px 0;
+      background: var(--card-bg);
+      border-radius: 30px;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-1);
+    }
+
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 6px solid transparent;
+      background: var(--gradient-1);
+      padding: 6px;
+      margin: 0 auto 2rem;
+      position: relative;
+      animation: profileFloat 6s ease-in-out infinite;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--card-bg);
+    }
+
+    @keyframes profileFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .intro-text {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
     .highlight {
-      color: #f582ae;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       font-weight: 600;
     }
-    .btn-learn {
-      background: linear-gradient(to right, #f582ae, #ff6b9b);
-      color: white;
-      font-weight: bold;
-      border: none;
+
+    .section-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-light);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
     }
-    .btn-learn:hover {
-      background: linear-gradient(to right, #ff6b9b, #f582ae);
+
+    .section-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-1);
+      transition: left 0.4s ease;
+    }
+
+    .section-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .section-card:hover::before {
+      left: 0;
+    }
+
+    .section-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .section-card:hover .section-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .skill-item {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid var(--border-light);
+      transition: all 0.3s ease;
+    }
+
+    .skill-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .skill-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .journey-timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .journey-timeline::before {
+      content: '';
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--gradient-1);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 15px;
+      border: 1px solid var(--border-light);
+      margin-left: 2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.5rem;
+      top: 1.5rem;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--gradient-1);
+      border: 3px solid var(--card-bg);
+      box-shadow: 0 0 0 3px var(--border-light);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid var(--border-light);
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .profile-image {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .intro-text {
+        font-size: 1.1rem;
+      }
+      
+      .section-card {
+        padding: 1.5rem;
+      }
+
+      .journey-timeline {
+        padding-left: 1rem;
+      }
+
+      .timeline-item {
+        margin-left: 1rem;
+      }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--light-bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gradient-1);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-blue);
     }
   </style>
 </head>
+
 <body>
-  <div class="container py-5">
-    <div class="about-section">
-      <h1 class="mb-4 text-center">👩‍💻 About CodeWithAnjalii</h1>
-      <p>Hello! I'm <span class="highlight">Anjali</span>, the creator of <strong>CodeWithAnjalii</strong> — a platform to make learning tech simple, fun, and beginner-friendly!</p>
+  <!-- Animated Background -->
+  <div class="animated-bg"></div>
+  
+  <!-- Floating Shapes -->
+  <div class="floating-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
 
-      <p>I started this site to help students, career-switchers, and curious minds understand complex concepts in an easy way. Whether it's <span class="highlight">HTML, CSS, Python, SQL, or Git</span>, you’ll find step-by-step guides, real examples, and mini-projects here.</p>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-cpu-fill"></i> CodeWithAnjalii
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="bi bi-house-heart"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="courses.html"><i class="bi bi-journal-code"></i> Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#ai-tools"><i class="bi bi-robot"></i> AI Tools</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#automation"><i class="bi bi-gear-wide-connected"></i> Automation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="about.html"><i class="bi bi-person"></i> About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html"><i class="bi bi-pencil-square"></i> Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="bi bi-chat-heart"></i> Contact</a>
+          </li>
+        </ul>
+        <a href="index.html#subscribe" class="btn btn-primary-gradient ms-3">
+          <i class="bi bi-person-plus-fill"></i> Join Free
+        </a>
+      </div>
+    </div>
+  </nav>
 
-      <p>I'm passionate about teaching in a way that builds confidence in students. Each lesson is designed with 💡 clarity, 💻 practice, and 🎯 purpose — so that you don't just read code, you understand it.</p>
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="container">
+      <!-- Hero Section -->
+      <div class="about-hero fade-in">
+        <div class="profile-image">
+          <div style="width: 100%; height: 100%; border-radius: 50%; background: var(--gradient-1); display: flex; align-items: center; justify-content: center;">
+            <i class="bi bi-person-fill" style="font-size: 4rem; color: white;"></i>
+          </div>
+        </div>
+        <h1 style="font-size: 3rem; font-weight: 700; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem;">
+          👩‍💻 Meet Anjali Yadav
+        </h1>
+        <h3 style="color: var(--text-light); margin-bottom: 2rem;">Your AI & Coding Mentor</h3>
+        <div class="intro-text">
+          <p>Hello! I'm <span class="highlight">Anjali</span>, the creator of <strong>CodeWithAnjalii</strong> — a platform dedicated to making cutting-edge technology accessible, understandable, and exciting for everyone!</p>
+          <p class="mt-3">From <span class="highlight">Generative AI and Machine Learning</span> to <span class="highlight">Full-Stack Development and Automation</span>, I'm here to guide you through your tech journey with clarity, passion, and real-world applications.</p>
+        </div>
+      </div>
 
-      <p class="mt-4"><strong>Let's code the future together — one line at a time!</strong></p>
+      <!-- Mission Section -->
+      <div class="section-card fade-in">
+        <div class="row align-items-center">
+          <div class="col-lg-2">
+            <div class="section-icon mx-auto" style="background: var(--gradient-1);">
+              <i class="bi bi-rocket-takeoff"></i>
+            </div>
+          </div>
+          <div class="col-lg-10">
+            <h2>🎯 My Mission</h2>
+            <p class="mb-3">To bridge the gap between complex technology and practical application. I believe that anyone can learn to code, master AI tools, and build amazing things — regardless of their background or previous experience.</p>
+            <p>My goal is to create a learning environment where students don't just memorize code, but truly understand the 'why' behind every concept, building confidence and problem-solving skills that last a lifetime.</p>
+          </div>
+        </div>
+      </div>
 
-      <div class="text-center mt-5">
-        <a href="courses.html" class="btn btn-learn btn-lg">📚 Explore My Free Courses</a>
+      <!-- What I Teach Section -->
+      <div class="section-card fade-in">
+        <div class="text-center">
+          <h2 class="mb-4">🎓 What I Teach</h2>
+          <p class="intro-text mb-4">I specialize in making complex topics simple and actionable. Here's what you'll master with me:</p>
+        </div>
         
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-icon">🤖</div>
+            <h5>Generative AI Mastery</h5>
+            <p class="text-muted">ChatGPT, Claude, Gemini, Prompt Engineering, AI Automation</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">💻</div>
+            <h5>Full-Stack Development</h5>
+            <p class="text-muted">Python, JavaScript, React, Node.js, Database Design</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">⚡</div>
+            <h5>Automation & DevOps</h5>
+            <p class="text-muted">Python Scripts, CI/CD, Cloud Deployment, No-Code Tools</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">✍️</div>
+            <h5>Technical Writing</h5>
+            <p class="text-muted">Documentation, SOP Writing, Content Strategy, Blogging</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">📊</div>
+            <h5>Data Science & ML</h5>
+            <p class="text-muted">Python Analytics, Machine Learning, Data Visualization</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">🌐</div>
+            <h5>Modern Web Tech</h5>
+            <p class="text-muted">HTML5, CSS3, JavaScript ES6+, Responsive Design</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teaching Philosophy -->
+      <div class="section-card fade-in">
+        <div class="row align-items-center">
+          <div class="col-lg-2">
+            <div class="section-icon mx-auto" style="background: var(--gradient-2);">
+              <i class="bi bi-lightbulb"></i>
+            </div>
+          </div>
+          <div class="col-lg-10">
+            <h2>💡 My Teaching Philosophy</h2>
+            <p class="mb-3">I believe in <strong>learning by doing</strong>. Every lesson is designed with three core principles:</p>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Clarity:</strong> Complex concepts broken down into digestible steps</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Practice:</strong> Hands-on projects and real-world applications</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Purpose:</strong> Understanding not just 'how' but 'why' and 'when' to use each concept</li>
+            </ul>
+            <p class="highlight">I teach in both Hindi and English to ensure every Indian student can learn comfortably in their preferred language.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Journey Timeline -->
+      <div class="section-card fade-in">
+        <h2 class="text-center mb-4">🚀 My Journey</h2>
+        <div class="journey-timeline">
+          <div class="timeline-item">
+            <h5>🎓 Started Learning Programming</h5>
+            <p class="text-muted mb-2">2020</p>
+            <p>Began my coding journey with Python and web development. Fell in love with the problem-solving aspect of programming.</p>
+          </div>
+          <div class="timeline-item">
+            <h5>💼 First Tech Job & Freelancing</h5>
+            <p class="text-muted mb-2">2024</p>
+            <p>Started working on real projects and discovered my passion for teaching while helping colleagues learn new technologies.</p>
+          </div>
+          <div class="timeline-item">
+            <h5>🤖 AI Revolution Discovery</h5>
+            <p class="text-muted mb-2">2025</p>
+            <p>Discovered the power of AI tools and automation. Started experimenting with ChatGPT and building AI-powered solutions.</p>
+          </div>
+          <div class="timeline-item">
+            <h5>🎬 Content Creation Journey</h5>
+            <p class="text-muted mb-2">2025</p>
+            <p>Launched CodeWithAnjalii to share knowledge through tutorials, courses, and practical guides for Indian students.</p>
+          </div>
+          <div class="timeline-item">
+            <h5>🌟 Building Community</h5>
+            <p class="text-muted mb-2">2025-Present</p>
+            <p>Growing a community of 50K+ learners, launching comprehensive courses, and helping students land their dream jobs.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Impact Stats -->
+      <div class="section-card fade-in">
+        <h2 class="text-center mb-4">📈 Impact & Community</h2>
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-number">50K+</div>
+            <h6>Students Taught</h6>
+            <p class="text-muted">Across all platforms</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">500+</div>
+            <h6>Success Stories</h6>
+            <p class="text-muted">Students who got jobs</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">20+</div>
+            <h6>Free Courses</h6>
+            <p class="text-muted">Complete learning paths</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <h6>Free Content</h6>
+            <p class="text-muted">Accessible to everyone</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personal Touch -->
+      <div class="section-card fade-in">
+        <div class="row align-items-center">
+          <div class="col-lg-2">
+            <div class="section-icon mx-auto" style="background: var(--gradient-4);">
+              <i class="bi bi-heart"></i>
+            </div>
+          </div>
+          <div class="col-lg-10">
+            <h2>❤️ Beyond Coding</h2>
+            <p class="mb-3">When I'm not coding or creating courses, you'll find me:</p>
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-2"><i class="bi bi-music-note text-primary me-2"></i> Exploring new AI tools and technologies</li>
+                  <li class="mb-2"><i class="bi bi-book text-primary me-2"></i> Reading about emerging tech trends</li>
+                  <li class="mb-2"><i class="bi bi-camera text-primary me-2"></i> Creating content for social media</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-2"><i class="bi bi-people text-primary me-2"></i> Mentoring aspiring developers</li>
+                  <li class="mb-2"><i class="bi bi-globe text-primary me-2"></i> Contributing to open-source projects</li>
+                  <li class="mb-2"><i class="bi bi-chat text-primary me-2"></i> Engaging with our amazing community</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="section-card fade-in text-center" style="background: var(--gradient-1); color: white;">
+        <h2 class="mb-4">🚀 Ready to Start Your Journey?</h2>
+        <p class="intro-text mb-4">Join me and thousands of other students in mastering the technologies that will shape our future. Let's build something amazing together!</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="courses.html" class="btn btn-light btn-lg">
+            <i class="bi bi-play-circle-fill"></i> Explore Free Courses
+          </a>
+          <a href="index.html#subscribe" class="btn btn-outline-light btn-lg">
+            <i class="bi bi-person-plus-fill"></i> Join Community
+          </a>
+        </div>
+      </div>
+
+      <!-- Connect Section -->
+      <div class="section-card fade-in">
+        <h2 class="text-center mb-4">🤝 Let's Connect!</h2>
+        <p class="text-center intro-text mb-4">Follow me across platforms for daily tips, tutorials, and tech insights!</p>
+        
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="skill-item">
+              <div class="section-icon mx-auto mb-3" style="width: 60px; height: 60px; background: #E4405F;">
+                <i class="bi bi-instagram"></i>
+              </div>
+              <h6>Instagram</h6>
+              <p class="text-muted">Daily coding tips & behind-the-scenes</p>
+              <a href="https://instagram.com/codewithanjalii" class="btn btn-outline-primary btn-sm" target="_blank">
+                Follow @codewithanjalii
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="skill-item">
+              <div class="section-icon mx-auto mb-3" style="width: 60px; height: 60px; background: #FF0000;">
+                <i class="bi bi-youtube"></i>
+              </div>
+              <h6>YouTube</h6>
+              <p class="text-muted">Complete video tutorials & courses</p>
+              <a href="https://youtube.com/@codewithanjalii" class="btn btn-outline-primary btn-sm" target="_blank">
+                Subscribe Channel
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="skill-item">
+              <div class="section-icon mx-auto mb-3" style="width: 60px; height: 60px; background: #0077B5;">
+                <i class="bi bi-linkedin"></i>
+              </div>
+              <h6>LinkedIn</h6>
+              <p class="text-muted">Professional updates & career tips</p>
+              <a href="https://linkedin.com/in/codewithanjalii" class="btn btn-outline-primary btn-sm" target="_blank">
+                Connect with Me
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="skill-item">
+              <div class="section-icon mx-auto mb-3" style="width: 60px; height: 60px; background: #333;">
+                <i class="bi bi-github"></i>
+              </div>
+              <h6>GitHub</h6>
+              <p class="text-muted">Open source projects & code samples</p>
+              <a href="https://github.com/codewithanjalii" class="btn btn-outline-primary btn-sm" target="_blank">
+                View Projects
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final Message -->
+      <div class="text-center py-5">
+        <h3 class="highlight mb-3">Let's code the future together — one line at a time! 💻✨</h3>
+        <p class="text-muted">Thank you for being part of this incredible journey. Your success is my motivation! 🚀</p>
       </div>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h5>💻 CodeWithAnjalii</h5>
+          <p class="mb-2">Empowering the next generation of tech professionals with cutting-edge skills in AI, Development, and Automation.</p>
+          <p class="text-muted">&copy; 2025 CodeWithAnjalii. Made with ❤️ for Indian students.</p>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <div class="mb-3">
+            <a href="https://instagram.com/codewithanjalii" class="text-white me-3" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com/@codewithanjalii" class="text-white me-3" target="_blank"><i class="bi bi-youtube"></i></a>
+            <a href="https://github.com/codewithanjalii" class="text-white me-3" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://linkedin.com/in/codewithanjalii" class="text-white" target="_blank"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <div class="mb-3">
+            <a href="courses.html" class="footer-link me-3">Courses</a>
+            <a href="about.html" class="footer-link me-3">About</a>
+            <a href="blog.html" class="footer-link me-3">Blog</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+          <small class="text-muted">🇮🇳 Proudly Made in India</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Active navigation highlighting
+    window.addEventListener('scroll', () => {
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === 'about.html') {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Add parallax effect to floating shapes
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const shapes = document.querySelectorAll('.shape');
+      
+      shapes.forEach((shape, index) => {
+        const speed = 0.3 + (index * 0.1);
+        shape.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    });
+
+    // Counter animation for stats
+    function animateCounter(element) {
+      const target = parseInt(element.textContent.replace(/[^0-9]/g, ''));
+      const increment = target / 50;
+      let current = 0;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.textContent = element.textContent.replace(/[0-9]+/, target);
+          clearInterval(timer);
+        } else {
+          element.textContent = element.textContent.replace(/[0-9]+/, Math.floor(current));
+        }
+      }, 30);
+    }
+
+    // Trigger counter animation when stats come into view
+    const statsObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const statNumber = entry.target.querySelector('.stat-number');
+          if (statNumber && !statNumber.classList.contains('animated')) {
+            statNumber.classList.add('animated');
+            animateCounter(statNumber);
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-card').forEach(card => {
+      statsObserver.observe(card);
+    });
+
+    // Add subtle hover effects to timeline items
+    document.querySelectorAll('.timeline-item').forEach(item => {
+      item.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateX(10px)';
+      });
+      
+      item.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateX(0)';
+      });
+    });
+  </script>
 </body>
 </html>
