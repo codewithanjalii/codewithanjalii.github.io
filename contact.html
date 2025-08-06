@@ -39,9 +39,12 @@
       --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
       --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
       --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      --gradient-6: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      --gradient-7: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
       --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
       --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
       --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+      --shadow-xl: 0 12px 48px rgba(0,0,0,0.15);
     }
 
     * {
@@ -58,7 +61,7 @@
       overflow-x: hidden;
     }
 
-    /* Animated Background Elements */
+    /* Enhanced Animated Background */
     .animated-bg {
       position: fixed;
       top: 0;
@@ -66,21 +69,22 @@
       width: 100%;
       height: 100%;
       z-index: -2;
-      opacity: 0.03;
-      background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe, #43e97b);
-      background-size: 400% 400%;
-      animation: gradientWave 20s ease infinite;
+      opacity: 0.05;
+      background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe, #43e97b, #fa709a);
+      background-size: 600% 600%;
+      animation: gradientWave 25s ease infinite;
     }
 
     @keyframes gradientWave {
       0% { background-position: 0% 50%; }
-      25% { background-position: 100% 50%; }
-      50% { background-position: 100% 100%; }
-      75% { background-position: 50% 100%; }
+      20% { background-position: 100% 50%; }
+      40% { background-position: 100% 100%; }
+      60% { background-position: 50% 100%; }
+      80% { background-position: 0% 100%; }
       100% { background-position: 0% 50%; }
     }
 
-    /* Floating Geometric Shapes */
+    /* Enhanced Floating Geometric Shapes */
     .floating-shapes {
       position: fixed;
       top: 0;
@@ -88,7 +92,7 @@
       width: 100%;
       height: 100%;
       z-index: -1;
-      opacity: 0.1;
+      opacity: 0.12;
       overflow: hidden;
     }
 
@@ -96,46 +100,68 @@
       position: absolute;
       border-radius: 50%;
       background: linear-gradient(45deg, var(--primary-blue), var(--accent-purple));
-      animation: float 15s infinite ease-in-out;
+      animation: float 20s infinite ease-in-out;
+      filter: blur(0.5px);
     }
 
     .shape:nth-child(1) {
-      width: 80px;
-      height: 80px;
-      top: 10%;
-      left: 10%;
-      animation-delay: -2s;
-    }
-
-    .shape:nth-child(2) {
       width: 120px;
       height: 120px;
-      top: 70%;
-      left: 80%;
-      animation-delay: -5s;
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-      border-radius: 0;
+      top: 15%;
+      left: 8%;
+      animation-delay: -2s;
       background: var(--gradient-2);
     }
 
-    .shape:nth-child(3) {
-      width: 60px;
-      height: 60px;
-      top: 40%;
-      left: 90%;
-      animation-delay: -8s;
+    .shape:nth-child(2) {
+      width: 160px;
+      height: 160px;
+      top: 65%;
+      left: 85%;
+      animation-delay: -5s;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      border-radius: 0;
       background: var(--gradient-3);
     }
 
+    .shape:nth-child(3) {
+      width: 80px;
+      height: 80px;
+      top: 35%;
+      left: 95%;
+      animation-delay: -8s;
+      background: var(--gradient-4);
+    }
+
     .shape:nth-child(4) {
-      width: 100px;
-      height: 100px;
-      top: 80%;
-      left: 20%;
+      width: 140px;
+      height: 140px;
+      top: 75%;
+      left: 15%;
       animation-delay: -12s;
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
       border-radius: 0;
-      background: var(--gradient-4);
+      background: var(--gradient-5);
+    }
+
+    .shape:nth-child(5) {
+      width: 100px;
+      height: 100px;
+      top: 5%;
+      left: 70%;
+      animation-delay: -15s;
+      background: var(--gradient-6);
+      clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+      border-radius: 0;
+    }
+
+    .shape:nth-child(6) {
+      width: 60px;
+      height: 60px;
+      top: 50%;
+      left: 3%;
+      animation-delay: -18s;
+      background: var(--gradient-7);
     }
 
     @keyframes float {
@@ -143,24 +169,28 @@
         transform: translateY(0px) rotate(0deg) scale(1);
         opacity: 0.1;
       }
-      33% {
-        transform: translateY(-30px) rotate(120deg) scale(1.1);
+      25% {
+        transform: translateY(-40px) rotate(90deg) scale(1.2);
         opacity: 0.2;
       }
-      66% {
-        transform: translateY(20px) rotate(240deg) scale(0.9);
+      50% {
+        transform: translateY(-20px) rotate(180deg) scale(0.8);
         opacity: 0.15;
+      }
+      75% {
+        transform: translateY(30px) rotate(270deg) scale(1.1);
+        opacity: 0.12;
       }
     }
 
-    /* Navigation with Glass Effect */
+    /* Enhanced Navigation */
     .navbar {
-      background: rgba(255, 255, 255, 0.85) !important;
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-      animation: slideDown 0.8s ease-out;
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(25px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.4s ease;
+      box-shadow: 0 12px 40px rgba(31, 38, 135, 0.15);
+      animation: slideDown 1s ease-out;
     }
 
     @keyframes slideDown {
@@ -175,13 +205,18 @@
     }
 
     .navbar-brand {
-      font-weight: 700;
-      font-size: 1.5rem;
+      font-weight: 800;
+      font-size: 1.6rem;
       background: var(--gradient-1);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      animation: pulse 2s infinite;
+      animation: pulse 3s infinite;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand:hover {
+      transform: scale(1.05);
     }
 
     .nav-link {
@@ -189,68 +224,89 @@
       font-weight: 500;
       position: relative;
       transition: all 0.3s ease;
+      border-radius: 8px;
+      padding: 8px 12px !important;
     }
 
     .nav-link:hover {
       color: var(--primary-blue) !important;
       transform: translateY(-2px);
+      background: rgba(37, 99, 235, 0.1);
     }
 
     .nav-link::after {
       content: '';
       position: absolute;
       bottom: -5px;
-      left: 0;
+      left: 50%;
       width: 0;
-      height: 2px;
+      height: 3px;
       background: var(--gradient-1);
-      transition: width 0.3s ease;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+      border-radius: 2px;
     }
 
     .nav-link:hover::after,
     .nav-link.active::after {
-      width: 100%;
+      width: 70%;
     }
 
     .btn-primary-gradient {
       background: var(--gradient-1);
       border: none;
       color: white;
-      font-weight: 500;
+      font-weight: 600;
       padding: 12px 24px;
-      border-radius: 50px;
+      border-radius: 25px;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
-      animation: buttonGlow 3s infinite alternate;
+      animation: buttonGlow 4s infinite alternate;
+    }
+
+    .btn-primary-gradient::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .btn-primary-gradient:hover::before {
+      left: 100%;
     }
 
     .btn-primary-gradient:hover {
-      transform: translateY(-2px) scale(1.05);
+      transform: translateY(-3px) scale(1.05);
       box-shadow: var(--shadow-lg);
       color: white;
     }
 
     @keyframes buttonGlow {
-      0% { box-shadow: 0 0 5px rgba(102, 126, 234, 0.5); }
-      100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.8), 0 0 30px rgba(102, 126, 234, 0.4); }
+      0% { box-shadow: 0 0 8px rgba(102, 126, 234, 0.4); }
+      100% { box-shadow: 0 0 25px rgba(102, 126, 234, 0.8), 0 0 35px rgba(102, 126, 234, 0.3); }
     }
 
-    /* Main Content */
+    /* Enhanced Main Content */
     .main-content {
-      padding-top: 120px;
+      padding-top: 140px;
       min-height: 100vh;
     }
 
     .contact-hero {
       text-align: center;
-      padding: 60px 0 40px;
+      padding: 80px 40px 60px;
       background: var(--card-bg);
-      border-radius: 30px;
-      box-shadow: var(--shadow-lg);
-      margin-bottom: 3rem;
+      border-radius: 35px;
+      box-shadow: var(--shadow-xl);
+      margin-bottom: 4rem;
       position: relative;
       overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.5);
     }
 
     .contact-hero::before {
@@ -259,28 +315,60 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 4px;
+      height: 6px;
       background: var(--gradient-2);
+      border-radius: 35px 35px 0 0;
+    }
+
+    .contact-hero::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(240, 147, 251, 0.05) 0%, transparent 70%);
+      animation: rotate 30s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     .contact-hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
+      font-size: 3.5rem;
+      font-weight: 800;
       background: var(--gradient-2);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      animation: textGlow 3s ease-in-out infinite alternate;
     }
 
+    @keyframes textGlow {
+      0% { filter: drop-shadow(0 0 5px rgba(240, 147, 251, 0.3)); }
+      100% { filter: drop-shadow(0 0 15px rgba(240, 147, 251, 0.6)); }
+    }
+
+    .contact-hero .lead {
+      font-size: 1.3rem;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    /* Enhanced Contact Container */
     .contact-container {
       background: var(--card-bg);
-      border-radius: 25px;
-      padding: 3rem;
-      box-shadow: var(--shadow-lg);
+      border-radius: 30px;
+      padding: 4rem;
+      box-shadow: var(--shadow-xl);
       border: 1px solid var(--border-light);
       position: relative;
       overflow: hidden;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
     }
 
     .contact-container::before {
@@ -289,9 +377,10 @@
       top: 0;
       left: -100%;
       width: 100%;
-      height: 4px;
+      height: 6px;
       background: var(--gradient-2);
-      transition: left 0.4s ease;
+      transition: left 0.6s ease;
+      border-radius: 30px 30px 0 0;
     }
 
     .contact-container:hover::before {
@@ -299,61 +388,97 @@
     }
 
     .contact-container:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg), 0 0 40px rgba(240, 147, 251, 0.2);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl), 0 0 50px rgba(240, 147, 251, 0.15);
     }
 
+    /* Enhanced Form Styling */
     .form-floating {
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
     }
 
     .form-control {
       border: 2px solid var(--border-light);
-      border-radius: 15px;
-      padding: 1rem;
-      font-size: 1rem;
+      border-radius: 18px;
+      padding: 1.2rem 1rem;
+      font-size: 1.1rem;
       transition: all 0.3s ease;
-      background: rgba(248, 250, 252, 0.5);
+      background: rgba(248, 250, 252, 0.7);
+      backdrop-filter: blur(10px);
     }
 
     .form-control:focus {
       border-color: var(--accent-pink);
-      box-shadow: 0 0 0 0.2rem rgba(236, 72, 153, 0.25);
+      box-shadow: 0 0 0 0.25rem rgba(236, 72, 153, 0.15);
       background: var(--card-bg);
+      transform: translateY(-2px);
     }
 
     .form-label {
       font-weight: 600;
       color: var(--text-dark);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.05rem;
     }
 
     .btn-send {
       background: var(--gradient-2);
       border: none;
       color: white;
-      font-weight: 500;
-      padding: 15px 30px;
-      border-radius: 50px;
+      font-weight: 600;
+      padding: 18px 40px;
+      border-radius: 30px;
+      font-size: 1.1rem;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-send::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-send:hover::before {
+      left: 100%;
     }
 
     .btn-send:hover {
-      transform: translateY(-2px) scale(1.05);
-      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: var(--shadow-xl);
       color: white;
     }
 
-    .contact-methods {
-      background: linear-gradient(135deg, rgba(240, 147, 251, 0.1), rgba(245, 87, 108, 0.1));
-      border-radius: 20px;
-      padding: 2rem;
-      margin: 2rem 0;
-      border-left: 4px solid var(--accent-pink);
+    .btn-send:active {
+      transform: translateY(-2px) scale(1.02);
     }
 
+    /* Enhanced Contact Methods */
+    .contact-methods {
+      background: linear-gradient(135deg, rgba(240, 147, 251, 0.08), rgba(245, 87, 108, 0.08));
+      border-radius: 25px;
+      padding: 2.5rem;
+      margin: 2rem 0;
+      border-left: 5px solid var(--accent-pink);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(240, 147, 251, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .contact-methods:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Enhanced Social Links */
     .social-links {
       display: flex;
       justify-content: center;
@@ -365,65 +490,69 @@
     .social-link {
       background: var(--card-bg);
       border: 2px solid var(--border-light);
-      border-radius: 15px;
-      padding: 1rem 1.5rem;
+      border-radius: 20px;
+      padding: 1.2rem 1.8rem;
       text-decoration: none;
       color: var(--text-dark);
-      font-weight: 500;
+      font-weight: 600;
       transition: all 0.3s ease;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.8rem;
       box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.1), transparent);
+      transition: left 0.4s ease;
+    }
+
+    .social-link:hover::before {
+      left: 100%;
     }
 
     .social-link:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: var(--shadow-lg);
       color: var(--accent-pink);
       border-color: var(--accent-pink);
     }
 
     .social-link i {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
+      transition: all 0.3s ease;
     }
 
-    .response-time-card {
-      background: var(--gradient-4);
-      color: white;
-      border-radius: 20px;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 2rem;
+    .social-link:hover i {
+      transform: scale(1.2) rotate(10deg);
     }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+    /* Enhanced Quick Contact Cards */
     .quick-contact-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2.5rem 0;
     }
 
     .quick-contact-card {
       background: var(--card-bg);
       border: 2px solid var(--border-light);
-      border-radius: 20px;
-      padding: 2rem;
+      border-radius: 25px;
+      padding: 2.5rem;
       text-align: center;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
       position: relative;
       overflow: hidden;
+      box-shadow: var(--shadow-sm);
     }
 
     .quick-contact-card::before {
@@ -432,15 +561,27 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 4px;
+      height: 5px;
       background: var(--gradient-3);
       transform: translateX(-100%);
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease;
+    }
+
+    .quick-contact-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(79, 172, 254, 0.05) 0%, transparent 70%);
+      animation: rotate 25s linear infinite reverse;
+      z-index: -1;
     }
 
     .quick-contact-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: var(--shadow-xl);
       border-color: var(--primary-blue);
     }
 
@@ -449,89 +590,315 @@
     }
 
     .quick-contact-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
       background: var(--gradient-3);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      transition: all 0.3s ease;
     }
 
+    .quick-contact-card:hover .quick-contact-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    /* Enhanced Response Time Card */
+    .response-time-card {
+      background: var(--gradient-4);
+      color: white;
+      border-radius: 25px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .response-time-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+      z-index: -1;
+    }
+
+    /* Enhanced Fade In Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Enhanced Accordion */
+    .accordion-item {
+      border: none;
+      margin-bottom: 1rem;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    .accordion-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .accordion-button {
+      background: var(--card-bg);
+      border: none;
+      font-weight: 600;
+      color: var(--text-dark);
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background: var(--gradient-6);
+      color: var(--text-dark);
+      box-shadow: none;
+    }
+
+    .accordion-button:focus {
+      box-shadow: none;
+      border: none;
+    }
+
+    .accordion-body {
+      background: rgba(168, 237, 234, 0.05);
+      color: var(--text-dark);
+    }
+
+    /* Enhanced Footer */
+    footer {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      color: white;
+      padding: 3rem 0;
+      margin-top: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-2);
+    }
+
+    .footer-link {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Enhanced Mobile Responsiveness */
     @media (max-width: 768px) {
+      .contact-hero {
+        padding: 60px 30px 40px;
+        margin-bottom: 3rem;
+      }
+      
       .contact-hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
       }
       
       .contact-container {
-        padding: 2rem;
-        border-radius: 20px;
+        padding: 2.5rem 2rem;
+        border-radius: 25px;
       }
       
       .social-links {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
       }
       
       .quick-contact-cards {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .main-content {
+        padding-top: 120px;
+      }
+
+      .navbar-brand {
+        font-size: 1.4rem;
       }
     }
 
-    /* Custom Scrollbar */
+    /* Enhanced Scrollbar */
     ::-webkit-scrollbar {
-      width: 8px;
+      width: 10px;
     }
 
     ::-webkit-scrollbar-track {
       background: var(--light-bg);
+      border-radius: 5px;
     }
 
     ::-webkit-scrollbar-thumb {
       background: var(--gradient-2);
-      border-radius: 4px;
+      border-radius: 5px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
       background: var(--accent-pink);
     }
 
-    /* Success message styling */
+    /* Success Message Enhancement */
     .success-message {
       background: var(--gradient-4);
       color: white;
-      border-radius: 15px;
-      padding: 1.5rem;
+      border-radius: 20px;
+      padding: 2rem;
       text-align: center;
       margin-top: 2rem;
       display: none;
-      animation: slideInUp 0.5s ease-out;
+      animation: successSlide 0.8s ease-out;
+      box-shadow: var(--shadow-lg);
     }
 
-    @keyframes slideInUp {
+    @keyframes successSlide {
       from {
-        transform: translateY(30px);
+        transform: translateY(40px) scale(0.9);
         opacity: 0;
       }
       to {
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
         opacity: 1;
       }
+    }
+
+    /* Loading Button Enhancement */
+    .btn-send.loading {
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .btn-send.loading::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      border: 2px solid transparent;
+      border-top: 2px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-left: 10px;
+      display: inline-block;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Badge Enhancement */
+    .badge {
+      border-radius: 15px;
+      padding: 8px 16px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      margin: 0 5px 10px 0;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .badge:hover {
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    /* Form Text Enhancements */
+    .form-text {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-text.text-success {
+      color: var(--accent-green) !important;
+    }
+
+    .form-text.text-warning {
+      color: var(--accent-orange) !important;
+    }
+
+    .form-text.text-danger {
+      color: #dc3545 !important;
+    }
+
+    /* Enhanced Button Hover Effects */
+    .btn-outline-danger {
+      border: 2px solid var(--accent-pink);
+      color: var(--accent-pink);
+      font-weight: 600;
+      border-radius: 25px;
+      padding: 12px 30px;
+      transition: all 0.3s ease;
+      background: transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-outline-danger::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-2);
+      transition: left 0.4s ease;
+      z-index: -1;
+    }
+
+    .btn-outline-danger:hover::before {
+      left: 0;
+    }
+
+    .btn-outline-danger:hover {
+      border-color: var(--accent-pink);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
     }
   </style>
 </head>
 
 <body>
-  <!-- Animated Background -->
+  <!-- Enhanced Animated Background -->
   <div class="animated-bg"></div>
   
-  <!-- Floating Shapes -->
+  <!-- Enhanced Floating Shapes -->
   <div class="floating-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
     <div class="shape"></div>
     <div class="shape"></div>
     <div class="shape"></div>
     <div class="shape"></div>
   </div>
 
-  <!-- Navigation -->
+  <!-- Enhanced Navigation -->
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">
@@ -574,7 +941,7 @@
   <!-- Main Content -->
   <div class="main-content">
     <div class="container">
-      <!-- Hero Section -->
+      <!-- Enhanced Hero Section -->
       <div class="contact-hero fade-in">
         <h1>📬 Get in Touch</h1>
         <p class="lead">I'd love to hear from you! Whether you're a beginner, student, or just curious — let's connect! 💬</p>
@@ -587,7 +954,7 @@
 
       <div class="row">
         <div class="col-lg-8">
-          <!-- Contact Form -->
+          <!-- Enhanced Contact Form -->
           <div class="contact-container fade-in">
             <h3 class="mb-4">
               <i class="bi bi-envelope-heart text-primary me-2"></i>
@@ -595,7 +962,7 @@
             </h3>
             
             <form id="contactForm" action="https://formsubmit.co/hello.codewithanjalii@gmail.com" method="POST">
-              <!-- FormSubmit Hidden Fields -->
+              <!-- FormSubmit Hidden Fields - All Original Configurations Preserved -->
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_next" value="https://codewithanjalii.github.io/thankyou.html">
               <input type="text" name="_honey" style="display:none">
@@ -647,9 +1014,9 @@
           </div>
         </div>
 
-        <!-- Contact Info Sidebar -->
+        <!-- Enhanced Contact Info Sidebar -->
         <div class="col-lg-4">
-          <!-- Quick Contact Cards -->
+          <!-- Enhanced Quick Contact Cards -->
           <div class="quick-contact-cards fade-in">
             <div class="quick-contact-card">
               <i class="bi bi-clock-history quick-contact-icon"></i>
@@ -663,7 +1030,7 @@
             </div>
           </div>
 
-          <!-- Contact Methods -->
+          <!-- Enhanced Contact Methods -->
           <div class="contact-methods fade-in">
             <h5><i class="bi bi-chat-dots text-primary me-2"></i>Other Ways to Connect</h5>
             <p class="small mb-3">Choose your preferred way to get in touch!</p>
@@ -692,11 +1059,11 @@
             </div>
           </div>
 
-          <!-- FAQ Section -->
+          <!-- Enhanced FAQ Section -->
           <div class="contact-methods fade-in">
             <h5><i class="bi bi-question-circle text-warning me-2"></i>Frequently Asked</h5>
             <div class="accordion" id="faqAccordion">
-              <div class="accordion-item border-0 mb-2" style="border-radius: 10px; overflow: hidden;">
+              <div class="accordion-item border-0 mb-2">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
                     Do you offer 1-on-1 mentoring?
@@ -709,7 +1076,7 @@
                 </div>
               </div>
               
-              <div class="accordion-item border-0 mb-2" style="border-radius: 10px; overflow: hidden;">
+              <div class="accordion-item border-0 mb-2">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
                     Can you help with my project?
@@ -721,10 +1088,23 @@
                   </div>
                 </div>
               </div>
+
+              <div class="accordion-item border-0 mb-2">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    How fast do you respond?
+                  </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    I aim to respond within 24-48 hours. For urgent matters, Instagram DM is usually faster!
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Response Time Card -->
+          <!-- Enhanced Response Time Card -->
           <div class="response-time-card fade-in">
             <h5><i class="bi bi-lightning-charge me-2"></i>Quick Response Promise</h5>
             <p class="mb-0">I aim to respond to all messages within 24-48 hours. For faster responses, try Instagram DM! 📱</p>
@@ -734,7 +1114,7 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Enhanced Footer -->
   <footer class="bg-dark text-white py-4 mt-5">
     <div class="container">
       <div class="row">
@@ -766,7 +1146,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   
   <script>
-    // Intersection Observer for scroll animations
+    // Enhanced Intersection Observer for scroll animations
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -780,12 +1160,13 @@
       });
     }, observerOptions);
 
-    // Observe all fade-in elements
-    document.querySelectorAll('.fade-in').forEach(el => {
+    // Observe all fade-in elements with stagger effect
+    document.querySelectorAll('.fade-in').forEach((el, index) => {
+      el.style.transitionDelay = `${index * 0.1}s`;
       observer.observe(el);
     });
 
-    // Form handling and validation
+    // Enhanced Form handling and validation
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
@@ -798,7 +1179,7 @@
         return;
       }
       
-      // Email validation
+      // Enhanced Email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
         e.preventDefault();
@@ -807,61 +1188,97 @@
         return;
       }
       
-      // Show loading state
+      // Name validation
+      if (name.length < 2) {
+        e.preventDefault();
+        alert('Please enter your full name!');
+        document.getElementById('name').focus();
+        return;
+      }
+      
+      // Message length validation
+      if (message.length < 10) {
+        e.preventDefault();
+        alert('Please write a more detailed message (at least 10 characters)!');
+        document.getElementById('message').focus();
+        return;
+      }
+      
+      // Show enhanced loading state
       const submitBtn = document.getElementById('submitBtn');
       const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Sending...';
+      submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Sending Message...';
       submitBtn.disabled = true;
+      submitBtn.classList.add('loading');
       
-      // The form will submit normally to FormSubmit
-      // On success, user will be redirected to thankyou.html
+      // Add success animation
+      setTimeout(() => {
+        submitBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Message Sent!';
+      }, 1000);
     });
 
-    // Auto-resize textarea
+    // Enhanced Auto-resize textarea
     const messageTextarea = document.getElementById('message');
     messageTextarea.addEventListener('input', function() {
       this.style.height = 'auto';
-      this.style.height = this.scrollHeight + 'px';
+      this.style.height = Math.min(this.scrollHeight, 200) + 'px';
     });
 
-    // Form field animations
+    // Enhanced Form field animations
     document.querySelectorAll('.form-control').forEach(input => {
       input.addEventListener('focus', function() {
-        this.parentNode.style.transform = 'translateY(-2px)';
+        this.parentNode.style.transform = 'translateY(-3px)';
+        this.parentNode.style.boxShadow = 'var(--shadow-md)';
       });
       
       input.addEventListener('blur', function() {
         this.parentNode.style.transform = 'translateY(0)';
+        this.parentNode.style.boxShadow = 'none';
       });
     });
 
-    // Add parallax effect to floating shapes
-    window.addEventListener('scroll', () => {
+    // Enhanced parallax effect for floating shapes
+    let ticking = false;
+    
+    function updateShapes() {
       const scrolled = window.pageYOffset;
       const shapes = document.querySelectorAll('.shape');
       
       shapes.forEach((shape, index) => {
-        const speed = 0.3 + (index * 0.1);
-        shape.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+        const speed = 0.2 + (index * 0.05);
+        const rotation = scrolled * 0.05 + (index * 30);
+        shape.style.transform = `translateY(${scrolled * speed}px) rotate(${rotation}deg) scale(${1 + Math.sin(scrolled * 0.01 + index) * 0.1})`;
       });
+      
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateShapes);
+        ticking = true;
+      }
     });
 
     // Enhanced hover effects for contact cards
     document.querySelectorAll('.quick-contact-card').forEach(card => {
       card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.05)';
+        this.style.transform = 'translateY(-12px) scale(1.05)';
+        this.style.boxShadow = 'var(--shadow-xl)';
       });
       
       card.addEventListener('mouseleave', function() {
         this.style.transform = 'translateY(0) scale(1)';
+        this.style.boxShadow = 'var(--shadow-sm)';
       });
     });
 
-    // Social link hover effects
+    // Enhanced social link hover effects
     document.querySelectorAll('.social-link').forEach(link => {
       link.addEventListener('mouseenter', function() {
         const icon = this.querySelector('i');
-        icon.style.transform = 'scale(1.3) rotate(10deg)';
+        icon.style.transform = 'scale(1.4) rotate(15deg)';
+        icon.style.transition = 'all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
       });
       
       link.addEventListener('mouseleave', function() {
@@ -870,9 +1287,9 @@
       });
     });
 
-    // Character counter for message textarea
+    // Enhanced character counter for message textarea
     const messageCounter = document.createElement('div');
-    messageCounter.className = 'form-text mt-1';
+    messageCounter.className = 'form-text mt-2';
     messageCounter.id = 'messageCounter';
     messageTextarea.parentNode.appendChild(messageCounter);
 
@@ -880,82 +1297,45 @@
       const length = this.value.length;
       const counter = document.getElementById('messageCounter');
       
-      if (length < 10) {
+      if (length === 0) {
+        counter.innerHTML = '';
+        counter.className = 'form-text mt-2';
+      } else if (length < 10) {
         counter.innerHTML = `<i class="bi bi-exclamation-triangle text-warning me-1"></i>Message is too short (${length} characters). Please be more descriptive.`;
-        counter.className = 'form-text mt-1 text-warning';
+        counter.className = 'form-text mt-2 text-warning';
       } else if (length > 1000) {
         counter.innerHTML = `<i class="bi bi-exclamation-triangle text-danger me-1"></i>Message is too long (${length}/1000 characters). Please keep it concise.`;
-        counter.className = 'form-text mt-1 text-danger';
+        counter.className = 'form-text mt-2 text-danger';
         this.value = this.value.substring(0, 1000);
       } else {
-        counter.innerHTML = `<i class="bi bi-check-circle text-success me-1"></i>${length} characters. Perfect length!`;
-        counter.className = 'form-text mt-1 text-success';
+        counter.innerHTML = `<i class="bi bi-check-circle text-success me-1"></i>${length} characters. Perfect length! 👍`;
+        counter.className = 'form-text mt-2 text-success';
       }
     });
 
-    // Add typing effect to hero text
-    function typeWriter(element, text, speed = 50) {
+    // Enhanced typing effect for hero text
+    function typeWriter(element, text, speed = 40) {
       let i = 0;
+      const originalText = element.textContent;
       element.innerHTML = '';
+      element.style.borderRight = '2px solid var(--accent-pink)';
       
       function type() {
         if (i < text.length) {
           element.innerHTML += text.charAt(i);
           i++;
-          setTimeout(type, speed);
+          setTimeout(type, speed + Math.random() * 20);
+        } else {
+          setTimeout(() => {
+            element.style.borderRight = 'none';
+          }, 500);
         }
       }
       
-      type();
+      setTimeout(type, 1500);
     }
 
-    // Initialize typing effect after page load
-    window.addEventListener('load', function() {
-      const heroText = document.querySelector('.contact-hero p');
-      const originalText = heroText.textContent;
-      setTimeout(() => {
-        typeWriter(heroText, originalText, 30);
-      }, 1000);
-    });
-
-    // Add success animation after form submission
-    if (window.location.search.includes('success')) {
-      setTimeout(() => {
-        document.getElementById('successMessage').style.display = 'block';
-        document.getElementById('contactForm').style.opacity = '0.5';
-      }, 1000);
-    }
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Add floating animation to contact hero
-    function floatingAnimation() {
-      const hero = document.querySelector('.contact-hero');
-      hero.style.transform = 'translateY(-10px)';
-      
-      setTimeout(() => {
-        hero.style.transform = 'translateY(0px)';
-      }, 2000);
-      
-      setTimeout(floatingAnimation, 4000);
-    }
-
-    // Start floating animation after page load
-    setTimeout(floatingAnimation, 2000);
-
-    // Email validation with real-time feedback
+    // Enhanced Email validation with real-time feedback
     const emailInput = document.getElementById('email');
     const emailFeedback = document.createElement('div');
     emailFeedback.className = 'form-text mt-1';
@@ -971,7 +1351,7 @@
         feedback.innerHTML = '';
         feedback.className = 'form-text mt-1';
       } else if (emailRegex.test(email)) {
-        feedback.innerHTML = '<i class="bi bi-check-circle text-success me-1"></i>Valid email address!';
+        feedback.innerHTML = '<i class="bi bi-check-circle text-success me-1"></i>Valid email address! ✨';
         feedback.className = 'form-text mt-1 text-success';
       } else {
         feedback.innerHTML = '<i class="bi bi-x-circle text-danger me-1"></i>Please enter a valid email address';
@@ -979,57 +1359,202 @@
       }
     });
 
-    // Add loading animation to form submit
+    // Name validation with real-time feedback
+    const nameInput = document.getElementById('name');
+    const nameFeedback = document.createElement('div');
+    nameFeedback.className = 'form-text mt-1';
+    nameFeedback.id = 'nameFeedback';
+    nameInput.parentNode.appendChild(nameFeedback);
+
+    nameInput.addEventListener('input', function() {
+      const name = this.value.trim();
+      const feedback = document.getElementById('nameFeedback');
+      
+      if (name === '') {
+        feedback.innerHTML = '';
+        feedback.className = 'form-text mt-1';
+      } else if (name.length < 2) {
+        feedback.innerHTML = '<i class="bi bi-x-circle text-danger me-1"></i>Name is too short';
+        feedback.className = 'form-text mt-1 text-danger';
+      } else if (name.length >= 2 && name.length < 20) {
+        feedback.innerHTML = '<i class="bi bi-check-circle text-success me-1"></i>Perfect! 👋';
+        feedback.className = 'form-text mt-1 text-success';
+      } else {
+        feedback.innerHTML = '<i class="bi bi-exclamation-triangle text-warning me-1"></i>That\'s quite a long name!';
+        feedback.className = 'form-text mt-1 text-warning';
+      }
+    });
+
+    // Enhanced loading animation sequence
     document.getElementById('contactForm').addEventListener('submit', function() {
       const submitBtn = document.getElementById('submitBtn');
       
-      // Create loading animation
-      let dots = 0;
-      const loadingInterval = setInterval(() => {
-        dots = (dots + 1) % 4;
-        const dotString = '.'.repeat(dots);
-        submitBtn.innerHTML = `<i class="bi bi-hourglass-split me-2"></i>Sending${dotString}`;
-      }, 500);
+      // Multi-stage loading animation
+      let stage = 0;
+      const stages = [
+        '<i class="bi bi-hourglass-top me-2"></i>Preparing...',
+        '<i class="bi bi-hourglass-split me-2"></i>Sending...',
+        '<i class="bi bi-hourglass-bottom me-2"></i>Almost there...'
+      ];
       
-      // Clear interval after 5 seconds (form should submit by then)
+      const loadingInterval = setInterval(() => {
+        if (stage < stages.length) {
+          submitBtn.innerHTML = stages[stage];
+          stage++;
+        } else {
+          stage = 0;
+        }
+      }, 800);
+      
+      // Clear interval after 5 seconds
       setTimeout(() => {
         clearInterval(loadingInterval);
+        submitBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Message Sent! 🎉';
       }, 5000);
     });
 
-    // Prevent form resubmission on page refresh
+    // Enhanced page entrance animations
+    window.addEventListener('load', function() {
+      // Stagger animation for elements
+      const elements = document.querySelectorAll('.fade-in');
+      elements.forEach((el, index) => {
+        setTimeout(() => {
+          el.classList.add('visible');
+        }, 200 + (index * 150));
+      });
+
+      // Hero text typing effect
+      setTimeout(() => {
+        const heroText = document.querySelector('.contact-hero p.lead');
+        if (heroText) {
+          const originalText = heroText.textContent;
+          typeWriter(heroText, originalText, 35);
+        }
+      }, 2000);
+    });
+
+    // Enhanced floating animation for contact hero
+    function enhancedFloatingAnimation() {
+      const hero = document.querySelector('.contact-hero');
+      const cards = document.querySelectorAll('.quick-contact-card');
+      
+      // Hero floating
+      hero.style.transform = 'translateY(-8px) rotate(0.5deg)';
+      
+      // Cards floating with different timings
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.style.transform = `translateY(-5px) rotate(${index % 2 === 0 ? '0.3deg' : '-0.3deg'})`;
+        }, index * 200);
+      });
+      
+      setTimeout(() => {
+        hero.style.transform = 'translateY(0px) rotate(0deg)';
+        cards.forEach(card => {
+          card.style.transform = 'translateY(0px) rotate(0deg)';
+        });
+      }, 3000);
+    }
+
+    // Start enhanced floating animation
+    setTimeout(enhancedFloatingAnimation, 3000);
+    setInterval(enhancedFloatingAnimation, 8000);
+
+    // Enhanced pulse effect for CTA elements
+    function enhancedPulseEffect() {
+      const elements = document.querySelectorAll('.btn-send, .btn-primary-gradient, .badge');
+      elements.forEach((el, index) => {
+        setTimeout(() => {
+          el.style.transform = 'scale(1.05)';
+          el.style.boxShadow = 'var(--shadow-lg)';
+          setTimeout(() => {
+            el.style.transform = 'scale(1)';
+            el.style.boxShadow = '';
+          }, 300);
+        }, index * 100);
+      });
+    }
+
+    // Pulse every 6 seconds
+    setInterval(enhancedPulseEffect, 6000);
+
+    // Smooth scrolling enhancement
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Enhanced success animation
+    if (window.location.search.includes('success')) {
+      setTimeout(() => {
+        document.getElementById('successMessage').style.display = 'block';
+        document.getElementById('contactForm').style.opacity = '0.6';
+        document.getElementById('contactForm').style.pointerEvents = 'none';
+      }, 1000);
+    }
+
+    // Prevent form resubmission
     if (window.history.replaceState) {
       window.history.replaceState(null, null, window.location.href);
     }
 
-    // Add pulse effect to CTA buttons
-    function pulseEffect() {
-      document.querySelectorAll('.btn-send, .btn-primary-gradient').forEach(btn => {
-        btn.style.transform = 'scale(1.05)';
-        setTimeout(() => {
-          btn.style.transform = 'scale(1)';
-        }, 200);
-      });
+    // Enhanced navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 100) {
+        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        navbar.style.boxShadow = '0 15px 45px rgba(31, 38, 135, 0.2)';
+      } else {
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.boxShadow = '0 12px 40px rgba(31, 38, 135, 0.15)';
+      }
+    });
+
+    // Initialize page with welcome message
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('🚀 Enhanced CodeWithAnjalii Contact Page Loaded!');
+      console.log('💫 All animations and interactions are ready!');
+      console.log('💬 Feel free to reach out - I love helping fellow developers!');
+      
+      // Add initial load animation to navbar
+      setTimeout(() => {
+        document.querySelector('.navbar').style.opacity = '1';
+        document.querySelector('.navbar').style.transform = 'translateY(0)';
+      }, 100);
+    });
+
+    // Enhanced form progress indicator
+    function updateFormProgress() {
+      const requiredFields = document.querySelectorAll('#contactForm input[required], #contactForm textarea[required]');
+      const filledFields = Array.from(requiredFields).filter(field => field.value.trim() !== '');
+      const progress = (filledFields.length / requiredFields.length) * 100;
+      
+      // You can add a progress bar here if needed
+      if (progress === 100) {
+        document.getElementById('submitBtn').style.background = 'var(--gradient-4)';
+        document.getElementById('submitBtn').style.boxShadow = 'var(--shadow-lg)';
+      } else {
+        document.getElementById('submitBtn').style.background = 'var(--gradient-2)';
+        document.getElementById('submitBtn').style.boxShadow = 'var(--shadow-md)';
+      }
     }
 
-    // Pulse every 5 seconds
-    setInterval(pulseEffect, 5000);
-
-    // Initialize page animations
-    document.addEventListener('DOMContentLoaded', function() {
-      // Trigger initial animations with stagger effect
-      setTimeout(() => {
-        document.querySelectorAll('.fade-in').forEach((el, index) => {
-          setTimeout(() => {
-            el.classList.add('visible');
-          }, index * 200);
-        });
-      }, 100);
-      
-      // Add welcome message
-      console.log('🚀 CodeWithAnjalii Contact Page Loaded Successfully!');
-      console.log('💬 Feel free to reach out - I love helping fellow developers!');
+    // Add progress tracking to form fields
+    document.querySelectorAll('#contactForm input, #contactForm textarea').forEach(field => {
+      field.addEventListener('input', updateFormProgress);
+      field.addEventListener('blur', updateFormProgress);
     });
+
+    // Initial progress check
+    updateFormProgress();
   </script>
 </body>
 </html>
