@@ -1,188 +1,1636 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Learn Coding Free | CodeWithAnjalii</title>
+  <title>AI & Coding Mastery | CodeWithAnjalii - Learn Gen AI, Automation & Programming</title>
   <meta name="google-site-verification" content="oohCAl1xNrcDvPVSomnA-ZUMIbWsHBVjjDN7-JPHsPE" />
-  <meta name="description" content="Free tutorials for HTML, CSS, Python, Git, SQL. Learn coding from scratch with CodeWithAnjalii.">
-  <meta name="keywords" content="learn coding, HTML tutorial, Python course, CodeWithAnjalii, free programming course">
+  <meta name="description" content="Master Generative AI, Machine Learning, Coding, Automation, and Blogging. Complete courses on ChatGPT, Claude, Python, Web Development, and SOP writing.">
+  <meta name="keywords" content="generative AI, machine learning, Python course, automation, blogging, SOP writing, ChatGPT, Claude AI, coding bootcamp">
   <meta name="author" content="Anjali Yadav">
   <meta name="robots" content="index, follow">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <meta property="og:title" content="Learn Coding Free | CodeWithAnjalii">
-  <meta property="og:description" content="Free tutorials for HTML, CSS, Python, Git, SQL. Learn coding from scratch with CodeWithAnjalii.">
+  <meta property="og:title" content="AI & Coding Mastery | CodeWithAnjalii">
+  <meta property="og:description" content="Master Generative AI, Machine Learning, Coding, Automation, and Blogging with comprehensive courses and tutorials.">
   <meta property="og:image" content="https://codewithanjalii.github.io/images/og-image.png">
-  <meta property="og:url" content="https://codewithanjalii.github.io/blog.html">
+  <meta property="og:url" content="https://codewithanjalii.github.io">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Learn Coding Free | CodeWithAnjalii">
-  <meta name="twitter:description" content="Free tutorials for HTML, CSS, Python, Git, SQL. Learn coding from scratch with CodeWithAnjalii.">
-  <meta name="twitter:image" content="https://codewithanjalii.github.io/images/og-image.png">
+  
   <link rel="icon" href="https://codewithanjalii.github.io/images/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="https://codewithanjalii.github.io/images/apple-touch-icon.png">
-  <link rel="manifest" href="https://codewithanjalii.github.io/manifest.json">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-  <!-- Bootstrap CSS -->
-  <<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
   <style>
     :root {
-      --primary: #4C6EF5;
-      --accent: #15AABF;
-      --background: #FAFAFA;
-      --highlight: #D0BFFF;
-      --text-dark: #2B2B2B;
+      --primary-blue: #2563eb;
+      --secondary-blue: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --accent-green: #10b981;
+      --accent-orange: #f59e0b;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-dark: #1e293b;
+      --text-light: #64748b;
+      --border-light: #e2e8f0;
+      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      background-color: var(--background);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
       color: var(--text-dark);
-      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: var(--light-bg);
+      overflow-x: hidden;
     }
 
-    .hero {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      background-size: 200% 200%;
-      animation: gradientShift 8s ease infinite;
+    /* Animated Background Elements */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      opacity: 0.03;
+      background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe, #43e97b);
+      background-size: 400% 400%;
+      animation: gradientWave 20s ease infinite;
+    }
+
+    @keyframes gradientWave {
+      0% { background-position: 0% 50%; }
+      25% { background-position: 100% 50%; }
+      50% { background-position: 100% 100%; }
+      75% { background-position: 50% 100%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Floating Geometric Shapes */
+    .floating-shapes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.1;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--primary-blue), var(--accent-purple));
+      animation: float 15s infinite ease-in-out;
+    }
+
+    .shape:nth-child(1) {
+      width: 80px;
+      height: 80px;
+      top: 10%;
+      left: 10%;
+      animation-delay: -2s;
+    }
+
+    .shape:nth-child(2) {
+      width: 120px;
+      height: 120px;
+      top: 70%;
+      left: 80%;
+      animation-delay: -5s;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      border-radius: 0;
+    }
+
+    .shape:nth-child(3) {
+      width: 60px;
+      height: 60px;
+      top: 40%;
+      left: 5%;
+      animation-delay: -8s;
+      background: var(--gradient-2);
+    }
+
+    .shape:nth-child(4) {
+      width: 100px;
+      height: 100px;
+      top: 20%;
+      right: 10%;
+      animation-delay: -3s;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      border-radius: 0;
+      background: var(--gradient-3);
+    }
+
+    .shape:nth-child(5) {
+      width: 70px;
+      height: 70px;
+      top: 60%;
+      left: 15%;
+      animation-delay: -10s;
+      transform: rotate(45deg);
+      border-radius: 20%;
+      background: var(--gradient-4);
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+        opacity: 0.1;
+      }
+      33% {
+        transform: translateY(-30px) rotate(120deg) scale(1.1);
+        opacity: 0.2;
+      }
+      66% {
+        transform: translateY(20px) rotate(240deg) scale(0.9);
+        opacity: 0.15;
+      }
+    }
+
+    /* Navigation with Glass Effect */
+    .navbar {
+      background: rgba(255, 255, 255, 0.85) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+      animation: slideDown 0.8s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: pulse 2s infinite;
+    }
+
+    .nav-link {
+      color: var(--text-dark) !important;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-blue) !important;
+      transform: translateY(-2px);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-1);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .btn-primary-gradient {
+      background: var(--gradient-1);
+      border: none;
       color: white;
-      padding: 100px 20px;
+      font-weight: 500;
+      padding: 12px 24px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      animation: buttonGlow 3s infinite alternate;
+    }
+
+    .btn-primary-gradient:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: var(--shadow-lg);
+      color: white;
+    }
+
+    @keyframes buttonGlow {
+      0% { box-shadow: 0 0 5px rgba(102, 126, 234, 0.5); }
+      100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.8), 0 0 30px rgba(102, 126, 234, 0.4); }
+    }
+
+    /* Hero Section with Advanced Animations */
+    .hero {
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInScale 1.2s ease-out;
+    }
+
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .typing-container {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
+    }
+
+    .typing-text {
+      color: var(--accent-purple);
+      font-weight: 600;
+      font-size: 1.5rem;
+      min-height: 2rem;
+      border-right: 3px solid var(--accent-purple);
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { border-color: var(--accent-purple); }
+      51%, 100% { border-color: transparent; }
+    }
+
+    .hero-buttons {
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
+
+    .hero-visual {
+      position: relative;
+      animation: fadeInRight 1.2s ease-out 0.4s both;
+    }
+
+    @keyframes fadeInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .hero-icon {
+      font-size: 20rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0.1;
+      animation: rotateFloat 20s linear infinite;
+    }
+
+    @keyframes rotateFloat {
+      0% {
+        transform: rotate(0deg) translateY(0px);
+      }
+      33% {
+        transform: rotate(120deg) translateY(-20px);
+      }
+      66% {
+        transform: rotate(240deg) translateY(10px);
+      }
+      100% {
+        transform: rotate(360deg) translateY(0px);
+      }
+    }
+
+    /* Interactive Course Cards */
+    .course-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      border: 1px solid var(--border-light);
+      padding: 2rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .course-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-1);
+      transition: left 0.4s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+
+    .course-card:hover::before {
+      left: 0;
+    }
+
+    .course-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: white;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .course-card:hover .course-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .course-card:nth-child(3n+1) .course-icon { background: var(--gradient-1); }
+    .course-card:nth-child(3n+2) .course-icon { background: var(--gradient-2); }
+    .course-card:nth-child(3n+3) .course-icon { background: var(--gradient-3); }
+
+    .course-card h4 {
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+      transition: color 0.3s ease;
+    }
+
+    .course-card:hover h4 {
+      color: var(--primary-blue);
+    }
+
+    .course-features {
+      list-style: none;
+      padding: 0;
+    }
+
+    .course-features li {
+      padding: 0.5rem 0;
+      color: var(--text-light);
+      position: relative;
+      padding-left: 1.5rem;
+      transition: all 0.3s ease;
+      transform: translateX(0);
+    }
+
+    .course-card:hover .course-features li {
+      transform: translateX(5px);
+    }
+
+    .course-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent-green);
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .course-card:hover .course-features li::before {
+      transform: scale(1.2);
+    }
+
+    /* Animated Statistics */
+    .stats-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 2rem;
       text-align: center;
+      border: 1px solid var(--border-light);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+      animation: rotate 4s linear infinite;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .stats-card:hover::before {
+      opacity: 1;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .stats-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stats-number {
+      font-size: 3rem;
+      font-weight: 700;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       position: relative;
       z-index: 1;
     }
 
-    @keyframes gradientShift {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+    /* AI Tools Grid Animation */
+    .ai-tool-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid var(--border-light);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .btn-accent {
-      background-color: var(--accent);
-      color: white;
-      border: none;
+    .ai-tool-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
     }
 
-    .btn-accent:hover {
-      background-color: #1098a5;
+    .ai-tool-card:hover::after {
+      transform: translateX(100%);
     }
 
-    .card {
-      border: 1px solid transparent;
-      border-radius: 12px;
-      background: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    .ai-tool-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Interactive Elements */
+    .feature-item {
+      text-align: center;
+      padding: 2rem;
       transition: all 0.3s ease;
     }
 
-    .card:hover {
-      border: 1px solid var(--highlight);
-      box-shadow: 0 6px 16px rgba(85, 108, 214, 0.15);
+    .feature-item:hover {
+      transform: translateY(-5px);
     }
 
-    footer {
-      background-color: var(--primary);
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
       color: white;
+      margin: 0 auto 1.5rem;
+      background: var(--gradient-1);
+      transition: all 0.3s ease;
+    }
+
+    .feature-item:hover .feature-icon {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Loading Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scale-in {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.6s ease;
+    }
+
+    .scale-in.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 80px 0 60px;
+        text-align: center;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .course-card {
+        margin-bottom: 2rem;
+      }
+      
+      .stats-number {
+        font-size: 2.5rem;
+      }
+
+      .hero-icon {
+        font-size: 10rem;
+      }
+
+      .floating-shapes {
+        display: none;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .btn-primary-gradient {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--light-bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gradient-1);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-blue);
+    }
+
+    /* Additional Micro-animations */
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    .bounce-in {
+      animation: bounceIn 1s ease-out;
+    }
+
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(50px);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.05) translateY(-10px);
+      }
+      70% {
+        transform: scale(0.95) translateY(0px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0px);
+      }
     }
   </style>
 </head>
+
 <body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--primary);">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">CodeWithAnjalii</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item">
-          <a class="nav-link active" href="index.html"><i class="bi bi-house-door"></i> Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="courses.html"><i class="bi bi-book"></i> Courses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html"><i class="bi bi-person"></i> About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html"><i class="bi bi-chat"></i> Contact</a>
-        </li>
-      </ul>
-
-      <!-- Ask / Share Button (separate for emphasis) -->
-      <a href="blog.html" class="btn btn-outline-light ms-3">💬 Ask / Share</a>
-    </div>
+  <!-- Animated Background -->
+  <div class="animated-bg"></div>
+  
+  <!-- Floating Shapes -->
+  <div class="floating-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
   </div>
-</nav>
 
-
-<!-- Hero Section -->
-<div class="hero">
-  <div class="container">
-    <h1 data-aos="fade-up">Learn to Code with Anjali — For Free!</h1>
-    <p data-aos="fade-up" data-aos-delay="100">Start your coding journey with HTML, Python, SQL, Git and more — from beginner to advanced.</p>
-    <div data-aos="zoom-in" data-aos-delay="200">
-      <a href="courses.html" class="btn btn-light btn-lg me-2"><i class="bi bi-journal-code"></i> Explore Courses</a>
-      <a href="contact.html" class="btn btn-accent btn-lg"><i class="bi bi-chat-dots"></i> Contact Me</a>
-    </div>
-  </div>
-</div>
-
-<!-- Why Learn Section -->
-<section class="container my-5 text-center">
-  <h2 class="mb-4" data-aos="fade-down">Why Learn With Me?</h2>
-  <div class="row g-4">
-    <div class="col-md-4">
-      <div class="card p-4" data-aos="fade-up" data-aos-delay="100">
-        <h5><i class="bi bi-stars text-warning"></i> Beginner Friendly</h5>
-        <p>Simple Hindi-English explanations with real-world projects.</p>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <i class="bi bi-cpu-fill"></i> CodeWithAnjalii
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home"><i class="bi bi-house-heart"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#courses"><i class="bi bi-journal-code"></i> Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#ai-tools"><i class="bi bi-robot"></i> AI Tools</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#automation"><i class="bi bi-gear-wide-connected"></i> Automation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#blog"><i class="bi bi-pencil-square"></i> Blog & SOP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact"><i class="bi bi-chat-heart"></i> Contact</a>
+          </li>
+        </ul>
+        <a href="#get-started" class="btn btn-primary-gradient ms-3">
+          <i class="bi bi-rocket-takeoff"></i> Get Started
+        </a>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="card p-4" data-aos="fade-up" data-aos-delay="200">
-        <h5><i class="bi bi-collection-play text-primary"></i> Video + Notes</h5>
-        <p>YouTube tutorials + free notes + practice problems.</p>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center min-vh-100">
+        <div class="col-lg-6 hero-content">
+          <h1>Master the Future of <br><span class="typing-text" id="typing-text">Technology</span></h1>
+          <p>Transform your career with cutting-edge skills in Generative AI, Machine Learning, Python Development, Automation, and Professional Writing. Join thousands of successful students who've landed their dream jobs.</p>
+          
+          <div class="hero-buttons">
+            <a href="#courses" class="btn btn-primary-gradient btn-lg me-3 bounce-in">
+              <i class="bi bi-play-circle-fill"></i> Start Learning Now
+            </a>
+            <a href="#ai-tools" class="btn btn-outline-primary btn-lg bounce-in">
+              <i class="bi bi-stars"></i> Explore AI Tools
+            </a>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="row mt-5">
+            <div class="col-4 text-center">
+              <div class="stats-number" style="font-size: 2rem;">50K+</div>
+              <small class="text-muted">Students</small>
+            </div>
+            <div class="col-4 text-center">
+              <div class="stats-number" style="font-size: 2rem;">20+</div>
+              <small class="text-muted">Courses</small>
+            </div>
+            <div class="col-4 text-center">
+              <div class="stats-number" style="font-size: 2rem;">100%</div>
+              <small class="text-muted">Free</small>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 text-center hero-visual">
+          <div class="position-relative">
+            <i class="bi bi-cpu-fill hero-icon"></i>
+            <!-- Floating Tech Icons -->
+            <div class="position-absolute top-0 start-0 w-100 h-100">
+              <i class="bi bi-robot position-absolute" style="top: 10%; left: 10%; font-size: 3rem; color: var(--accent-purple); opacity: 0.6; animation: float 6s ease-in-out infinite;"></i>
+              <i class="bi bi-code-slash position-absolute" style="top: 20%; right: 15%; font-size: 2.5rem; color: var(--accent-green); opacity: 0.6; animation: float 8s ease-in-out infinite reverse;"></i>
+              <i class="bi bi-database position-absolute" style="bottom: 30%; left: 20%; font-size: 2rem; color: var(--accent-orange); opacity: 0.6; animation: float 7s ease-in-out infinite;"></i>
+              <i class="bi bi-cloud position-absolute" style="bottom: 20%; right: 10%; font-size: 2.8rem; color: var(--primary-blue); opacity: 0.6; animation: float 9s ease-in-out infinite reverse;"></i>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="card p-4" data-aos="fade-up" data-aos-delay="300">
-        <h5><i class="bi bi-hand-thumbs-up text-success"></i> Personal Help</h5>
-        <p>Message me on Instagram or GitHub for doubt clearance!</p>
+  </section>
+
+  <!-- Quick Access Cards -->
+  <section class="py-5" style="margin-top: -100px; position: relative; z-index: 3;">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="stats-card fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: var(--gradient-1);">
+              <i class="bi bi-brain"></i>
+            </div>
+            <h5>Gen AI Mastery</h5>
+            <p class="text-muted">ChatGPT, Claude, Gemini</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stats-card fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: var(--gradient-2);">
+              <i class="bi bi-code-square"></i>
+            </div>
+            <h5>Full-Stack Dev</h5>
+            <p class="text-muted">Python, React, Node.js</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stats-card fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: var(--gradient-3);">
+              <i class="bi bi-gear-fill"></i>
+            </div>
+            <h5>Automation</h5>
+            <p class="text-muted">No-code & Coding</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stats-card fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: var(--gradient-4);">
+              <i class="bi bi-pencil-fill"></i>
+            </div>
+            <h5>Content & SOP</h5>
+            <p class="text-muted">Blogging, Documentation</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer class="text-center py-3">
-  &copy; 2025 CodeWithAnjalii. Made with ❤️ to empower coders.
-</footer>
+  <!-- Main Courses Section -->
+  <section id="courses" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fade-in">🚀 Complete Learning Tracks</h2>
+        <p class="lead fade-in text-muted">Master technology with our structured, hands-on courses designed for Indian students</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="course-card fade-in">
+            <div class="course-icon">
+              <i class="bi bi-robot"></i>
+            </div>
+            <h4>🤖 Generative AI Mastery</h4>
+            <p>Master ChatGPT, Claude, Gemini, and cutting-edge AI tools for productivity and creativity</p>
+            <ul class="course-features">
+              <li>Advanced Prompt Engineering</li>
+              <li>AI Content Creation & Marketing</li>
+              <li>Business Automation with AI</li>
+              <li>Custom GPT Development</li>
+              <li>AI Integration Workflows</li>
+              <li>Hindi + English Tutorials</li>
+            </ul>
+            <div class="mt-3">
+              <span class="badge bg-success">Free</span>
+              <span class="badge bg-primary ms-2">Certificate</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="course-card fade-in">
+            <div class="course-icon">
+              <i class="bi bi-code-slash"></i>
+            </div>
+            <h4>💻 Full-Stack Development</h4>
+            <p>Complete web development with Python, JavaScript, React, and modern frameworks</p>
+            <ul class="course-features">
+              <li>Python Programming (Beginner to Pro)</li>
+              <li>Web Development (HTML/CSS/JS)</li>
+              <li>React & Node.js Applications</li>
+              <li>Database Design (SQL/MongoDB)</li>
+              <li>API Development & Integration</li>
+              <li>Real-world Projects</li>
+            </ul>
+            <div class="mt-3">
+              <span class="badge bg-success">Free</span>
+              <span class="badge bg-primary ms-2">Projects</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="course-card fade-in">
+            <div class="course-icon">
+              <i class="bi bi-gear-fill"></i>
+            </div>
+            <h4>⚡ Automation & DevOps</h4>
+            <p>Automate workflows, deploy applications, and streamline development processes</p>
+            <ul class="course-features">
+              <li>Python Process Automation</li>
+              <li>Git & GitHub Advanced Workflows</li>
+              <li>CI/CD Pipeline Setup</li>
+              <li>Cloud Deployment (AWS/Vercel)</li>
+              <li>Docker & Containerization</li>
+              <li>No-Code Automation Tools</li>
+            </ul>
+            <div class="mt-3">
+              <span class="badge bg-success">Free</span>
+              <span class="badge bg-warning ms-2">Hands-on</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
+  <!-- AI Tools Section -->
+  <section id="ai-tools" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fade-in">🛠️ AI Tools You'll Master</h2>
+        <p class="lead fade-in text-muted">Comprehensive coverage of the latest AI tools and platforms</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="ai-tool-card fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: var(--gradient-1);">
+              <i class="bi bi-chat-dots-fill"></i>
+            </div>
+            <h5>💬 Conversational AI</h5>
+            <p class="text-muted">ChatGPT, Claude, Gemini, Perplexity, Character.AI</p>
+            <div class="mt-3">
+              <small class="text-success">✓ Prompt Engineering</small><br>
+              <small class="text-success">✓ API Integration</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="ai-tool-card fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: var(--gradient-2);">
+              <i class="bi bi-image-fill"></i>
+            </div>
+            <h5>🎨 Image Generation</h5>
+            <p class="text-muted">Midjourney, DALL-E, Stable Diffusion, Leonardo AI</p>
+            <div class="mt-3">
+              <small class="text-success">✓ Creative Prompting</small><br>
+              <small class="text-success">✓ Business Graphics</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="ai-tool-card fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: var(--gradient-3);">
+              <i class="bi bi-camera-video-fill"></i>
+            </div>
+            <h5>🎬 Video & Audio AI</h5>
+            <p class="text-muted">Runway ML, ElevenLabs, Synthesia, Luma AI</p>
+            <div class="mt-3">
+              <small class="text-success">✓ Video Generation</small><br>
+              <small class="text-success">✓ Voice Cloning</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="ai-tool-card fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: var(--gradient-4);">
+              <i class="bi bi-code-square"></i>
+            </div>
+            <h5>👨‍💻 Coding AI</h5>
+            <p class="text-muted">GitHub Copilot, Cursor, Replit AI, CodeWhisperer</p>
+            <div class="mt-3">
+              <small class="text-success">✓ Code Generation</small><br>
+              <small class="text-success">✓ Debug Assistant</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional AI Tools Row -->
+      <div class="row g-4 mt-2">
+        <div class="col-md-6 col-lg-3">
+          <div class="ai-tool-card fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: var(--gradient-5);">
+              <i class="bi bi-file-text-fill"></i>
+            </div>
+            <h5>📝 Writing AI</h5>
+            <p class="text-muted">Jasper, Copy.ai, Writesonic, Grammarly</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="ai-tool-card fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+              <i class="bi bi-graph-up"></i>
+            </div>
+            <h5>📊 Analytics AI</h5>
+            <p class="text-muted">Tableau AI, Power BI, DataRobot</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="ai-tool-card fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+              <i class="bi bi-megaphone-fill"></i>
+            </div>
+            <h5>📢 Marketing AI</h5>
+            <p class="text-muted">HubSpot AI, Marketo, Mailchimp AI</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="ai-tool-card fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+              <i class="bi bi-music-note-beamed"></i>
+            </div>
+            <h5>🎵 Audio AI</h5>
+            <p class="text-muted">Mubert, AIVA, Soundraw, Boomy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Automation Section -->
+  <section id="automation" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fade-in">🔧 Automation Mastery</h2>
+        <p class="lead fade-in text-muted">Learn both Coding & No-Code Automation Solutions</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="course-card fade-in">
+            <h4><i class="bi bi-terminal text-primary"></i> 💻 Coding Automation</h4>
+            <div class="row">
+              <div class="col-12 mb-3">
+                <h6>🐍 Python Automation</h6>
+                <ul class="course-features">
+                  <li>Web Scraping with BeautifulSoup & Scrapy</li>
+                  <li>API Integration & Data Processing</li>
+                  <li>Email & WhatsApp Automation</li>
+                  <li>File Management & Excel Automation</li>
+                  <li>Social Media Bot Development</li>
+                </ul>
+              </div>
+              <div class="col-12">
+                <h6>🚀 Advanced Automation</h6>
+                <ul class="course-features">
+                  <li>Selenium Web Automation</li>
+                  <li>Database Automation Scripts</li>
+                  <li>CI/CD Pipeline Creation</li>
+                  <li>Cloud Function Deployment</li>
+                  <li>Server Monitoring & Alerts</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="course-card fade-in">
+            <h4><i class="bi bi-puzzle text-success"></i> 🔗 No-Code Automation</h4>
+            <div class="row">
+              <div class="col-12 mb-3">
+                <h6>🛠️ Popular Platforms</h6>
+                <ul class="course-features">
+                  <li>Zapier Advanced Workflows</li>
+                  <li>Make (Integromat) Complex Scenarios</li>
+                  <li>Airtable Database Automation</li>
+                  <li>Notion API & Template Creation</li>
+                  <li>Microsoft Power Automate</li>
+                </ul>
+              </div>
+              <div class="col-12">
+                <h6>💼 Business Automation</h6>
+                <ul class="course-features">
+                  <li>CRM & Sales Automation</li>
+                  <li>Social Media Content Scheduling</li>
+                  <li>Lead Generation & Nurturing</li>
+                  <li>E-commerce Order Processing</li>
+                  <li>Invoice & Payment Automation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog & SOP Section -->
+  <section id="blog" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fade-in">✍️ Professional Writing & SOP</h2>
+        <p class="lead fade-in text-muted">Master content creation and professional documentation</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="course-card fade-in">
+            <div class="course-icon" style="background: var(--gradient-1);">
+              <i class="bi bi-pencil-square"></i>
+            </div>
+            <h4>📝 Technical Blogging</h4>
+            <ul class="course-features">
+              <li>Content Strategy & Planning</li>
+              <li>SEO-Optimized Writing</li>
+              <li>Technical Documentation</li>
+              <li>Platform Management (Medium, Dev.to)</li>
+              <li>Monetization Strategies</li>
+              <li>AI-Assisted Content Creation</li>
+            </ul>
+            <div class="mt-3">
+              <span class="badge bg-info">Trending</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="course-card fade-in">
+            <div class="course-icon" style="background: var(--gradient-2);">
+              <i class="bi bi-file-text"></i>
+            </div>
+            <h4>🎓 SOP Writing Mastery</h4>
+            <ul class="course-features">
+              <li>University Application SOPs</li>
+              <li>Job Application Cover Letters</li>
+              <li>Visa Application Statements</li>
+              <li>Business Process Documentation</li>
+              <li>Standard Operating Procedures</li>
+              <li>Professional Portfolio Writing</li>
+            </ul>
+            <div class="mt-3">
+              <span class="badge bg-warning">High Demand</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="course-card fade-in">
+            <div class="course-icon" style="background: var(--gradient-3);">
+              <i class="bi bi-megaphone"></i>
+            </div>
+            <h4>📱 Content Marketing</h4>
+            <ul class="course-features">
+              <li>Social Media Content Strategy</li>
+              <li>Email Marketing Campaigns</li>
+              <li>Personal Branding & LinkedIn</li>
+              <li>YouTube Script Writing</li>
+              <li>Newsletter Creation</li>
+              <li>Copywriting for Conversions</li>
+            </ul>
+            <div class="mt-3">
+              <span class="badge bg-success">Creative</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fade-in">🌟 Why Choose Our Platform?</h2>
+        <p class="lead fade-in text-muted">Experience the best in online learning with cutting-edge features</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="bi bi-phone"></i>
+            </div>
+            <h5>📱 Mobile First</h5>
+            <p>Optimized for all devices - learn on phone, tablet, or laptop with seamless experience</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="bi bi-translate"></i>
+            </div>
+            <h5>🗣️ Bilingual Content</h5>
+            <p>Hindi-English explanations for better understanding, catering to Indian students</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="bi bi-people"></i>
+            </div>
+            <h5>👥 Community Support</h5>
+            <p>Join 50K+ learners and get instant help from peers, mentors, and instructors</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="bi bi-award"></i>
+            </div>
+            <h5>🏆 Industry Projects</h5>
+            <p>Build real-world projects that showcase your skills to top employers and startups</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fade-in">🎉 Success Stories</h2>
+        <p class="lead fade-in text-muted">Real students, real transformations</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="course-card fade-in">
+            <div class="d-flex align-items-center mb-3">
+              <div class="course-icon me-3" style="width: 50px; height: 50px; background: var(--gradient-1);">
+                <i class="bi bi-person-fill"></i>
+              </div>
+              <div>
+                <h6 class="mb-0">Rahul Sharma</h6>
+                <small class="text-muted">Software Engineer @ Google</small>
+              </div>
+            </div>
+            <p>"Anjali's AI automation course helped me automate 80% of my daily tasks. Got promoted within 6 months!"</p>
+            <div class="text-warning">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="course-card fade-in">
+            <div class="d-flex align-items-center mb-3">
+              <div class="course-icon me-3" style="width: 50px; height: 50px; background: var(--gradient-2);">
+                <i class="bi bi-person-fill"></i>
+              </div>
+              <div>
+                <h6 class="mb-0">Priya Patel</h6>
+                <small class="text-muted">Freelance AI Consultant</small>
+              </div>
+            </div>
+            <p>"The SOP writing course helped me get into my dream university in Canada. Now earning $5000/month!"</p>
+            <div class="text-warning">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="course-card fade-in">
+            <div class="d-flex align-items-center mb-3">
+              <div class="course-icon me-3" style="width: 50px; height: 50px; background: var(--gradient-3);">
+                <i class="bi bi-person-fill"></i>
+              </div>
+              <div>
+                <h6 class="mb-0">Arjun Singh</h6>
+                <small class="text-muted">Startup Founder</small>
+              </div>
+            </div>
+            <p>"Built my entire SaaS product using skills learned here. Revenue: ₹10L/month in just 8 months!"</p>
+            <div class="text-warning">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscription Form -->
+  <section id="subscribe" class="py-5" style="background: var(--gradient-1);">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="text-center text-white mb-4">
+            <h2 class="fade-in">🎯 Get Free Access to All Courses!</h2>
+            <p class="lead fade-in">Join 50,000+ students and get instant access to premium content, live sessions, and exclusive resources.</p>
+          </div>
+          
+          <!-- Subscription Form -->
+          <div class="card border-0 shadow-lg fade-in" style="border-radius: 20px;">
+            <div class="card-body p-4">
+              <form id="subscriptionForm" class="row g-3">
+                <div class="col-md-6">
+                  <label for="fullName" class="form-label fw-semibold">
+                    <i class="bi bi-person-fill text-primary"></i> Full Name *
+                  </label>
+                  <input type="text" class="form-control form-control-lg" id="fullName" placeholder="Enter your full name" required style="border-radius: 15px;">
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label fw-semibold">
+                    <i class="bi bi-envelope-fill text-primary"></i> Email Address *
+                  </label>
+                  <input type="email" class="form-control form-control-lg" id="email" placeholder="your.email@gmail.com" required style="border-radius: 15px;">
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label fw-semibold">
+                    <i class="bi bi-phone-fill text-primary"></i> Phone Number *
+                  </label>
+                  <input type="tel" class="form-control form-control-lg" id="phone" placeholder="+91 9876543210" required style="border-radius: 15px;">
+                </div>
+                <div class="col-md-6">
+                  <label for="interest" class="form-label fw-semibold">
+                    <i class="bi bi-heart-fill text-primary"></i> Primary Interest
+                  </label>
+                  <select class="form-select form-select-lg" id="interest" style="border-radius: 15px;">
+                    <option selected>Choose your interest...</option>
+                    <option value="ai">🤖 Generative AI & ChatGPT</option>
+                    <option value="coding">💻 Full-Stack Development</option>
+                    <option value="automation">⚡ Automation & No-Code</option>
+                    <option value="writing">✍️ Content Writing & SOP</option>
+                    <option value="all">🌟 All Courses</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="experience" class="form-label fw-semibold">
+                    <i class="bi bi-bar-chart-fill text-primary"></i> Current Experience Level
+                  </label>
+                  <div class="row g-2">
+                    <div class="col-md-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="experience" id="beginner" value="beginner">
+                        <label class="form-check-label" for="beginner">🌱 Complete Beginner</label>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="experience" id="basic" value="basic">
+                        <label class="form-check-label" for="basic">📚 Some Knowledge</label>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="experience" id="intermediate" value="intermediate">
+                        <label class="form-check-label" for="intermediate">💡 Intermediate</label>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="experience" id="advanced" value="advanced">
+                        <label class="form-check-label" for="advanced">🚀 Advanced</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                    <label class="form-check-label" for="agreeTerms">
+                      I agree to receive course updates, free resources, and exclusive content via email and WhatsApp. 
+                      <small class="text-muted">(We respect your privacy - no spam, unsubscribe anytime)</small>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-primary-gradient btn-lg px-5" style="border-radius: 50px;">
+                    <i class="bi bi-rocket-takeoff"></i> Get Free Access Now!
+                  </button>
+                </div>
+              </form>
+              
+              <!-- Success Message (Hidden by default) -->
+              <div id="successMessage" class="alert alert-success mt-4 d-none" style="border-radius: 15px;">
+                <h5><i class="bi bi-check-circle-fill"></i> Welcome to CodeWithAnjalii Family! 🎉</h5>
+                <p class="mb-0">Thank you for subscribing! Check your email for instant access to free courses and resources. We'll also send you our complete roadmap guide.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- What You'll Get -->
+          <div class="row g-3 mt-4 text-white">
+            <div class="col-md-3 text-center">
+              <div class="fade-in">
+                <i class="bi bi-gift-fill" style="font-size: 2rem;"></i>
+                <h6 class="mt-2">🎁 Free Courses</h6>
+                <small>Instant access to premium content</small>
+              </div>
+            </div>
+            <div class="col-md-3 text-center">
+              <div class="fade-in">
+                <i class="bi bi-calendar-event" style="font-size: 2rem;"></i>
+                <h6 class="mt-2">📅 Live Sessions</h6>
+                <small>Weekly interactive workshops</small>
+              </div>
+            </div>
+            <div class="col-md-3 text-center">
+              <div class="fade-in">
+                <i class="bi bi-whatsapp" style="font-size: 2rem;"></i>
+                <h6 class="mt-2">💬 WhatsApp Group</h6>
+                <small>Direct access to community</small>
+              </div>
+            </div>
+            <div class="col-md-3 text-center">
+              <div class="fade-in">
+                <i class="bi bi-download" style="font-size: 2rem;"></i>
+                <h6 class="mt-2">📚 Resources</h6>
+                <small>PDFs, cheat sheets, templates</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section id="get-started" class="py-5 bg-light">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fade-in">🚀 Ready to Transform Your Career?</h2>
+          <p class="lead fade-in mb-4 text-muted">Join our community and start your journey to becoming a tech professional.</p>
+          <div class="fade-in">
+            <a href="#subscribe" class="btn btn-primary-gradient btn-lg me-3">
+              <i class="bi bi-person-plus-fill"></i> Join Free Now
+            </a>
+            <a href="#contact" class="btn btn-outline-primary btn-lg">
+              <i class="bi bi-chat-dots"></i> Get Personal Guidance
+            </a>
+          </div>
+          <div class="mt-4">
+            <small class="text-muted">💯 100% Free • 🎓 Certificate Included • 👥 Lifetime Community Access</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fade-in">📞 Get in Touch</h2>
+        <p class="lead fade-in text-muted">Have questions? Need guidance? I'm here to help!</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-3">
+          <div class="course-card text-center fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: #E4405F;">
+              <i class="bi bi-instagram"></i>
+            </div>
+            <h5>Instagram</h5>
+            <p class="text-muted">Daily tips & updates</p>
+            <a href="#" class="btn btn-outline-primary">Follow @codewithanjalii</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="course-card text-center fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: #FF0000;">
+              <i class="bi bi-youtube"></i>
+            </div>
+            <h5>YouTube</h5>
+            <p class="text-muted">Free video tutorials</p>
+            <a href="#" class="btn btn-outline-primary">Subscribe Channel</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="course-card text-center fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: #333;">
+              <i class="bi bi-github"></i>
+            </div>
+            <h5>GitHub</h5>
+            <p class="text-muted">Open source projects</p>
+            <a href="#" class="btn btn-outline-primary">View Repositories</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="course-card text-center fade-in">
+            <div class="course-icon mx-auto mb-3" style="background: #0077B5;">
+              <i class="bi bi-linkedin"></i>
+            </div>
+            <h5>LinkedIn</h5>
+            <p class="text-muted">Professional network</p>
+            <a href="#" class="btn btn-outline-primary">Connect with Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h5>💻 CodeWithAnjalii</h5>
+          <p class="mb-2">Empowering the next generation of tech professionals with cutting-edge skills in AI, Development, and Automation.</p>
+          <p class="text-muted">&copy; 2025 CodeWithAnjalii. Made with ❤️ for Indian students.</p>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <div class="mb-3">
+            <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-github"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <small class="text-muted">🇮🇳 Proudly Made in India</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Typing Animation
+    const typingText = document.getElementById('typing-text');
+    const words = ['Technology', 'AI & Machine Learning', 'Web Development', 'Automation', 'Content Writing', 'Your Future'];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      const currentWord = words[wordIndex];
+      
+      if (isDeleting) {
+        typingText.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingText.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      if (!isDeleting && charIndex === currentWord.length) {
+        setTimeout(() => isDeleting = true, 2000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+
+      setTimeout(typeEffect, isDeleting ? 50 : 100);
+    }
+
+    // Start typing animation
+    typeEffect();
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in, .scale-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Active navigation highlighting
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Add random floating particles
+    function createParticle() {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = Math.random() * 100 + 'vw';
+      particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      particle.style.opacity = Math.random();
+      particle.style.width = particle.style.height = Math.random() * 10 + 5 + 'px';
+      
+      document.body.appendChild(particle);
+      
+      setTimeout(() => {
+        particle.remove();
+      }, 5000);
+    }
+
+    // Create particles periodically
+    setInterval(createParticle, 300);
+
+    // Add parallax effect to hero icons
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll('.hero-visual i');
+      
+      parallaxElements.forEach((element, index) => {
+        const speed = 0.5 + (index * 0.1);
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    });
+  </script>
 </body>
 </html>
