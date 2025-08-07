@@ -1,131 +1,918 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Courses - CodeWithAnjalii</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <title>Free Courses | CodeWithAnjalii - Learn Programming from Scratch</title>
+  <meta name="google-site-verification" content="oohCAl1xNrcDvPVSomnA-ZUMIbWsHBVjjDN7-JPHsPE" />
+  <meta name="description" content="Free programming courses by CodeWithAnjalii. Learn HTML, CSS, Python, SQL, Git & GitHub from scratch with hands-on projects.">
+  <meta name="keywords" content="free programming courses, HTML CSS Python tutorial, coding for beginners, learn programming online, CodeWithAnjalii courses">
+  <meta name="author" content="Anjali Yadav">
+  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta property="og:title" content="Free Courses | CodeWithAnjalii">
+  <meta property="og:description" content="Learn programming from scratch with free courses in HTML, CSS, Python, SQL, and more!">
+  <meta property="og:image" content="https://codewithanjalii.github.io/images/courses-og-image.png">
+  <meta property="og:url" content="https://codewithanjalii.github.io/courses.html">
+  <meta property="og:type" content="website">
+  
+  <link rel="icon" href="https://codewithanjalii.github.io/images/favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
   <style>
     :root {
-      --primary: #4C6EF5;
-      --accent: #15AABF;
-      --background: #FAFAFA;
-      --highlight: #D0BFFF;
-      --text-dark: #2B2B2B;
+      --primary-blue: #2563eb;
+      --secondary-blue: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --accent-green: #10b981;
+      --accent-orange: #f59e0b;
+      --accent-red: #ef4444;
+      --accent-pink: #ec4899;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-dark: #1e293b;
+      --text-light: #64748b;
+      --border-light: #e2e8f0;
+      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      --gradient-6: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      background-color: var(--background);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
       color: var(--text-dark);
-      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: var(--light-bg);
+      overflow-x: hidden;
     }
 
-    .page-header {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: white;
-      padding: 60px 0;
-      text-align: center;
+    /* Animated Background Elements */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      opacity: 0.03;
+      background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe, #43e97b);
+      background-size: 400% 400%;
+      animation: gradientWave 20s ease infinite;
     }
 
-    .card {
-      border: 1px solid transparent;
-      border-radius: 12px;
-      background: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    @keyframes gradientWave {
+      0% { background-position: 0% 50%; }
+      25% { background-position: 100% 50%; }
+      50% { background-position: 100% 100%; }
+      75% { background-position: 50% 100%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Floating Geometric Shapes */
+    .floating-shapes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.1;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--primary-blue), var(--accent-purple));
+      animation: float 15s infinite ease-in-out;
+    }
+
+    .shape:nth-child(1) {
+      width: 80px;
+      height: 80px;
+      top: 15%;
+      left: 85%;
+      animation-delay: -2s;
+    }
+
+    .shape:nth-child(2) {
+      width: 120px;
+      height: 120px;
+      top: 60%;
+      left: 10%;
+      animation-delay: -5s;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      border-radius: 0;
+    }
+
+    .shape:nth-child(3) {
+      width: 60px;
+      height: 60px;
+      top: 30%;
+      left: 70%;
+      animation-delay: -8s;
+      background: var(--gradient-2);
+    }
+
+    .shape:nth-child(4) {
+      width: 90px;
+      height: 90px;
+      top: 80%;
+      left: 60%;
+      animation-delay: -12s;
+      background: var(--gradient-4);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      border-radius: 0;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+        opacity: 0.1;
+      }
+      33% {
+        transform: translateY(-30px) rotate(120deg) scale(1.1);
+        opacity: 0.2;
+      }
+      66% {
+        transform: translateY(20px) rotate(240deg) scale(0.9);
+        opacity: 0.15;
+      }
+    }
+
+    /* Navigation with Glass Effect */
+    .navbar {
+      background: rgba(255, 255, 255, 0.85) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+      animation: slideDown 0.8s ease-out;
+      height: 80px;
+      min-height: 80px;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: pulse 2s infinite;
+    }
+
+    .nav-link {
+      color: var(--text-dark) !important;
+      font-weight: 500;
+      position: relative;
       transition: all 0.3s ease;
     }
-    .card:hover {
-      border: 1px solid var(--highlight);
-      box-shadow: 0 6px 16px rgba(85, 108, 214, 0.15);
+
+    .nav-link:hover {
+      color: var(--primary-blue) !important;
+      transform: translateY(-2px);
     }
 
-    footer {
-      background-color: var(--primary);
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-1);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .btn-primary-gradient {
+      background: var(--gradient-1);
+      border: none;
       color: white;
+      font-weight: 500;
+      padding: 12px 24px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      animation: buttonGlow 3s infinite alternate;
+    }
+
+    .btn-primary-gradient:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: var(--shadow-lg);
+      color: white;
+    }
+
+    @keyframes buttonGlow {
+      0% { box-shadow: 0 0 5px rgba(102, 126, 234, 0.5); }
+      100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.8), 0 0 30px rgba(102, 126, 234, 0.4); }
+    }
+
+    /* Main Content */
+    .main-content {
+      padding-top: 100px;
+      min-height: 100vh;
+    }
+
+    .courses-hero {
+      text-align: center;
+      padding: 40px 0 30px;
+      background: var(--card-bg);
+      border-radius: 30px;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      /* Fixed: Ensure visibility */
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .courses-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-1);
+    }
+
+    .courses-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.8rem;
+    }
+
+    .courses-hero .stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary-blue);
+      display: block;
+    }
+
+    .stat-label {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    /* Courses Grid */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .course-card {
+      background: var(--card-bg);
+      border-radius: 25px;
+      padding: 2rem;
+      border: 2px solid var(--border-light);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      /* Fixed: Always visible */
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .course-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+
+    .course-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+      transform-origin: left;
+    }
+
+    .course-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* Course specific gradients */
+    .course-card.html-card::before { background: var(--gradient-6); }
+    .course-card.css-card::before { background: var(--gradient-5); }
+    .course-card.python-card::before { background: var(--gradient-4); }
+    .course-card.git-card::before { background: var(--gradient-1); }
+    .course-card.sql-card::before { background: var(--gradient-2); }
+    .course-card.ai-card::before { background: var(--gradient-3); }
+    .course-card.automation-coding-card::before { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    .course-card.nocode-card::before { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+
+    .course-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 2.5rem;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .html-card .course-icon { background: var(--gradient-6); }
+    .css-card .course-icon { background: var(--gradient-5); }
+    .python-card .course-icon { background: var(--gradient-4); }
+    .git-card .course-icon { background: var(--gradient-1); }
+    .sql-card .course-icon { background: var(--gradient-2); }
+    .ai-card .course-icon { background: var(--gradient-3); }
+    .automation-coding-card .course-icon { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    .nocode-card .course-icon { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+
+    .course-card h4 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+      font-size: 1.5rem;
+    }
+
+    .course-description {
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .course-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 2rem;
+    }
+
+    .course-features li {
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      color: var(--text-light);
+    }
+
+    .course-features li i {
+      color: var(--accent-green);
+      margin-right: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .course-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-badge {
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .difficulty-beginner {
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--accent-green);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .difficulty-intermediate {
+      background: rgba(245, 158, 11, 0.1);
+      color: var(--accent-orange);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .duration-badge {
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--primary-blue);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .course-btn {
+      width: 100%;
+      padding: 15px 30px;
+      border-radius: 50px;
+      border: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .html-card .course-btn {
+      background: var(--gradient-6);
+      color: white;
+    }
+
+    .css-card .course-btn {
+      background: var(--gradient-5);
+      color: white;
+    }
+
+    .python-card .course-btn {
+      background: var(--gradient-4);
+      color: white;
+    }
+
+    .git-card .course-btn {
+      background: var(--gradient-1);
+      color: white;
+    }
+
+    .sql-card .course-btn {
+      background: var(--gradient-2);
+      color: white;
+    }
+
+    .ai-card .course-btn {
+      background: var(--gradient-3);
+      color: white;
+    }
+
+    .automation-coding-card .course-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .nocode-card .course-btn {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      color: white;
+    }
+
+    .course-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .courses-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .course-card {
+        padding: 1.5rem;
+        border-radius: 20px;
+      }
+
+      .courses-hero .stats {
+        gap: 1rem;
+      }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--light-bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gradient-1);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-blue);
     }
   </style>
 </head>
+
 <body>
+  <!-- Animated Background -->
+  <div class="animated-bg"></div>
+  
+  <!-- Floating Shapes -->
+  <div class="floating-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--primary);">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">CodeWithAnjalii</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#"><i class="bi bi-book"></i> Courses</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-person"></i> About</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-chat"></i> Contact</a></li>
-        <!-- Ask / Share Button (separate for emphasis) -->
-        <li class="nav-item"></li><a href="blog.html" class="btn btn-outline-light ms-3">💬 Ask / Share</a></li>
-      </ul>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-cpu-fill"></i> CodeWithAnjalii
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="bi bi-house-heart"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="courses.html"><i class="bi bi-journal-code"></i> Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#ai-tools"><i class="bi bi-robot"></i> AI Tools</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#automation"><i class="bi bi-gear-wide-connected"></i> Automation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html"><i class="bi bi-person"></i> About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html"><i class="bi bi-pencil-square"></i> Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="bi bi-chat-heart"></i> Contact</a>
+          </li>
+        </ul>
+        <a href="index.html#subscribe" class="btn btn-primary-gradient ms-3">
+          <i class="bi bi-person-plus-fill"></i> Join Free
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="container">
+      <!-- Hero Section -->
+      <div class="courses-hero">
+        <h1>🚀 Free Coding Courses</h1>
+        <p class="lead">Master programming from scratch with hands-on projects and real-world examples</p>
+        <div class="mt-4">
+          <span class="badge bg-success me-2">💯 100% Free</span>
+          <span class="badge bg-primary me-2">🎯 Beginner Friendly</span>
+          <span class="badge bg-warning">📱 Mobile Optimized</span>
+        </div>
+        
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-number">8+</span>
+            <span class="stat-label">Courses</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">80+</span>
+            <span class="stat-label">Lessons</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">1000+</span>
+            <span class="stat-label">Students</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Courses Grid -->
+      <div class="courses-grid">
+        <!-- HTML Course -->
+        <div class="course-card html-card">
+          <div class="course-icon">
+            <i class="bi bi-code-slash"></i>
+          </div>
+          <h4>HTML for Beginners</h4>
+          <p class="course-description">
+            Start your web development journey with HTML. Learn to create structured webpages from basic tags to complex forms and layouts.
+          </p>
+          
+          <div class="course-meta">
+            <span class="meta-badge difficulty-beginner">🌱 Beginner</span>
+            <span class="meta-badge duration-badge">⏱️ 2-3 hours</span>
+          </div>
+          
+          <ul class="course-features">
+            <li><i class="bi bi-check-circle-fill"></i> Basic HTML structure and syntax</li>
+            <li><i class="bi bi-check-circle-fill"></i> Forms, tables, and semantic HTML</li>
+            <li><i class="bi bi-check-circle-fill"></i> Real project: Personal webpage</li>
+          </ul>
+          
+          <a href="html/index.html" class="course-btn">
+            <i class="bi bi-play-fill me-2"></i>Start Learning HTML
+          </a>
+        </div>
+
+        <!-- CSS Course -->
+        <div class="course-card css-card">
+          <div class="course-icon">
+            <i class="bi bi-palette-fill"></i>
+          </div>
+          <h4>CSS Styling</h4>
+          <p class="course-description">
+            Make your websites beautiful! Learn colors, layouts, animations, and responsive design with modern CSS techniques.
+          </p>
+          
+          <div class="course-meta">
+            <span class="meta-badge difficulty-beginner">🌱 Beginner</span>
+            <span class="meta-badge duration-badge">⏱️ 3-4 hours</span>
+          </div>
+          
+          <ul class="course-features">
+            <li><i class="bi bi-check-circle-fill"></i> Colors, fonts, and layouts</li>
+            <li><i class="bi bi-check-circle-fill"></i> Flexbox and CSS Grid</li>
+            <li><i class="bi bi-check-circle-fill"></i> Responsive design principles</li>
+          </ul>
+          
+          <a href="css/index.html" class="course-btn">
+            <i class="bi bi-brush me-2"></i>Start Learning CSS
+          </a>
+        </div>
+
+        <!-- Python Course -->
+        <div class="course-card python-card">
+          <div class="course-icon">
+            <i class="bi bi-terminal-fill"></i>
+          </div>
+          <h4>Python Basics</h4>
+          <p class="course-description">
+            Dive into programming with Python! Learn variables, loops, functions, and how to solve real problems with code.
+          </p>
+          
+          <div class="course-meta">
+            <span class="meta-badge difficulty-beginner">🌱 Beginner</span>
+            <span class="meta-badge duration-badge">⏱️ 4-5 hours</span>
+          </div>
+          
+          <ul class="course-features">
+            <li><i class="bi bi-check-circle-fill"></i> Variables, data types, and operators</li>
+            <li><i class="bi bi-check-circle-fill"></i> Control flow and functions</li>
+            <li><i class="bi bi-check-circle-fill"></i> Hands-on coding exercises</li>
+          </ul>
+          
+          <a href="python/index.html" class="course-btn">
+            <i class="bi bi-code me-2"></i>Start Learning Python
+          </a>
+        </div>
+
+        <!-- Git Course -->
+        <div class="course-card git-card">
+          <div class="course-icon">
+            <i class="bi bi-git"></i>
+          </div>
+          <h4>Git & GitHub</h4>
+          <p class="course-description">
+            Master version control! Learn Git commands, GitHub workflow, and how to collaborate on projects like a pro developer.
+          </p>
+          
+          <div class="course-meta">
+            <span class="meta-badge difficulty-beginner">🌱 Beginner</span>
+            <span class="meta-badge duration-badge">⏱️ 2-3 hours</span>
+          </div>
+          
+          <ul class="course-features">
+            <li><i class="bi bi-check-circle-fill"></i> Git basics and repository setup</li>
+            <li><i class="bi bi-check-circle-fill"></i> Commits, branches, and merging</li>
+            <li><i class="bi bi-check-circle-fill"></i> GitHub collaboration workflow</li>
+          </ul>
+          
+          <a href="git/index.html" class="course-btn">
+            <i class="bi bi-diagram-3 me-2"></i>Start Learning Git
+          </a>
+        </div>
+
+        <!-- SQL Course -->
+        <div class="course-card sql-card">
+          <div class="course-icon">
+            <i class="bi bi-database-fill"></i>
+          </div>
+          <h4>SQL Queries</h4>
+          <p class="course-description">
+            Unlock the power of databases! Learn to write SELECT, JOIN, and complex queries to manage real-world data effectively.
+          </p>
+          
+          <div class="course-meta">
+            <span class="meta-badge difficulty-beginner">🌱 Beginner</span>
+            <span class="meta-badge duration-badge">⏱️ 3-4 hours</span>
+          </div>
+          
+          <ul class="course-features">
+            <li><i class="bi bi-check-circle-fill"></i> SELECT, WHERE, and ORDER BY</li>
+            <li><i class="bi bi-check-circle-fill"></i> JOINs and subqueries</li>
+            <li><i class="bi bi-check-circle-fill"></i> Database design basics</li>
+          </ul>
+          
+          <a href="sql/index.html" class="course-btn">
+            <i class="bi bi-database me-2"></i>Start Learning SQL
+          </a>
+        </div>
+
+        <!-- Gen AI Course -->
+        <div class="course-card ai-card">
+          <div class="course-icon">
+            <i class="bi bi-robot"></i>
+          </div>
+          <h4>Generative AI Mastery</h4>
+          <p class="course-description">
+            Master ChatGPT, Claude, Gemini and other AI tools. Learn prompt engineering, AI workflows, and build AI-powered projects.
+          </p>
+          
+          <div class="course-meta">
+            <span class="meta-badge difficulty-beginner">🌱 Beginner</span>
+            <span class="meta-badge duration-badge">⏱️ 5-6 hours</span>
+          </div>
+          
+          <ul class="course-features">
+            <li><i class="bi bi-check-circle-fill"></i> Prompt engineering techniques</li>
+            <li><i class="bi bi-check-circle-fill"></i> AI tools for productivity</li>
+            <li><i class="bi bi-check-circle-fill"></i> Building AI workflows</li>
+          </ul>
+          
+          <a href="genai/index.html" class="course-btn">
+            <i class="bi bi-lightning me-2"></i>Start Learning Gen AI
+          </a>
+        </div>
+
+        <!-- Coding Automation Course -->
+        <div class="course-card automation-coding-card">
+          <div class="course-icon">
+            <i class="bi bi-gear-wide-connected"></i>
+          </div>
+          <h4>Coding Automation</h4>
+          <p class="course-description">
+            Automate repetitive tasks with Python! Learn web scraping, file handling, API integration and build automation scripts.
+          </p>
+          
+          <div class="course-meta">
+            <span class="meta-badge difficulty-intermediate">🚀 Intermediate</span>
+            <span class="meta-badge duration-badge">⏱️ 6-8 hours</span>
+          </div>
+          
+          <ul class="course-features">
+            <li><i class="bi bi-check-circle-fill"></i> Python automation libraries</li>
+            <li><i class="bi bi-check-circle-fill"></i> Web scraping & APIs</li>
+            <li><i class="bi bi-check-circle-fill"></i> Task scheduling & workflows</li>
+          </ul>
+          
+          <a href="automation-coding/index.html" class="course-btn">
+            <i class="bi bi-code-square me-2"></i>Start Coding Automation
+          </a>
+        </div>
+
+        <!-- No-Code Automation Course -->
+        <div class="course-card nocode-card">
+          <div class="course-icon">
+            <i class="bi bi-magic"></i>
+          </div>
+          <h4>No-Code Automation</h4>
+          <p class="course-description">
+            Build powerful automations without coding! Master Zapier, Make.com, Airtable and connect apps to automate workflows.
+          </p>
+          
+          <div class="course-meta">
+            <span class="meta-badge difficulty-beginner">🌱 Beginner</span>
+            <span class="meta-badge duration-badge">⏱️ 4-5 hours</span>
+          </div>
+          
+          <ul class="course-features">
+            <li><i class="bi bi-check-circle-fill"></i> Zapier & Make.com workflows</li>
+            <li><i class="bi bi-check-circle-fill"></i> App integrations & triggers</li>
+            <li><i class="bi bi-check-circle-fill"></i> Business process automation</li>
+          </ul>
+          
+          <a href="nocode-automation/index.html" class="course-btn">
+            <i class="bi bi-puzzle me-2"></i>Start No-Code Automation
+          </a>
+        </div>
+      </div>
+
+      <!-- Learning Path Section -->
+      <div class="learning-path">
+        <h2 class="text-center mb-4">🗺️ Recommended Learning Path</h2>
+        <p class="text-center text-muted mb-4">
+          Follow this structured path to maximize your learning and build strong programming foundations
+        </p>
+        
+        <div class="path-steps">
+          <div class="path-step">
+            <div class="step-number">1</div>
+            <h5>HTML Basics</h5>
+            <p class="text-muted small">Start with structure</p>
+          </div>
+          <div class="path-step">
+            <div class="step-number">2</div>
+            <h5>CSS Styling</h5>
+            <p class="text-muted small">Add beautiful design</p>
+          </div>
+          <div class="path-step">
+            <div class="step-number">3</div>
+            <h5>Git & GitHub</h5>
+            <p class="text-muted small">Version control</p>
+          </div>
+          <div class="path-step">
+            <div class="step-number">4</div>
+            <h5>Python Basics</h5>
+            <p class="text-muted small">Programming logic</p>
+          </div>
+          <div class="path-step">
+            <div class="step-number">5</div>
+            <h5>SQL Queries</h5>
+            <p class="text-muted small">Database skills</p>
+          </div>
+          <div class="path-step">
+            <div class="step-number">6</div>
+            <h5>Automation</h5>
+            <p class="text-muted small">Advanced projects</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="text-center my-5">
+        <h3 class="mb-3">Ready to Start Your Coding Journey? 🚀</h3>
+        <p class="text-muted mb-4">Join thousands of students learning to code for free</p>
+        <a href="#" class="btn btn-primary-gradient btn-lg me-3">
+          <i class="bi bi-play-fill me-2"></i>Start First Course
+        </a>
+        <a href="index.html#subscribe" class="btn btn-outline-primary btn-lg">
+          <i class="bi bi-envelope me-2"></i>Get Updates
+        </a>
+      </div>
     </div>
   </div>
-</nav>
 
-<!-- Page Header -->
-<header class="page-header">
-  <div class="container">
-    <h1 class="display-5">Explore Free Coding Courses</h1>
-    <p>HTML, CSS, Python, SQL, Git — everything you need to start your journey 🚀</p>
-  </div>
-</header>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Simple scroll animation script -->
+  <script>
+    // Simple animation on scroll
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.course-card');
+      elements.forEach((element, index) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    }
 
-<!-- Courses Grid -->
-<section class="container my-5">
-  <div class="row g-4">
-    <div class="col-md-4" data-aos="fade-up">
-      <div class="card p-3">
-        <h5><i class="bi bi-code-slash text-primary"></i> HTML for Beginners</h5>
-        <p>Start from basic tags to forms, tables, and structure of a real webpage.</p>
-        <a href="html/index.html" class="btn btn-outline-primary btn-sm">Start Learning</a>
-      </div>
-    </div>
-    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-      <div class="card p-3">
-        <h5><i class="bi bi-palette text-warning"></i> CSS Styling</h5>
-        <p>Learn colors, layout, Flexbox, and how to make your site beautiful.</p>
-        <a href="css/index.html" class="btn btn-outline-primary btn-sm">Start Learning</a>
-      </div>
-    </div>
-    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-      <div class="card p-3">
-        <h5><i class="bi bi-terminal text-success"></i> Python Basics</h5>
-        <p>Understand variables, loops, logic and how Python works behind the scenes.</p>
-        <a href="python/index.html" class="btn btn-outline-primary btn-sm">Start Learning</a>
-      </div>
-    </div>
-    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-      <div class="card p-3">
-        <h5><i class="bi bi-diagram-3 text-info"></i> Git & GitHub</h5>
-        <p>Learn version control, commits, and push your code to GitHub easily.</p>
-        <a href="git/index.html" class="btn btn-outline-primary btn-sm">Start Learning</a>
-      </div>
-    </div>
-    <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-      <div class="card p-3">
-        <h5><i class="bi bi-database-check text-danger"></i> SQL Queries</h5>
-        <p>Write SELECT, JOIN, and GROUP BY queries to manage real-world databases.</p>
-        <a href="sql/index.html" class="btn btn-outline-primary btn-sm">Start Learning</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="text-center py-3">
-  &copy; 2025 CodeWithAnjalii. Learn free. Build confidence. 💡
-</footer>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
+    // Run on load and scroll
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+    
+    // Initial call
+    animateOnScroll();
+  </script>
 </body>
 </html>
