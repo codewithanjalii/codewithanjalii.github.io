@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learn HTML from Scratch | CodeWithAnjalii</title>
-  <meta name="description" content="Master HTML from basics to advanced concepts. Interactive lessons, live examples, and hands-on projects to build your web development skills.">
+  <title>HTML Forms Mastery | CodeWithAnjalii</title>
+  <meta name="description" content="Master HTML forms with interactive examples, validation techniques, and accessibility best practices. Learn input types, form controls, and user experience.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -23,6 +23,7 @@
       --border-light: #e2e8f0;
       --gradient-main: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
       --gradient-secondary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --gradient-accent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
       --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
       --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
@@ -70,8 +71,9 @@
       backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       box-shadow: var(--shadow-sm);
-      position: sticky;
+      position: fixed;
       top: 0;
+      width: 100%;
       z-index: 1000;
     }
 
@@ -84,23 +86,43 @@
       background-clip: text;
     }
 
-    /* Hero Section */
-    .hero-section {
-      padding: 4rem 0;
-      position: relative;
-      overflow: hidden;
+    /* Progress Bar */
+    .progress-container {
+      position: fixed;
+      top: 76px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      z-index: 999;
     }
 
-    .hero-content {
+    .progress-bar {
+      height: 100%;
+      background: var(--gradient-main);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Main Content */
+    .main-content {
+      padding-top: 100px;
+      min-height: 100vh;
+    }
+
+    /* Hero Section */
+    .lesson-hero {
       background: var(--card-bg);
       border-radius: 30px;
-      padding: 4rem;
+      padding: 3rem;
+      margin-bottom: 2rem;
       box-shadow: var(--shadow-lg);
       position: relative;
+      overflow: hidden;
       animation: slideInUp 1s ease-out;
     }
 
-    .hero-content::before {
+    .lesson-hero::before {
       content: '';
       position: absolute;
       top: 0;
@@ -108,25 +130,45 @@
       right: 0;
       height: 5px;
       background: var(--gradient-main);
-      border-radius: 30px 30px 0 0;
     }
 
-    .hero-title {
-      font-size: 3.2rem;
+    .lesson-hero h1 {
+      font-size: 2.8rem;
       font-weight: 800;
       background: var(--gradient-main);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
+      margin-bottom: 1rem;
     }
 
-    .hero-subtitle {
-      font-size: 1.4rem;
-      color: var(--text-light);
-      margin-bottom: 2rem;
-      font-weight: 400;
+    .lesson-meta {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-badge {
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .difficulty-badge {
+      background: rgba(67, 233, 123, 0.1);
+      color: var(--accent-green);
+      border: 1px solid rgba(67, 233, 123, 0.3);
+    }
+
+    .duration-badge {
+      background: rgba(79, 172, 254, 0.1);
+      color: var(--accent-blue);
+      border: 1px solid rgba(79, 172, 254, 0.3);
     }
 
     @keyframes slideInUp {
@@ -144,8 +186,8 @@
     .content-section {
       background: var(--card-bg);
       border-radius: 25px;
-      padding: 3rem;
-      margin-bottom: 2.5rem;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
       box-shadow: var(--shadow-md);
       border: 2px solid transparent;
       transition: all 0.3s ease;
@@ -155,53 +197,51 @@
     .content-section:hover {
       border-color: var(--primary-orange);
       transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
     }
 
-    .section-title {
+    .content-section h2 {
+      color: var(--text-dark);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
       gap: 1rem;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 2rem;
+      font-size: 1.8rem;
     }
 
     .section-icon {
-      width: 60px;
-      height: 60px;
-      border-radius: 15px;
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
       background: var(--gradient-main);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: white;
-      box-shadow: var(--shadow-md);
     }
 
     /* Code Examples */
-    .code-showcase {
+    .code-example {
       background: #1e1e1e;
       color: #d4d4d4;
-      padding: 2.5rem;
-      border-radius: 20px;
+      padding: 2rem;
+      border-radius: 15px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 1rem;
+      font-size: 0.95rem;
       margin: 2rem 0;
       position: relative;
       overflow: hidden;
       box-shadow: var(--shadow-md);
     }
 
-    .code-showcase::before {
+    .code-example::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 4px;
+      height: 3px;
       background: var(--gradient-main);
     }
 
@@ -209,9 +249,15 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       padding-bottom: 1rem;
       border-bottom: 1px solid #333;
+    }
+
+    .code-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
 
     .code-dots {
@@ -235,7 +281,7 @@
       color: white;
       padding: 0.5rem 1rem;
       border-radius: 8px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       cursor: pointer;
       transition: all 0.3s ease;
     }
@@ -244,168 +290,155 @@
       background: rgba(255, 255, 255, 0.2);
     }
 
-    /* Learning Path Cards */
-    .learning-path {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
+    /* Syntax highlighting */
+    .code-tag { color: #569cd6; }
+    .code-attr { color: #9cdcfe; }
+    .code-string { color: #ce9178; }
+    .code-comment { color: #6a9955; }
+    .code-text { color: #d4d4d4; }
 
-    .path-card {
-      background: var(--card-bg);
-      border-radius: 20px;
-      padding: 2.5rem;
-      box-shadow: var(--shadow-md);
-      border: 2px solid transparent;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .path-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--gradient-secondary);
-    }
-
-    .path-card:hover {
-      border-color: var(--accent-blue);
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .path-icon {
-      width: 70px;
-      height: 70px;
-      border-radius: 16px;
-      background: var(--gradient-secondary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      color: white;
-      margin-bottom: 1.5rem;
-    }
-
-    .path-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 1rem;
-    }
-
-    .path-description {
-      color: var(--text-light);
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-
-    /* Course Features */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-
-    .feature-card {
-      text-align: center;
+    /* Interactive Form Demo */
+    .form-demo {
+      background: var(--light-bg);
+      border: 2px dashed var(--border-light);
+      border-radius: 15px;
       padding: 2rem;
-      border-radius: 20px;
-      background: var(--card-bg);
+      margin: 2rem 0;
+    }
+
+    .demo-form {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
       box-shadow: var(--shadow-sm);
+    }
+
+    .demo-form .form-control {
+      border-radius: 8px;
+      border: 2px solid var(--border-light);
+      padding: 0.75rem;
       transition: all 0.3s ease;
     }
 
-    .feature-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
+    .demo-form .form-control:focus {
+      border-color: var(--primary-orange);
+      box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.25);
     }
 
-    .feature-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    /* CTA Buttons */
-    .cta-button {
+    .demo-form .btn-primary {
       background: var(--gradient-main);
       border: none;
-      color: white;
+      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
       font-weight: 600;
-      padding: 18px 35px;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
+    }
+
+    /* Input Types Grid */
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .input-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 1.5rem;
+      border: 2px solid var(--border-light);
       transition: all 0.3s ease;
+    }
+
+    .input-card:hover {
+      border-color: var(--primary-orange);
+      transform: translateY(-3px);
       box-shadow: var(--shadow-md);
     }
 
-    .cta-button:hover {
-      color: white;
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .cta-button.outline {
-      background: transparent;
-      border: 2px solid var(--primary-orange);
+    .input-type {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 600;
       color: var(--primary-orange);
+      margin-bottom: 0.5rem;
     }
 
-    .cta-button.outline:hover {
-      background: var(--primary-orange);
-      color: white;
+    /* Pro Tips */
+    .pro-tip {
+      background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), rgba(255, 107, 107, 0.1));
+      border-left: 5px solid var(--primary-orange);
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin: 2rem 0;
     }
 
-    /* Tools Section */
-    .tools-section {
+    .pro-tip-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: var(--primary-orange);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Try It Section */
+    .try-it-section {
       background: linear-gradient(135deg, rgba(67, 233, 123, 0.1), rgba(79, 172, 254, 0.1));
       border-radius: 25px;
-      padding: 3rem;
+      padding: 2.5rem;
       margin: 2rem 0;
       border: 2px solid rgba(67, 233, 123, 0.2);
     }
 
-    .tool-item {
+    .challenge-card {
       background: white;
       border-radius: 15px;
       padding: 2rem;
       margin: 1rem 0;
       box-shadow: var(--shadow-sm);
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      transition: all 0.3s ease;
     }
 
-    .tool-item:hover {
-      transform: translateX(10px);
+    /* Navigation Buttons */
+    .lesson-navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      background: var(--gradient-main);
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 15px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .nav-btn:hover {
+      color: white;
+      transform: translateY(-3px);
       box-shadow: var(--shadow-md);
     }
 
-    .tool-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 12px;
-      background: var(--gradient-main);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.3rem;
+    .nav-btn.outline {
+      background: transparent;
+      border: 2px solid var(--primary-orange);
+      color: var(--primary-orange);
     }
 
-    /* Animations */
+    .nav-btn.outline:hover {
+      background: var(--primary-orange);
+      color: white;
+    }
+
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -417,6 +450,32 @@
       }
     }
 
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .lesson-hero {
+        padding: 2rem;
+        border-radius: 20px;
+      }
+      
+      .lesson-hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .content-section {
+        padding: 2rem;
+        border-radius: 20px;
+      }
+      
+      .lesson-navigation {
+        flex-direction: column;
+      }
+      
+      .input-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Scroll Animations */
     .animate-on-scroll {
       opacity: 0;
       transform: translateY(30px);
@@ -427,48 +486,28 @@
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* Syntax highlighting */
-    .code-tag { color: #569cd6; }
-    .code-attr { color: #9cdcfe; }
-    .code-string { color: #ce9178; }
-    .code-comment { color: #6a9955; }
-    .code-text { color: #d4d4d4; }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .hero-content {
-        padding: 2.5rem;
-        border-radius: 20px;
-      }
-      
-      .hero-title {
-        font-size: 2.5rem;
-      }
-      
-      .content-section {
-        padding: 2rem;
-        border-radius: 20px;
-      }
-      
-      .learning-path {
-        grid-template-columns: 1fr;
-      }
-    }
   </style>
 </head>
 
 <body>
   <!-- Animated Background -->
   <div class="animated-bg"></div>
+  
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <i class="bi bi-code-square"></i> HTML Mastery
+        <i class="bi bi-input-cursor-text"></i> HTML Forms
       </a>
       <div class="d-flex gap-2">
+        <a href="tags.html" class="btn btn-outline-secondary btn-sm">
+          <i class="bi bi-arrow-left"></i> Previous
+        </a>
         <a href="../courses.html" class="btn btn-outline-secondary btn-sm">
           <i class="bi bi-collection"></i> All Courses
         </a>
@@ -477,269 +516,674 @@
   </nav>
 
   <!-- Main Content -->
-  <div class="container">
-    
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1 class="hero-title">🚀 Master HTML from Scratch</h1>
-        <p class="hero-subtitle">
-          Learn HTML (HyperText Markup Language) — the foundation of web development. 
-          Build from basic tags to complete web pages with interactive lessons and hands-on projects.
+  <div class="main-content">
+    <div class="container">
+      
+      <!-- Hero Section -->
+      <div class="lesson-hero">
+        <h1>📋 HTML Forms Mastery</h1>
+        <p class="lead">
+          Master HTML forms to collect user input effectively. Learn input types, validation, 
+          accessibility, and modern form best practices for better user experience.
         </p>
         
-        <div class="d-flex gap-3 flex-wrap">
-          <a href="tags.html" class="cta-button">
-            <i class="bi bi-play-fill"></i>
-            Start Learning Now
-          </a>
-          <a href="#course-content" class="cta-button outline">
-            <i class="bi bi-book"></i>
-            View Course Content
-          </a>
+        <div class="lesson-meta">
+          <div class="meta-badge difficulty-badge">
+            <i class="bi bi-speedometer2"></i>
+            Beginner Level
+          </div>
+          <div class="meta-badge duration-badge">
+            <i class="bi bi-clock"></i>
+            20 minutes
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- What is HTML Section -->
-    <section class="content-section animate-on-scroll">
-      <h2 class="section-title">
-        <div class="section-icon">
-          <i class="bi bi-question-circle"></i>
-        </div>
-        What is HTML?
-      </h2>
-      
-      <div class="row">
-        <div class="col-lg-8">
-          <p class="lead">
-            HTML stands for <strong>HyperText Markup Language</strong>. It's not a programming language, 
-            but a markup language that structures content for the web.
-          </p>
+      <!-- What are HTML Forms -->
+      <div class="content-section animate-on-scroll">
+        <h2>
+          <div class="section-icon">
+            <i class="bi bi-card-text"></i>
+          </div>
+          What are HTML Forms?
+        </h2>
+        
+        <p class="lead">
+          HTML forms are interactive sections of a webpage that collect information from users. 
+          They're essential for login pages, contact forms, surveys, and any user interaction.
+        </p>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <h5><i class="bi bi-check-circle text-success me-2"></i>Forms are used for:</h5>
+            <ul>
+              <li>User registration and login</li>
+              <li>Contact and feedback forms</li>
+              <li>Search functionality</li>
+              <li>Online surveys and polls</li>
+              <li>E-commerce checkout</li>
+            </ul>
+          </div>
           
-          <p>HTML is the backbone of every website you visit. It defines the structure and content 
-          of web pages using elements called tags. Think of HTML as the skeleton of a website — 
-          it provides the basic structure that CSS (styling) and JavaScript (interactivity) build upon.</p>
-        </div>
-        
-        <div class="col-lg-4">
-          <div class="features-grid">
-            <div class="feature-card">
-              <span class="feature-icon">📄</span>
-              <h6>Structure</h6>
-              <small>Organize content with headings, paragraphs, and sections</small>
-            </div>
-            <div class="feature-card">
-              <span class="feature-icon">🔗</span>
-              <h6>Links</h6>
-              <small>Connect pages and resources across the web</small>
-            </div>
+          <div class="col-md-6">
+            <h5><i class="bi bi-gear text-primary me-2"></i>Key components:</h5>
+            <ul>
+              <li><code>&lt;form&gt;</code> container</li>
+              <li><code>&lt;input&gt;</code> fields</li>
+              <li><code>&lt;textarea&gt;</code> for long text</li>
+              <li><code>&lt;select&gt;</code> dropdowns</li>
+              <li><code>&lt;button&gt;</code> for submission</li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      <div class="code-showcase">
-        <div class="code-header">
-          <div class="d-flex align-items-center gap-3">
-            <div class="code-dots">
-              <div class="code-dot red"></div>
-              <div class="code-dot yellow"></div>
-              <div class="code-dot green"></div>
-            </div>
-            <span>my-first-page.html</span>
+        <div class="pro-tip">
+          <div class="pro-tip-header">
+            <i class="bi bi-lightbulb-fill"></i>
+            Key Concept
           </div>
-          <button class="copy-btn" onclick="copyCode(this)">
-            <i class="bi bi-clipboard"></i> Copy
-          </button>
-        </div>
-        <pre><code><span class="code-tag">&lt;!DOCTYPE html&gt;</span>
-<span class="code-tag">&lt;html&gt;</span>
-  <span class="code-tag">&lt;head&gt;</span>
-    <span class="code-tag">&lt;title&gt;</span><span class="code-text">My First Page</span><span class="code-tag">&lt;/title&gt;</span>
-  <span class="code-tag">&lt;/head&gt;</span>
-  <span class="code-tag">&lt;body&gt;</span>
-    <span class="code-tag">&lt;h1&gt;</span><span class="code-text">Hello World!</span><span class="code-tag">&lt;/h1&gt;</span>
-    <span class="code-tag">&lt;p&gt;</span><span class="code-text">This is my first HTML page.</span><span class="code-tag">&lt;/p&gt;</span>
-  <span class="code-tag">&lt;/body&gt;</span>
-<span class="code-tag">&lt;/html&gt;</span></code></pre>
-      </div>
-    </section>
-
-    <!-- Tools Section -->
-    <section class="tools-section animate-on-scroll">
-      <h2 class="section-title">
-        <div class="section-icon" style="background: var(--gradient-secondary);">
-          <i class="bi bi-tools"></i>
-        </div>
-        Tools You Need
-      </h2>
-      
-      <p class="lead text-center mb-4">
-        You only need 2 simple things to start your HTML journey!
-      </p>
-      
-      <div class="row">
-        <div class="col-md-6">
-          <div class="tool-item">
-            <div class="tool-icon">
-              <i class="bi bi-browser-chrome"></i>
-            </div>
-            <div>
-              <h5>Web Browser</h5>
-              <p class="mb-0 text-muted">Chrome, Firefox, Safari, or Edge to view your HTML pages</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-6">
-          <div class="tool-item">
-            <div class="tool-icon">
-              <i class="bi bi-code-slash"></i>
-            </div>
-            <div>
-              <h5>Text Editor</h5>
-              <p class="mb-0 text-muted">VS Code, Sublime Text, or even simple Notepad</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Course Content -->
-    <section id="course-content" class="content-section animate-on-scroll">
-      <h2 class="section-title">
-        <div class="section-icon">
-          <i class="bi bi-map"></i>
-        </div>
-        Learning Path
-      </h2>
-      
-      <div class="learning-path">
-        <div class="path-card">
-          <div class="path-icon">
-            <i class="bi bi-tags"></i>
-          </div>
-          <h3 class="path-title">HTML Tags & Elements</h3>
-          <p class="path-description">
-            Master the building blocks of HTML. Learn headings, paragraphs, links, images, 
-            and essential tags that form the foundation of web pages.
+          <p class="mb-0">
+            Forms need two important attributes: <code>action</code> (where to send data) 
+            and <code>method</code> (how to send it - usually "GET" or "POST").
           </p>
-          <a href="tags.html" class="cta-button">
-            Start Learning <i class="bi bi-arrow-right"></i>
-          </a>
         </div>
+      </div>
+
+      <!-- Basic Form Structure -->
+      <div class="content-section animate-on-scroll">
+        <h2>
+          <div class="section-icon">
+            <i class="bi bi-diagram-3"></i>
+          </div>
+          Basic Form Structure
+        </h2>
         
-        <div class="path-card">
-          <div class="path-icon">
+        <div class="code-example">
+          <div class="code-header">
+            <div class="code-title">
+              <div class="code-dots">
+                <div class="code-dot red"></div>
+                <div class="code-dot yellow"></div>
+                <div class="code-dot green"></div>
+              </div>
+              <span>basic-form.html</span>
+            </div>
+            <button class="copy-btn" onclick="copyCode(this)">
+              <i class="bi bi-clipboard"></i> Copy
+            </button>
+          </div>
+          <pre><code><span class="code-tag">&lt;form</span> <span class="code-attr">action</span>=<span class="code-string">"/submit"</span> <span class="code-attr">method</span>=<span class="code-string">"POST"</span><span class="code-tag">&gt;</span>
+  <span class="code-comment">&lt;!-- Form content goes here --&gt;</span>
+  
+  <span class="code-tag">&lt;label</span> <span class="code-attr">for</span>=<span class="code-string">"username"</span><span class="code-tag">&gt;</span><span class="code-text">Username:</span><span class="code-tag">&lt;/label&gt;</span>
+  <span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"text"</span> <span class="code-attr">id</span>=<span class="code-string">"username"</span> <span class="code-attr">name</span>=<span class="code-string">"username"</span> <span class="code-attr">required</span><span class="code-tag">&gt;</span>
+  
+  <span class="code-tag">&lt;button</span> <span class="code-attr">type</span>=<span class="code-string">"submit"</span><span class="code-tag">&gt;</span><span class="code-text">Submit</span><span class="code-tag">&lt;/button&gt;</span>
+<span class="code-tag">&lt;/form&gt;</span></code></pre>
+        </div>
+
+        <div class="form-demo">
+          <h5 class="text-center mb-3"><i class="bi bi-eye-fill me-2"></i>Live Demo</h5>
+          <form class="demo-form">
+            <div class="mb-3">
+              <label for="demo-username" class="form-label">Username:</label>
+              <input type="text" class="form-control" id="demo-username" name="username" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Input Types -->
+      <div class="content-section animate-on-scroll">
+        <h2>
+          <div class="section-icon">
             <i class="bi bi-ui-checks"></i>
           </div>
-          <h3 class="path-title">Interactive Forms</h3>
-          <p class="path-description">
-            Create dynamic forms for user input. Explore input types, validation, 
-            accessibility, and modern form best practices.
-          </p>
-          <a href="forms.html" class="cta-button">
-            Learn Forms <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
+          Essential Input Types
+        </h2>
         
-        <div class="path-card">
-          <div class="path-icon">
-            <i class="bi bi-table"></i>
+        <p>HTML5 provides many input types for different kinds of data. Here are the most important ones:</p>
+        
+        <div class="input-grid">
+          <div class="input-card">
+            <div class="input-type">type="text"</div>
+            <p><strong>Text Input</strong> - Single line text</p>
+            <small class="text-muted">For names, titles, short answers</small>
+            <div class="mt-2">
+              <input type="text" class="form-control" placeholder="Enter your name" />
+            </div>
           </div>
-          <h3 class="path-title">Data Tables</h3>
-          <p class="path-description">
-            Display structured data effectively. Learn table elements, styling, 
-            accessibility, and responsive table techniques.
+          
+          <div class="input-card">
+            <div class="input-type">type="email"</div>
+            <p><strong>Email Input</strong> - Email addresses</p>
+            <small class="text-muted">Built-in email validation</small>
+            <div class="mt-2">
+              <input type="email" class="form-control" placeholder="your@email.com" />
+            </div>
+          </div>
+          
+          <div class="input-card">
+            <div class="input-type">type="password"</div>
+            <p><strong>Password Input</strong> - Hidden text</p>
+            <small class="text-muted">Text appears as dots/asterisks</small>
+            <div class="mt-2">
+              <input type="password" class="form-control" placeholder="Enter password" />
+            </div>
+          </div>
+          
+          <div class="input-card">
+            <div class="input-type">type="number"</div>
+            <p><strong>Number Input</strong> - Numeric values</p>
+            <small class="text-muted">With step controls</small>
+            <div class="mt-2">
+              <input type="number" class="form-control" placeholder="25" min="1" max="100" />
+            </div>
+          </div>
+          
+          <div class="input-card">
+            <div class="input-type">type="date"</div>
+            <p><strong>Date Input</strong> - Date picker</p>
+            <small class="text-muted">Browser date widget</small>
+            <div class="mt-2">
+              <input type="date" class="form-control" />
+            </div>
+          </div>
+          
+          <div class="input-card">
+            <div class="input-type">type="tel"</div>
+            <p><strong>Phone Input</strong> - Phone numbers</p>
+            <small class="text-muted">Mobile keyboard optimization</small>
+            <div class="mt-2">
+              <input type="tel" class="form-control" placeholder="+1 (555) 123-4567" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Elements -->
+      <div class="content-section animate-on-scroll">
+        <h2>
+          <div class="section-icon">
+            <i class="bi bi-puzzle"></i>
+          </div>
+          Complete Form Example
+        </h2>
+        
+        <p>Let's build a comprehensive contact form using various input types and elements:</p>
+        
+        <div class="code-example">
+          <div class="code-header">
+            <div class="code-title">
+              <div class="code-dots">
+                <div class="code-dot red"></div>
+                <div class="code-dot yellow"></div>
+                <div class="code-dot green"></div>
+              </div>
+              <span>contact-form.html</span>
+            </div>
+            <button class="copy-btn" onclick="copyCode(this)">
+              <i class="bi bi-clipboard"></i> Copy
+            </button>
+          </div>
+          <pre><code><span class="code-tag">&lt;form</span> <span class="code-attr">action</span>=<span class="code-string">"/contact"</span> <span class="code-attr">method</span>=<span class="code-string">"POST"</span><span class="code-tag">&gt;</span>
+  <span class="code-comment">&lt;!-- Personal Information --&gt;</span>
+  <span class="code-tag">&lt;fieldset&gt;</span>
+    <span class="code-tag">&lt;legend&gt;</span><span class="code-text">Personal Information</span><span class="code-tag">&lt;/legend&gt;</span>
+    
+    <span class="code-tag">&lt;label</span> <span class="code-attr">for</span>=<span class="code-string">"fullname"</span><span class="code-tag">&gt;</span><span class="code-text">Full Name:</span><span class="code-tag">&lt;/label&gt;</span>
+    <span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"text"</span> <span class="code-attr">id</span>=<span class="code-string">"fullname"</span> <span class="code-attr">name</span>=<span class="code-string">"fullname"</span> <span class="code-attr">required</span><span class="code-tag">&gt;</span>
+    
+    <span class="code-tag">&lt;label</span> <span class="code-attr">for</span>=<span class="code-string">"email"</span><span class="code-tag">&gt;</span><span class="code-text">Email:</span><span class="code-tag">&lt;/label&gt;</span>
+    <span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"email"</span> <span class="code-attr">id</span>=<span class="code-string">"email"</span> <span class="code-attr">name</span>=<span class="code-string">"email"</span> <span class="code-attr">required</span><span class="code-tag">&gt;</span>
+    
+    <span class="code-tag">&lt;label</span> <span class="code-attr">for</span>=<span class="code-string">"phone"</span><span class="code-tag">&gt;</span><span class="code-text">Phone:</span><span class="code-tag">&lt;/label&gt;</span>
+    <span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"tel"</span> <span class="code-attr">id</span>=<span class="code-string">"phone"</span> <span class="code-attr">name</span>=<span class="code-string">"phone"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;/fieldset&gt;</span>
+  
+  <span class="code-comment">&lt;!-- Preferences --&gt;</span>
+  <span class="code-tag">&lt;fieldset&gt;</span>
+    <span class="code-tag">&lt;legend&gt;</span><span class="code-text">Preferences</span><span class="code-tag">&lt;/legend&gt;</span>
+    
+    <span class="code-tag">&lt;label</span> <span class="code-attr">for</span>=<span class="code-string">"subject"</span><span class="code-tag">&gt;</span><span class="code-text">Subject:</span><span class="code-tag">&lt;/label&gt;</span>
+    <span class="code-tag">&lt;select</span> <span class="code-attr">id</span>=<span class="code-string">"subject"</span> <span class="code-attr">name</span>=<span class="code-string">"subject"</span> <span class="code-attr">required</span><span class="code-tag">&gt;</span>
+      <span class="code-tag">&lt;option</span> <span class="code-attr">value</span>=<span class="code-string">""</span><span class="code-tag">&gt;</span><span class="code-text">Choose a topic...</span><span class="code-tag">&lt;/option&gt;</span>
+      <span class="code-tag">&lt;option</span> <span class="code-attr">value</span>=<span class="code-string">"general"</span><span class="code-tag">&gt;</span><span class="code-text">General Inquiry</span><span class="code-tag">&lt;/option&gt;</span>
+      <span class="code-tag">&lt;option</span> <span class="code-attr">value</span>=<span class="code-string">"support"</span><span class="code-tag">&gt;</span><span class="code-text">Technical Support</span><span class="code-tag">&lt;/option&gt;</span>
+      <span class="code-tag">&lt;option</span> <span class="code-attr">value</span>=<span class="code-string">"feedback"</span><span class="code-tag">&gt;</span><span class="code-text">Feedback</span><span class="code-tag">&lt;/option&gt;</span>
+    <span class="code-tag">&lt;/select&gt;</span>
+    
+    <span class="code-tag">&lt;label&gt;</span><span class="code-text">Contact method:</span><span class="code-tag">&lt;/label&gt;</span>
+    <span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"radio"</span> <span class="code-attr">id</span>=<span class="code-string">"contact-email"</span> <span class="code-attr">name</span>=<span class="code-string">"contact-method"</span> <span class="code-attr">value</span>=<span class="code-string">"email"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;label</span> <span class="code-attr">for</span>=<span class="code-string">"contact-email"</span><span class="code-tag">&gt;</span><span class="code-text">Email</span><span class="code-tag">&lt;/label&gt;</span>
+    
+    <span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"radio"</span> <span class="code-attr">id</span>=<span class="code-string">"contact-phone"</span> <span class="code-attr">name</span>=<span class="code-string">"contact-method"</span> <span class="code-attr">value</span>=<span class="code-string">"phone"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;label</span> <span class="code-attr">for</span>=<span class="code-string">"contact-phone"</span><span class="code-tag">&gt;</span><span class="code-text">Phone</span><span class="code-tag">&lt;/label&gt;</span>
+  <span class="code-tag">&lt;/fieldset&gt;</span>
+  
+  <span class="code-comment">&lt;!-- Message --&gt;</span>
+  <span class="code-tag">&lt;label</span> <span class="code-attr">for</span>=<span class="code-string">"message"</span><span class="code-tag">&gt;</span><span class="code-text">Your Message:</span><span class="code-tag">&lt;/label&gt;</span>
+  <span class="code-tag">&lt;textarea</span> <span class="code-attr">id</span>=<span class="code-string">"message"</span> <span class="code-attr">name</span>=<span class="code-string">"message"</span> <span class="code-attr">rows</span>=<span class="code-string">"5"</span> <span class="code-attr">cols</span>=<span class="code-string">"50"</span> <span class="code-attr">required</span><span class="code-tag">&gt;&lt;/textarea&gt;</span>
+  
+  <span class="code-comment">&lt;!-- Agreement --&gt;</span>
+  <span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"checkbox"</span> <span class="code-attr">id</span>=<span class="code-string">"agree"</span> <span class="code-attr">name</span>=<span class="code-string">"agree"</span> <span class="code-attr">required</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;label</span> <span class="code-attr">for</span>=<span class="code-string">"agree"</span><span class="code-tag">&gt;</span><span class="code-text">I agree to the terms and conditions</span><span class="code-tag">&lt;/label&gt;</span>
+  
+  <span class="code-comment">&lt;!-- Submit Button --&gt;</span>
+  <span class="code-tag">&lt;button</span> <span class="code-attr">type</span>=<span class="code-string">"submit"</span><span class="code-tag">&gt;</span><span class="code-text">Send Message</span><span class="code-tag">&lt;/button&gt;</span>
+<span class="code-tag">&lt;/form&gt;</span></code></pre>
+        </div>
+
+        <div class="form-demo">
+          <h5 class="text-center mb-3"><i class="bi bi-eye-fill me-2"></i>Interactive Demo</h5>
+          <form class="demo-form">
+            <fieldset class="border p-3 rounded mb-3">
+              <legend class="float-none w-auto px-3">Personal Information</legend>
+              
+              <div class="mb-3">
+                <label for="demo-fullname" class="form-label">Full Name:</label>
+                <input type="text" class="form-control" id="demo-fullname" name="fullname" required>
+              </div>
+              
+              <div class="mb-3">
+                <label for="demo-email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="demo-email" name="email" required>
+              </div>
+              
+              <div class="mb-3">
+                <label for="demo-phone" class="form-label">Phone:</label>
+                <input type="tel" class="form-control" id="demo-phone" name="phone">
+              </div>
+            </fieldset>
+
+            <div class="mb-3">
+              <label for="demo-subject" class="form-label">Subject:</label>
+              <select class="form-select" id="demo-subject" name="subject" required>
+                <option value="">Choose a topic...</option>
+                <option value="general">General Inquiry</option>
+                <option value="support">Technical Support</option>
+                <option value="feedback">Feedback</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Preferred Contact Method:</label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="contact-method" id="demo-email-radio" value="email">
+                  <label class="form-check-label" for="demo-email-radio">Email</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="contact-method" id="demo-phone-radio" value="phone">
+                  <label class="form-check-label" for="demo-phone-radio">Phone</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="demo-message" class="form-label">Your Message:</label>
+              <textarea class="form-control" id="demo-message" name="message" rows="4" required></textarea>
+            </div>
+
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="demo-agree" name="agree" required>
+              <label class="form-check-label" for="demo-agree">
+                I agree to the terms and conditions
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-send-fill me-2"></i>Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Form Validation -->
+      <div class="content-section animate-on-scroll">
+        <h2>
+          <div class="section-icon">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          Form Validation & Attributes
+        </h2>
+        
+        <p>HTML5 provides built-in validation attributes to ensure data quality:</p>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <h5><i class="bi bi-check-square text-success me-2"></i>Validation Attributes:</h5>
+            <ul>
+              <li><code>required</code> - Field must be filled</li>
+              <li><code>minlength</code> - Minimum characters</li>
+              <li><code>maxlength</code> - Maximum characters</li>
+              <li><code>pattern</code> - Regular expression match</li>
+              <li><code>min</code> / <code>max</code> - For numbers/dates</li>
+            </ul>
+          </div>
+          
+          <div class="col-md-6">
+            <h5><i class="bi bi-ui-radios text-primary me-2"></i>User Experience:</h5>
+            <ul>
+              <li><code>placeholder</code> - Hint text</li>
+              <li><code>autocomplete</code> - Browser suggestions</li>
+              <li><code>autofocus</code> - Auto-focus on load</li>
+              <li><code>disabled</code> - Disable input</li>
+              <li><code>readonly</code> - Read-only field</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="code-example">
+          <div class="code-header">
+            <div class="code-title">
+              <div class="code-dots">
+                <div class="code-dot red"></div>
+                <div class="code-dot yellow"></div>
+                <div class="code-dot green"></div>
+              </div>
+              <span>validation-examples.html</span>
+            </div>
+            <button class="copy-btn" onclick="copyCode(this)">
+              <i class="bi bi-clipboard"></i> Copy
+            </button>
+          </div>
+          <pre><code><span class="code-comment">&lt;!-- Required field with placeholder --&gt;</span>
+<span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"text"</span> <span class="code-attr">name</span>=<span class="code-string">"username"</span> 
+       <span class="code-attr">placeholder</span>=<span class="code-string">"Enter username"</span> 
+       <span class="code-attr">required</span> 
+       <span class="code-attr">minlength</span>=<span class="code-string">"3"</span><span class="code-tag">&gt;</span>
+
+<span class="code-comment">&lt;!-- Password with pattern --&gt;</span>
+<span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"password"</span> <span class="code-attr">name</span>=<span class="code-string">"password"</span> 
+       <span class="code-attr">pattern</span>=<span class="code-string">".{8,}"</span> 
+       <span class="code-attr">title</span>=<span class="code-string">"Password must be at least 8 characters"</span><span class="code-tag">&gt;</span>
+
+<span class="code-comment">&lt;!-- Age with min/max --&gt;</span>
+<span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"number"</span> <span class="code-attr">name</span>=<span class="code-string">"age"</span> 
+       <span class="code-attr">min</span>=<span class="code-string">"18"</span> <span class="code-attr">max</span>=<span class="code-string">"100"</span><span class="code-tag">&gt;</span>
+
+<span class="code-comment">&lt;!-- Email with autocomplete --&gt;</span>
+<span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"email"</span> <span class="code-attr">name</span>=<span class="code-string">"email"</span> 
+       <span class="code-attr">autocomplete</span>=<span class="code-string">"email"</span> 
+       <span class="code-attr">autofocus</span><span class="code-tag">&gt;</span></code></pre>
+        </div>
+
+        <div class="pro-tip">
+          <div class="pro-tip-header">
+            <i class="bi bi-shield-check"></i>
+            Security Tip
+          </div>
+          <p class="mb-0">
+            Always validate data on the server-side too! Client-side validation is for user experience, 
+            but can be bypassed. Never trust user input without server validation.
           </p>
-          <a href="tables.html" class="cta-button">
-            Master Tables <i class="bi bi-arrow-right"></i>
-          </a>
         </div>
       </div>
-    </section>
 
-    <!-- What You'll Learn -->
-    <section class="content-section animate-on-scroll">
-      <h2 class="section-title">
-        <div class="section-icon">
-          <i class="bi bi-trophy"></i>
-        </div>
-        What You'll Master
-      </h2>
-      
-      <div class="features-grid">
-        <div class="feature-card">
-          <span class="feature-icon">🏷️</span>
-          <h6>HTML Tags & Structure</h6>
-          <p class="small text-muted">Learn all essential HTML elements and proper document structure</p>
-        </div>
+      <!-- Accessibility -->
+      <div class="content-section animate-on-scroll">
+        <h2>
+          <div class="section-icon">
+            <i class="bi bi-universal-access"></i>
+          </div>
+          Form Accessibility Best Practices
+        </h2>
         
-        <div class="feature-card">
-          <span class="feature-icon">📝</span>
-          <h6>Forms & User Input</h6>
-          <p class="small text-muted">Create interactive forms with validation and accessibility features</p>
-        </div>
+        <p>Making forms accessible ensures everyone can use them effectively:</p>
         
-        <div class="feature-card">
-          <span class="feature-icon">📊</span>
-          <h6>Tables & Data Display</h6>
-          <p class="small text-muted">Present tabular data in organized, readable formats</p>
+        <div class="row">
+          <div class="col-md-6">
+            <h5><i class="bi bi-eye text-info me-2"></i>Visual Accessibility:</h5>
+            <ul>
+              <li>Use clear, descriptive labels</li>
+              <li>Provide sufficient color contrast</li>
+              <li>Don't rely only on color for information</li>
+              <li>Make clickable areas large enough</li>
+            </ul>
+          </div>
+          
+          <div class="col-md-6">
+            <h5><i class="bi bi-keyboard text-warning me-2"></i>Keyboard & Screen Readers:</h5>
+            <ul>
+              <li>Connect labels with <code>for</code> attribute</li>
+              <li>Use <code>fieldset</code> and <code>legend</code></li>
+              <li>Provide error messages clearly</li>
+              <li>Test with Tab key navigation</li>
+            </ul>
+          </div>
         </div>
-        
-        <div class="feature-card">
-          <span class="feature-icon">♿</span>
-          <h6>Accessibility Best Practices</h6>
-          <p class="small text-muted">Build inclusive web content that works for everyone</p>
-        </div>
-        
-        <div class="feature-card">
-          <span class="feature-icon">📱</span>
-          <h6>Semantic HTML</h6>
-          <p class="small text-muted">Write meaningful markup that works across all devices</p>
-        </div>
-        
-        <div class="feature-card">
-          <span class="feature-icon">🚀</span>
-          <h6>Real Projects</h6>
-          <p class="small text-muted">Build actual web pages and practice with hands-on challenges</p>
+
+        <div class="code-example">
+          <div class="code-header">
+            <div class="code-title">
+              <div class="code-dots">
+                <div class="code-dot red"></div>
+                <div class="code-dot yellow"></div>
+                <div class="code-dot green"></div>
+              </div>
+              <span>accessible-form.html</span>
+            </div>
+            <button class="copy-btn" onclick="copyCode(this)">
+              <i class="bi bi-clipboard"></i> Copy
+            </button>
+          </div>
+          <pre><code><span class="code-comment">&lt;!-- Good: Label connected to input --&gt;</span>
+<span class="code-tag">&lt;label</span> <span class="code-attr">for</span>=<span class="code-string">"username"</span><span class="code-tag">&gt;</span><span class="code-text">Username (required):</span><span class="code-tag">&lt;/label&gt;</span>
+<span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"text"</span> <span class="code-attr">id</span>=<span class="code-string">"username"</span> <span class="code-attr">name</span>=<span class="code-string">"username"</span> 
+       <span class="code-attr">required</span> <span class="code-attr">aria-describedby</span>=<span class="code-string">"username-help"</span><span class="code-tag">&gt;</span>
+<span class="code-tag">&lt;small</span> <span class="code-attr">id</span>=<span class="code-string">"username-help"</span><span class="code-tag">&gt;</span><span class="code-text">Must be 3-20 characters long</span><span class="code-tag">&lt;/small&gt;</span>
+
+<span class="code-comment">&lt;!-- Good: Grouped radio buttons --&gt;</span>
+<span class="code-tag">&lt;fieldset&gt;</span>
+  <span class="code-tag">&lt;legend&gt;</span><span class="code-text">Choose your subscription:</span><span class="code-tag">&lt;/legend&gt;</span>
+  
+  <span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"radio"</span> <span class="code-attr">id</span>=<span class="code-string">"basic"</span> <span class="code-attr">name</span>=<span class="code-string">"plan"</span> <span class="code-attr">value</span>=<span class="code-string">"basic"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;label</span> <span class="code-attr">for</span>=<span class="code-string">"basic"</span><span class="code-tag">&gt;</span><span class="code-text">Basic ($10/month)</span><span class="code-tag">&lt;/label&gt;</span>
+  
+  <span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"radio"</span> <span class="code-attr">id</span>=<span class="code-string">"premium"</span> <span class="code-attr">name</span>=<span class="code-string">"plan"</span> <span class="code-attr">value</span>=<span class="code-string">"premium"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;label</span> <span class="code-attr">for</span>=<span class="code-string">"premium"</span><span class="code-tag">&gt;</span><span class="code-text">Premium ($25/month)</span><span class="code-tag">&lt;/label&gt;</span>
+<span class="code-tag">&lt;/fieldset&gt;</span></code></pre>
         </div>
       </div>
-    </section>
 
-    <!-- Get Started Section -->
-    <section class="content-section animate-on-scroll text-center">
-      <h2 class="section-title justify-content-center">
-        <div class="section-icon">
-          <i class="bi bi-rocket-takeoff"></i>
+      <!-- Try It Yourself -->
+      <div class="try-it-section animate-on-scroll">
+        <h2 class="text-center mb-4">
+          <i class="bi bi-rocket-takeoff me-2"></i>
+          Practice Challenges
+        </h2>
+        
+        <div class="challenge-card">
+          <h5><i class="bi bi-trophy-fill text-warning me-2"></i>Challenge 1: Registration Form</h5>
+          <p>Create a user registration form with:</p>
+          <ul>
+            <li>First name and last name (required)</li>
+            <li>Email address with validation</li>
+            <li>Password with minimum 8 characters</li>
+            <li>Confirm password field</li>
+            <li>Date of birth</li>
+            <li>Gender selection (radio buttons)</li>
+            <li>Terms agreement checkbox</li>
+          </ul>
         </div>
-        Ready to Build Your First Website?
-      </h2>
-      
-      <p class="lead mb-4">
-        Join thousands of students who have mastered HTML and launched their web development careers!
-      </p>
-      
-      <div class="d-flex gap-3 justify-content-center flex-wrap">
-        <a href="tags.html" class="cta-button">
-          <i class="bi bi-play-circle"></i>
-          Start Learning HTML Tags
+        
+        <div class="challenge-card">
+          <h5><i class="bi bi-star-fill text-primary me-2"></i>Challenge 2: Survey Form</h5>
+          <p>Build a feedback survey with:</p>
+          <ul>
+            <li>Rating scale (1-5 radio buttons)</li>
+            <li>Multiple choice questions (checkboxes)</li>
+            <li>Dropdown for categories</li>
+            <li>Large text area for comments</li>
+            <li>Contact information (optional)</li>
+          </ul>
+        </div>
+
+        <div class="challenge-card">
+          <h5><i class="bi bi-diamond-fill text-success me-2"></i>Challenge 3: Job Application</h5>
+          <p>Create a job application form with:</p>
+          <ul>
+            <li>Personal details section</li>
+            <li>Work experience (multiple entries)</li>
+            <li>Skills checkboxes</li>
+            <li>File upload for resume</li>
+            <li>Availability date picker</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Best Practices Summary -->
+      <div class="content-section animate-on-scroll">
+        <h2>
+          <div class="section-icon">
+            <i class="bi bi-award"></i>
+          </div>
+          Form Best Practices Summary
+        </h2>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="text-success"><i class="bi bi-check-circle-fill me-2"></i>Do:</h5>
+            <ul>
+              <li>Always use labels with form controls</li>
+              <li>Group related fields with fieldsets</li>
+              <li>Provide clear error messages</li>
+              <li>Use appropriate input types</li>
+              <li>Test with keyboard navigation</li>
+              <li>Make required fields obvious</li>
+              <li>Use placeholder text as hints</li>
+            </ul>
+          </div>
+          
+          <div class="col-md-6">
+            <h5 class="text-danger"><i class="bi bi-x-circle-fill me-2"></i>Don't:</h5>
+            <ul>
+              <li>Use placeholder as the only label</li>
+              <li>Make forms unnecessarily long</li>
+              <li>Use vague error messages</li>
+              <li>Forget to include name attributes</li>
+              <li>Skip form validation</li>
+              <li>Make clickable areas too small</li>
+              <li>Rely only on color for information</li>
+              <li>Auto-submit without user action</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <div class="pro-tip-header">
+            <i class="bi bi-lightbulb-fill"></i>
+            Pro Tip
+          </div>
+          <p class="mb-0">
+            Test your forms on mobile devices! Touch targets should be at least 44px × 44px, 
+            and consider how the virtual keyboard affects your layout.
+          </p>
+        </div>
+      </div>
+
+      <!-- What's Next -->
+      <div class="content-section animate-on-scroll">
+        <h2>
+          <div class="section-icon">
+            <i class="bi bi-arrow-right-circle"></i>
+          </div>
+          Next Steps in Your Journey
+        </h2>
+        
+        <p class="lead">Excellent work mastering HTML forms! Here's what to explore next:</p>
+        
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <div class="text-center p-3 border rounded h-100">
+              <i class="bi bi-table display-4 text-primary mb-2"></i>
+              <h6>HTML Tables</h6>
+              <p class="small text-muted">Learn to display tabular data effectively</p>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-3">
+            <div class="text-center p-3 border rounded h-100">
+              <i class="bi bi-palette display-4 text-success mb-2"></i>
+              <h6>CSS Styling</h6>
+              <p class="small text-muted">Make your forms beautiful and responsive</p>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-3">
+            <div class="text-center p-3 border rounded h-100">
+              <i class="bi bi-lightning-charge display-4 text-warning mb-2"></i>
+              <h6>JavaScript Validation</h6>
+              <p class="small text-muted">Add dynamic form validation and interactivity</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <h5>🎯 Quick Review Questions:</h5>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="border rounded p-3 mb-3">
+                <p class="mb-2"><strong>Q: What attribute connects a label to an input?</strong></p>
+                <small class="text-muted">Answer: The <code>for</code> attribute in the label should match the <code>id</code> of the input</small>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="border rounded p-3 mb-3">
+                <p class="mb-2"><strong>Q: Which input type is best for email addresses?</strong></p>
+                <small class="text-muted">Answer: <code>type="email"</code> provides built-in validation and mobile keyboard optimization</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="lesson-navigation">
+        <a href="tags.html" class="nav-btn outline">
+          <i class="bi bi-arrow-left"></i>
+          Previous: HTML Tags
         </a>
-        <a href="../courses.html" class="cta-button outline">
-          <i class="bi bi-collection"></i>
-          Browse All Courses
+        
+        <a href="tables.html" class="nav-btn">
+          Next: HTML Tables
+          <i class="bi bi-arrow-right"></i>
         </a>
       </div>
-    </section>
-
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   
   <script>
+    // Progress Bar
+    function updateProgressBar() {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight - windowHeight;
+      const scrolled = window.scrollY;
+      const progress = (scrolled / documentHeight) * 100;
+      
+      document.getElementById('progressBar').style.width = progress + '%';
+    }
+
+    // Scroll Animation
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('animated');
+        }
+      });
+    }
+
     // Copy Code Function
     function copyCode(button) {
-      const codeBlock = button.closest('.code-showcase').querySelector('pre code');
+      const codeBlock = button.closest('.code-example').querySelector('pre code');
       const text = codeBlock.textContent;
       
       navigator.clipboard.writeText(text).then(() => {
@@ -762,33 +1206,61 @@
         
         const originalText = button.innerHTML;
         button.innerHTML = '<i class="bi bi-check"></i> Copied!';
+        button.style.background = 'rgba(67, 233, 123, 0.2)';
+        
         setTimeout(() => {
           button.innerHTML = originalText;
+          button.style.background = 'rgba(255, 255, 255, 0.1)';
         }, 2000);
       });
     }
 
-    // Scroll Animation
-    function animateOnScroll() {
-      const elements = document.querySelectorAll('.animate-on-scroll');
-      elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < window.innerHeight - elementVisible) {
-          element.classList.add('animated');
-        }
+    // Form Demo Enhancement
+    function enhanceFormDemo() {
+      const demoForms = document.querySelectorAll('.demo-form');
+      
+      demoForms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Show success message
+          const successDiv = document.createElement('div');
+          successDiv.className = 'alert alert-success mt-3';
+          successDiv.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i>Form submitted successfully! (Demo only)';
+          
+          // Remove any existing success messages
+          const existingAlert = form.parentNode.querySelector('.alert-success');
+          if (existingAlert) {
+            existingAlert.remove();
+          }
+          
+          form.parentNode.appendChild(successDiv);
+          
+          // Remove success message after 3 seconds
+          setTimeout(() => {
+            successDiv.remove();
+          }, 3000);
+        });
       });
     }
 
     // Event Listeners
-    window.addEventListener('scroll', animateOnScroll);
-    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', () => {
+      updateProgressBar();
+      animateOnScroll();
+    });
 
-    // Initial call
+    window.addEventListener('load', () => {
+      animateOnScroll();
+      updateProgressBar();
+      enhanceFormDemo();
+    });
+
+    // Initial calls
     animateOnScroll();
+    updateProgressBar();
 
-    // Smooth scrolling for anchor links
+    // Add smooth scrolling to navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -802,14 +1274,32 @@
       });
     });
 
-    // Add some interactive hover effects
-    document.querySelectorAll('.path-card').forEach(card => {
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-      });
+    // Add form validation feedback
+    document.addEventListener('DOMContentLoaded', function() {
+      const inputs = document.querySelectorAll('.demo-form input, .demo-form select, .demo-form textarea');
       
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(-10px) scale(1)';
+      inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+          if (this.checkValidity()) {
+            this.classList.remove('is-invalid');
+            this.classList.add('is-valid');
+          } else {
+            this.classList.remove('is-valid');
+            this.classList.add('is-invalid');
+          }
+        });
+
+        input.addEventListener('input', function() {
+          if (this.classList.contains('is-invalid') || this.classList.contains('is-valid')) {
+            if (this.checkValidity()) {
+              this.classList.remove('is-invalid');
+              this.classList.add('is-valid');
+            } else {
+              this.classList.remove('is-valid');
+              this.classList.add('is-invalid');
+            }
+          }
+        });
       });
     });
   </script>
